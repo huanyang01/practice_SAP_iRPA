@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<USER>
+	<BREAKPOINTS />
+	<BOOKMARKS />
+	<FINDHISTORY>
+		<FINDWHAT><![CDATA[ctx.options.path]]></FINDWHAT>
+		<FINDWHAT><![CDATA[ctx.options.path.log]]></FINDWHAT>
+		<FINDWHAT><![CDATA[getFilteredTable]]></FINDWHAT>
+	</FINDHISTORY>
+	<DEBUGTRACEFINDHISTORY />
+	<OPENDOCS>
+		<OPENDOC LineNumber="-1" SearchPath="PROCESS[@Name='POPUPS']/WORKFLOWS/WORKFLOW[@Name='readLocalConfigurationFile']" Offset="0" Length="0"><![CDATA[madata]]></OPENDOC>
+		<OPENDOC LineNumber="63" SearchPath="PROCESS[@Name='GLOBAL']/SCRIPTS/SCRIPT[@Name='readlocalconfigurationfile']" Offset="0" Length="0" />
+		<OPENDOC LineNumber="2441" SearchPath="PROCESS[@Name='GLOBAL']/SCRIPTS/SCRIPT[@Name='Ctx Scenario']" Offset="0" Length="0" />
+	</OPENDOCS>
+	<PROPERTIES>
+		<CurPerspective><![CDATA[2]]></CurPerspective>
+		<DebugTester><![CDATA[]]></DebugTester>
+	</PROPERTIES>
+	<WATCHES>
+		<WATCH><![CDATA[txt]]></WATCH>
+		<WATCH><![CDATA[rootData.Config]]></WATCH>
+	</WATCHES>
+	<APPLIFILTERS />
+	<EVENTFILTERS />
+	<WORKFLOW_MOSTUSED />
+</USER>

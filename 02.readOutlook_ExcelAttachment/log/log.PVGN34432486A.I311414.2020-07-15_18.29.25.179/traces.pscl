@@ -1,5 +1,0 @@
-﻿{"ts":"18:29:32.447","ctx":"Action","action":"ctx.log","params":[" *** ctx.outlook.end() ***",0],"verb":"LOGMESS","parentId":82}
-{"ts":"18:29:32.488","ctx":"Action","action":"ctx.log","params":["No excel found, create a new one",0],"verb":"LOGMESS","parentId":84}
-{"ts":"18:29:35.604","ctx":"Action","action":"ctx.log","params":["End Row is 4 and End Column is C",0],"verb":"LOGMESS","parentId":88}
-{"ts":"18:29:35.734","ctx":"Action","action":"ctx.log","params":["Supplier Name is TodayCompany Invoice Number is 1_19123456 Amount is 258",0],"verb":"LOGMESS","parentId":96}
-{"ts":"18:29:35.743","ctx":"Action","action":"ctx.log","params":["Supplier Name is TomorrowGroup Invoice Number is 1_20062721 Amount is 123",0],"verb":"LOGMESS","parentId":96}

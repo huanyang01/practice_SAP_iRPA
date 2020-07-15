@@ -1,8 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <USER>
-	<BREAKPOINTS>
-		<BREAKPOINT LineNumber="134" SearchPath="PROCESS[@Name='GLOBAL']/SCRIPTS/SCRIPT[@Name='readOutlook_Excel']" Offset="5171" Length="23"><![CDATA[ctx.excel.initialize();]]></BREAKPOINT>
-	</BREAKPOINTS>
+	<BREAKPOINTS />
 	<BOOKMARKS />
 	<FINDHISTORY>
 		<FINDWHAT><![CDATA[getAttachmentsName]]></FINDWHAT>
@@ -21,7 +19,7 @@
 		<OPENDOC LineNumber="-1" SearchPath="PROCESS[@Name='GLOBAL']/WORKFLOWS/WORKFLOW[@Name='readOutlook_Excel']" Offset="0" Length="0"><![CDATA[madata]]></OPENDOC>
 		<OPENDOC LineNumber="512" SearchPath="PROCESS[@Name='GLOBAL']/SCRIPTS/SCRIPT[@Name='Ctx Core']" Offset="0" Length="0" />
 		<OPENDOC LineNumber="2477" SearchPath="PROCESS[@Name='GLOBAL']/SCRIPTS/SCRIPT[@Name='Ctx Scenario']" Offset="0" Length="0" />
-		<OPENDOC LineNumber="135" SearchPath="PROCESS[@Name='GLOBAL']/SCRIPTS/SCRIPT[@Name='readOutlook_Excel']" Offset="0" Length="0" />
+		<OPENDOC LineNumber="120" SearchPath="PROCESS[@Name='GLOBAL']/SCRIPTS/SCRIPT[@Name='readOutlook_Excel']" Offset="0" Length="0" />
 	</OPENDOCS>
 	<PROPERTIES>
 		<DebugTester><![CDATA[]]></DebugTester>

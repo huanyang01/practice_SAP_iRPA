@@ -1,6 +1,0 @@
-﻿{"ts":"18:53:40.555","ctx":"Action","action":"ctx.diagnostic.zipArchiveFolder","params":["C:\\GitHub\\practice_SAP_iRPA\\02.readOutlook_ExcelAttachment\\log\\record.PVGN34432486A.I311414.2020-07-15_18.53.36.544"],"parentId":13}
-{"ts":"18:53:40.559","ctx":"Action","action":"ctx.fso.folder.exist","params":["C:\\GitHub\\practice_SAP_iRPA\\02.readOutlook_ExcelAttachment\\log\\record.PVGN34432486A.I311414.2020-07-15_18.53.36.544"],"parentId":13}
-{"ts":"18:53:40.562","ctx":"Action","action":"ctx.fso.file.zip","params":[["C:\\GitHub\\practice_SAP_iRPA\\02.readOutlook_ExcelAttachment\\log\\record.PVGN34432486A.I311414.2020-07-15_18.53.36.544"],"C:\\GitHub\\practice_SAP_iRPA\\02.readOutlook_ExcelAttachment\\log\\record.PVGN34432486A.I311414.2020-07-15_18.53.36.544.zip",1556],"parentId":13}
-{"ts":"18:53:40.751","ctx":"Action","action":"ctx.sleep","params":[100],"result":"","verb":"SLEEP","parentId":13,"appliName":"ctx","appliInst":-1}
-{"ts":"18:53:41.262","ctx":"Action","action":"ctx.sleep","params":[500],"result":"","verb":"SLEEP","parentId":13,"appliName":"ctx","appliInst":-1}
-{"ts":"18:53:41.266","ctx":"Action","action":"ctx.fso.folder.remove","params":["C:\\GitHub\\practice_SAP_iRPA\\02.readOutlook_ExcelAttachment\\log\\record.PVGN34432486A.I311414.2020-07-15_18.53.36.544"],"parentId":13}
