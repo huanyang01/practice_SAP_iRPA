@@ -46,3 +46,7 @@ INT_RPA_STUDIO00P_11-80004527.MSI
 [1] Factory  中设置的 Name 需要与 Studio 中 Declare credential / Declare setting 中的 Setting Name 一致
 [2] Studio 中 Declare setting 的 Local (false) or server (true) storage 记得勾选
 [3] Factory  中设置的 Environment 要与 Agent 中 选取的 Environment 一致
+
+参见  
+https://blogs.sap.com/2020/04/16/how-to-use-credentials-and-variables-with-cloud-factory-in-sap-intelligent-rpa/
+https://www.youtube.com/watch?v=14WBpDyKrs8&feature=youtu.be
