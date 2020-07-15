@@ -1,0 +1,2 @@
+﻿{"ts":"21:34:09.192","ctx":"Action","action":"ctx.log","params":["Log the credential and variables ~  ` UserName:I311414 ~ Password: Initial0",0],"verb":"LOGMESS","parentId":78}
+{"ts":"21:34:13.302","ctx":"Action","action":"ctx.log","params":["Get the variable value: Value1",0],"verb":"LOGMESS","parentId":93}

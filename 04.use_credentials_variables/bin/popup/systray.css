@@ -1,0 +1,994 @@
+﻿/*** General ***/
+html{
+    border: solid;
+}
+
+body {
+	overflow: hidden;
+	padding-right: 0px !important;
+	width: 100% !important;
+}
+
+.panel {
+    margin-bottom: 20px;
+    background-color: #fff;
+		border-style: none;
+	box-shadow: none !important;
+	border: 0 !important;
+	-webkit-box-shadow: none !important;
+}
+
+.container-fluid {
+	padding: 0 !important;
+	margin: 0 !important;	
+}
+
+.row {
+	margin: 0 !important;
+}
+
+[ctxtype="ctx.popup.bootstrap.type.column"] {
+	padding: 0 !important;
+}
+
+/*** Page ***/
+/* Page Content Spacing */
+.agent-systray-content-container {
+	margin-left: 7px !important;
+	margin-right: 7px !important;
+	margin-top: 7px !important;
+}
+
+/* Page Titles */
+.agent-systray-h5 {
+	margin-top: 9px;
+	white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.agent-systray-h5-wrap {
+	margin-top: 9px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+		
+/* Toolbar */
+.agent-systray-toolbar-btn {
+	max-width: 48px !important;
+	max-height: 42px !important;
+	margin-left: 48px !important;
+	font-size: 24px !important;
+	margin-top: 10px;
+}
+
+.agent-systray-toolbar-btn > .badge {
+	right: 7px;
+  top: -7px !important;
+  padding: 2px 5px;
+	color: #fff !important;
+	font-size: 8px;
+}
+
+.agent-systray-toolbar-row {
+	position: absolute;
+  top: 425px;
+	width: 105%;
+}
+
+.agent-systray-header-container {
+	border-bottom: 1px solid #d9d9d9;
+	background-color: #354a5f;
+  color: #fff;
+	height: 48px;
+	padding-top: 7px !important;
+}
+
+.agent-systray-header-container h5 {
+	text-align: center;
+}
+
+.agent-systray-footer-container {
+	border-top: 1px solid #d9d9d9;
+	padding-left: 7px !important;	
+}
+
+.agent-systray-footer-container button {
+	margin-top: 5px;	
+}
+
+#containerMenuMain {
+	padding-left: 20px !important;
+}
+
+/*** Buttons ***/
+.btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+.agent-systray-btn-right {
+	float: right;
+}
+
+.btn-project-item {
+	float: right;
+  line-height: 1;
+  position: relative;
+  bottom: 14px;
+}
+
+.btn:focus,.btn:active:focus,.btn.active:focus,.btn.focus,.btn:active.focus,.btn.active.focus {
+	outline: thin dotted !important;/* IE */
+    outline: 5px auto -webkit-focus-ring-color !important;/* Chrome,Firefox */
+    outline-offset: -2px
+}
+
+/** Blue - Not Transparent = Default Button = .btn-info **/
+.btn-info {
+	box-shadow: none;
+	text-shadow: none;
+    color: #fff;
+    background-color: #0a6ed1 !important;
+    border-color: #0a6ed1
+}
+
+.btn-info > i {
+	color: #0854a0;
+	text-shadow: none;
+}
+
+.btn-info:focus,.btn-info.focus {
+    color: #fff;
+    background-color: #0a6ed1;
+    border-color: #0a6ed1
+}
+
+.btn-info:hover {
+    color: #fff;
+    background-color: #0854a0 !important;
+    border-color: #0854a0
+}
+
+.btn-info:active,.btn-info.active,.open>.dropdown-toggle.btn-info {
+    color: #fff;
+    background-color: #0854a0 !important;
+    border-color: #0854a0
+}
+
+.btn-info:active>i,.btn-info.active>i {
+	color: #fff;
+}
+
+.btn-info.disabled:active>i,.btn-info.disabled:focus>i,.btn-info[disabled]:focus>i,fieldset[disabled] .btn-info:focus>i,.btn-info.disabled.focus>i,.btn-info[disabled].focus>i,fieldset[disabled] .btn-info.focus>i {
+	color: #0854a0;
+}
+
+.btn-info:active:hover,.btn-info.active:hover,.open>.dropdown-toggle.btn-info:hover,.btn-info:active:focus,.btn-info.active:focus,.open>.dropdown-toggle.btn-info:focus,.btn-info:active.focus,.btn-info.active.focus,.open>.dropdown-toggle.btn-info.focus {
+    color: #fff;
+    background-color: #0854a0;
+    border-color: #0854a0
+}
+
+.btn-info:active,.btn-info.active,.open>.dropdown-toggle.btn-info {
+    background-image: none
+}
+
+.btn-info.disabled:hover,.btn-info[disabled]:hover,fieldset[disabled] .btn-info:hover,.btn-info.disabled:focus,.btn-info[disabled]:focus,fieldset[disabled] .btn-info:focus,.btn-info.disabled.focus,.btn-info[disabled].focus,fieldset[disabled] .btn-info.focus {
+    background-color: #0a6ed1 !important;
+    border-color: #0a6ed1 !important
+}
+
+.btn-info.disabled:active,.btn-info[disabled]:active,fieldset[disabled] .btn-info:active,.btn-info.disabled:focus,.btn-info[disabled]:focus,fieldset[disabled] .btn-info:focus,.btn-info.disabled.focus,.btn-info[disabled].focus,fieldset[disabled] .btn-info.focus {
+    background-color: #0a6ed1 !important;
+    border-color: #0a6ed1 !important
+}
+
+.btn-info .badge {
+    color: #0854a0;
+    background-color: #fff
+}
+/** Blue - Transparent -  No Border **/
+.agent-systray-transparent-btn {
+	box-shadow: none;
+	text-shadow: none;
+  color: #0854a0;
+  background-color: transparent;
+  border-color: transparent
+}
+
+.agent-systray-transparent-btn:focus,.agent-systray-transparent-btn.focus {
+  color: #0854a0 !important;
+  background-color: transparent;
+  border-color: transparent
+}
+
+.agent-systray-transparent-btn:hover {
+  color: #0854a0 !important;
+  background-color: #ebf5fe;
+  border-color: #0854a0
+}
+
+.agent-systray-transparent-btn > i {
+	color: #0854a0;
+	text-shadow: none;
+	background-color: transparent !important;
+}
+
+.agent-systray-transparent-btn:active,.agent-systray-transparent-btn.active,.open>.dropdown-toggle.agent-systray-transparent-btn {
+  color: #fff !important;
+  background-color: #0854a0;
+  border-color: #0854a0
+}
+
+.agent-systray-transparent-btn:active>i,.agent-systray-transparent-btn.active>i {
+	color: #fff !important;
+}
+
+.agent-systray-transparent-btn.disabled:active>i,.agent-systray-transparent-btn.disabled:focus>i,.agent-systray-transparent-btn[disabled]:focus>i,fieldset[disabled] .agent-systray-transparent-btn:focus>i,.agent-systray-transparent-btn.disabled.focus>i,.agent-systray-transparent-btn[disabled].focus>i,fieldset[disabled] .agent-systray-transparent-btn.focus>i {
+	color: #0854a0;
+}
+
+.agent-systray-transparent-btn:active:hover,.agent-systray-transparent-btn.active:hover,.open>.dropdown-toggle.agent-systray-transparent-btn:hover,.agent-systray-transparent-btn:active:focus,.agent-systray-transparent-btn.active:focus,.open>.dropdown-toggle.agent-systray-transparent-btn:focus,.agent-systray-transparent-btn:active.focus,.agent-systray-transparent-btn.active.focus,.open>.dropdown-toggle.agent-systray-transparent-btn.focus {
+  color: #fff;
+  background-color: #0854a0;
+  border-color: #0854a0
+}
+
+.agent-systray-transparent-btn:active,.agent-systray-transparent-btn.active,.open>.dropdown-toggle.agent-systray-transparent-btn {
+  background-image: none
+}
+
+.agent-systray-transparent-btn.disabled:hover,.agent-systray-transparent-btn[disabled]:hover,fieldset[disabled] .agent-systray-transparent-btn:hover,.agent-systray-transparent-btn.disabled:focus,.agent-systray-transparent-btn[disabled]:focus,fieldset[disabled] .agent-systray-transparent-btn:focus,.agent-systray-transparent-btn.disabled.focus,.agent-systray-transparent-btn[disabled].focus,fieldset[disabled] .agent-systray-transparent-btn.focus {
+  background-color: transparent !important;
+  border-color: transparent !important
+}
+
+.agent-systray-transparent-btn.disabled:hover>i,.agent-systray-transparent-btn[disabled]:hover>i,fieldset[disabled] .agent-systray-transparent-btn:hover>i,.agent-systray-transparent-btn.disabled:focus>i,.agent-systray-transparent-btn[disabled]:focus>i,fieldset[disabled] .agent-systray-transparent-btn:focus>i,.agent-systray-transparent-btn.disabled.focus>i,.agent-systray-transparent-btn[disabled].focus>i,fieldset[disabled] .agent-systray-transparent-btn.focus>i {
+  background-color: transparent !important;
+}
+
+.agent-systray-transparent-btn .badge {
+  color: #0854a0;
+  background-color: #fff
+}
+/** Blue - Transparent - Border **/
+.agent-systray-transparent-btn-with-border {
+	box-shadow: none;
+	text-shadow: none;
+  color: #0854a0 !important;
+  background-color: transparent !important;
+  border-color: #0854a0 !important
+}
+
+.agent-systray-transparent-btn-with-border > i {
+	color: #0854a0;
+	text-shadow: none;
+	background-color: transparent !important;
+}
+
+.agent-systray-transparent-btn-with-border:focus,.agent-systray-transparent-btn-with-border.focus {
+  color: #fff;
+  background-color: #0854a0;
+  border-color: #0854a0
+}
+
+.agent-systray-transparent-btn-with-border:hover {
+  color: #0854a0 !important;
+  background-color: #ebf5fe !important;
+  border-color: #0854a0
+}
+
+.agent-systray-transparent-btn-with-border:active,.agent-systray-transparent-btn-with-border.active,.open>.dropdown-toggle.agent-systray-transparent-btn-with-border {
+  color: #fff !important;
+  background-color: #0854a0 !important;
+  border-color: #0854a0
+}
+
+.agent-systray-transparent-btn-with-border:active>i,.agent-systray-transparent-btn-with-border.active>i {
+	color: #fff;
+}
+
+.agent-systray-transparent-btn-with-border.disabled:active>i,.agent-systray-transparent-btn-with-border.disabled:focus>i,.agent-systray-transparent-btn-with-border[disabled]:focus>i,fieldset[disabled] .agent-systray-transparent-btn-with-border:focus>i,.agent-systray-transparent-btn-with-border.disabled.focus>i,.agent-systray-transparent-btn-with-border[disabled].focus>i,fieldset[disabled] .agent-systray-transparent-btn-with-border.focus>i {
+	color: #0854a0;
+}
+
+.agent-systray-transparent-btn-with-border:active:hover,.agent-systray-transparent-btn-with-border.active:hover,.open>.dropdown-toggle.agent-systray-transparent-btn-with-border:hover,.agent-systray-transparent-btn-with-border:active:focus,.agent-systray-transparent-btn-with-border.active:focus,.open>.dropdown-toggle.agent-systray-transparent-btn-with-border:focus,.agent-systray-transparent-btn-with-border:active.focus,.agent-systray-transparent-btn-with-border.active.focus,.open>.dropdown-toggle.agent-systray-transparent-btn-with-border.focus {
+  color: #fff !important;
+  background-color: #0854a0;
+  border-color: #0854a0
+}
+
+.agent-systray-transparent-btn-with-border:active,.agent-systray-transparent-btn-with-border.active,.open>.dropdown-toggle.agent-systray-transparent-btn-with-border {
+  background-image: none
+}
+
+.agent-systray-transparent-btn-with-border.disabled:hover,.agent-systray-transparent-btn-with-border[disabled]:hover,fieldset[disabled] .agent-systray-transparent-btn-with-border:hover,.agent-systray-transparent-btn-with-border.disabled:focus,.agent-systray-transparent-btn-with-border[disabled]:focus,fieldset[disabled] .agent-systray-transparent-btn-with-border:focus,.agent-systray-transparent-btn-with-border.disabled.focus,.agent-systray-transparent-btn-with-border[disabled].focus,fieldset[disabled] .agent-systray-transparent-btn-with-border.focus {
+  background-color: transparent !important;
+  border-color: #0854a0 !important;
+	color: #0854a0 !important;
+}
+
+.agent-systray-transparent-btn-with-border.disabled:active,.agent-systray-transparent-btn-with-border[disabled]:active,fieldset[disabled] .agent-systray-transparent-btn-with-border:active,.agent-systray-transparent-btn-with-border.disabled:focus,.agent-systray-transparent-btn-with-border[disabled]:focus,fieldset[disabled] .agent-systray-transparent-btn-with-border:focus,.agent-systray-transparent-btn-with-border.disabled.focus,.agent-systray-transparent-btn-with-border[disabled].focus,fieldset[disabled] .agent-systray-transparent-btn-with-border.focus {
+  background-color: transparent !important;
+  border-color: #0854a0 !important;
+	color: #0854a0 !important;
+}
+
+.agent-systray-transparent-btn-with-border .badge {
+  color: #0854a0;
+  background-color: #fff
+}
+/** White - Transparent - No Border **/
+.agent-systray-transparent-btn-white {
+	box-shadow: none;
+	text-shadow: none;
+  color: #fff;
+  background-color: transparent;
+  border-color: transparent
+}
+
+.agent-systray-transparent-btn-white:focus,.agent-systray-transparent-btn-white.focus {
+  color: #fff !important;
+  background-color: transparent;
+  border-color: transparent
+}
+
+.agent-systray-transparent-btn-white:hover {
+  color: #fff !important;
+  background-color: #23303e
+}
+/** Red - Transparent - Border **/
+.agent-systray-transparent-btn-red-with-border {
+	box-shadow: none;
+	text-shadow: none;
+  color: #bb0000 !important;
+  background-color: transparent !important;
+  border-color: #bb0000 !important
+}
+
+.agent-systray-transparent-btn-red-with-border > i {
+	color: #bb0000;
+	text-shadow: none;
+	background-color: transparent !important;
+}
+
+.agent-systray-transparent-btn-red-with-border:focus,.agent-systray-transparent-btn-red-with-border.focus {
+  color: #fff;
+  background-color: #bb0000;
+  border-color: #bb0000
+}
+
+.agent-systray-transparent-btn-red-with-border:hover {
+  color: #bb0000 !important;
+  background-color: #f9e8e8 !important;
+  border-color: #bb0000
+}
+
+.agent-systray-transparent-btn-red-with-border:active,.agent-systray-transparent-btn-red-with-border.active,.open>.dropdown-toggle.agent-systray-transparent-btn-red-with-border {
+  color: #fff !important;
+  background-color: #bb0000 !important;
+  border-color: #bb0000
+}
+
+.agent-systray-transparent-btn-red-with-border:active>i,.agent-systray-transparent-btn-red-with-border.active>i {
+	color: #fff !important;
+}
+
+.agent-systray-transparent-btn-red-with-border.disabled:active>i,.agent-systray-transparent-btn-red-with-border.disabled:focus>i,.agent-systray-transparent-btn-red-with-border[disabled]:focus>i,fieldset[disabled] .agent-systray-transparent-btn-red-with-border:focus>i,.agent-systray-transparent-btn-red-with-border.disabled.focus>i,.agent-systray-transparent-btn-red-with-border[disabled].focus>i,fieldset[disabled] .agent-systray-transparent-btn-red-with-border.focus>i {
+	color: #bb0000;
+}
+
+.agent-systray-transparent-btn-red-with-border:active:hover,.agent-systray-transparent-btn-red-with-border.active:hover,.open>.dropdown-toggle.agent-systray-transparent-btn-red-with-border:hover,.agent-systray-transparent-btn-red-with-border:active:focus,.agent-systray-transparent-btn-red-with-border.active:focus,.open>.dropdown-toggle.agent-systray-transparent-btn-red-with-border:focus,.agent-systray-transparent-btn-red-with-border:active.focus,.agent-systray-transparent-btn-red-with-border.active.focus,.open>.dropdown-toggle.agent-systray-transparent-btn-red-with-border.focus {
+  color: #fff !important;
+  background-color: #bb0000;
+  border-color: #bb0000			
+}
+
+.agent-systray-transparent-btn-red-with-border:active,.agent-systray-transparent-btn-red-with-border.active,.open>.dropdown-toggle.agent-systray-transparent-btn-red-with-border {
+  background-image: none
+}
+
+.agent-systray-transparent-btn-red-with-border.disabled:hover, .agent-systray-transparent-btn-red-with-border[disabled]:hover,fieldset[disabled] .agent-systray-transparent-btn-red-with-border:hover,.agent-systray-transparent-btn-red-with-border.disabled:focus,.agent-systray-transparent-btn-red-with-border[disabled]:focus,fieldset[disabled] .agent-systray-transparent-btn-red-with-border:focus,.agent-systray-transparent-btn-red-with-border.disabled.focus,.agent-systray-transparent-btn-red-with-border[disabled].focus,fieldset[disabled] .agent-systray-transparent-btn-red-with-border.focus {
+  background-color: transparent !important;
+  border-color: #bb0000 !important;
+	color: #bb0000 !important;
+}
+
+.agent-systray-transparent-btn-red-with-border.disabled:active, .agent-systray-transparent-btn-red-with-border[disabled]:active,fieldset[disabled] .agent-systray-transparent-btn-red-with-border:active,.agent-systray-transparent-btn-red-with-border.disabled:focus,.agent-systray-transparent-btn-red-with-border[disabled]:focus,fieldset[disabled] .agent-systray-transparent-btn-red-with-border:focus,.agent-systray-transparent-btn-red-with-border.disabled.focus,.agent-systray-transparent-btn-red-with-border[disabled].focus,fieldset[disabled] .agent-systray-transparent-btn-red-with-border.focus {
+  background-color: transparent !important;
+  border-color: #bb0000 !important;
+	color: #bb0000 !important;
+}
+
+.agent-systray-transparent-btn-red-with-border .badge {
+  color: #bb0000;
+  background-color: #fff
+}
+/** Red - Not Transparent **/
+.agent-systray-btn-red {
+	box-shadow: none;
+	text-shadow: none;
+    color: #fff;
+    background-color: #bb0000 !important;
+    border-color: #bb0000
+}
+
+.agent-systray-btn-red > i {
+	color: #bb0000;
+	text-shadow: none;
+	background-color: transparent !important;
+}
+
+.agent-systray-btn-red:focus,.agent-systray-btn-red.focus {
+    color: #fff !important;
+    background-color: #bb0000;
+    border-color: #bb0000
+}
+
+.agent-systray-btn-red:hover {
+    color: #fff !important;
+    background-color: #bb0000 !important;
+    border-color: #bb0000
+}
+
+.agent-systray-btn-red:active,.agent-systray-btn-red.active,.open>.dropdown-toggle.agent-systray-btn-red {
+    color: #fff;
+    background-color: #bb0000 !important;
+    border-color: #bb0000
+}
+
+.agent-systray-btn-red:active>i,.agent-systray-btn-red.active>i {
+	color: #fff;
+}
+
+.agent-systray-btn-red.disabled:active>i,.agent-systray-btn-red.disabled:focus>i,.agent-systray-btn-red[disabled]:focus>i,fieldset[disabled] .agent-systray-btn-red:focus>i,.agent-systray-btn-red.disabled.focus>i,.agent-systray-btn-red[disabled].focus>i,fieldset[disabled] .agent-systray-btn-red.focus>i {
+	color: #bb0000;
+}
+
+.agent-systray-btn-red:active:hover,.agent-systray-btn-red.active:hover,.open>.dropdown-toggle.agent-systray-btn-red:hover,.agent-systray-btn-red:active:focus,.agent-systray-btn-red.active:focus,.open>.dropdown-toggle.agent-systray-btn-red:focus,.agent-systray-btn-red:active.focus,.agent-systray-btn-red.active.focus,.open>.dropdown-toggle.agent-systray-btn-red.focus {
+    color: #fff;
+    background-color: #bb0000;
+    border-color: #bb0000
+}
+
+.agent-systray-btn-red:active,.agent-systray-btn-red.active,.open>.dropdown-toggle.agent-systray-btn-red {
+    background-image: none
+}
+
+.agent-systray-btn-red.disabled:hover,.agent-systray-btn-red[disabled]:hover,fieldset[disabled] .agent-systray-btn-red:hover,.agent-systray-btn-red.disabled:focus,.agent-systray-btn-red[disabled]:focus,fieldset[disabled] .agent-systray-btn-red:focus,.agent-systray-btn-red.disabled.focus,.agent-systray-btn-red[disabled].focus,fieldset[disabled] .agent-systray-btn-red.focus {
+    background-color: #bb0000 !important;
+    border-color: #bb0000 !important
+}
+
+.agent-systray-btn-red .badge {
+    color: #bb0000;
+    background-color: #fff
+}
+/** Light Red - Transparent - Border **/
+.agent-systray-transparent-btn-light-red-with-border {
+	box-shadow: none;
+	text-shadow: none;
+  color: rgb(246, 109, 99) !important;
+  background-color: transparent !important;
+  border-color: rgb(246, 109, 99) !important
+}
+
+.agent-systray-transparent-btn-light-red-with-border > i {
+	color: rgb(246, 109, 99);
+	text-shadow: none;
+	background-color: transparent !important;
+}
+
+.agent-systray-transparent-btn-light-red-with-border:focus,.agent-systray-transparent-btn-light-red-with-border.focus {
+  color: #fff;
+  background-color: rgb(246, 109, 99);
+  border-color:rgb(246, 109, 99)
+}
+
+.agent-systray-transparent-btn-light-red-with-border:hover {
+  color: rgb(246, 109, 99) !important;
+  background-color: #f9e8e8 !important;
+  border-color: rgb(246, 109, 99)
+}
+
+.agent-systray-transparent-btn-light-red-with-border:active,.agent-systray-transparent-btn-light-red-with-border.active,.open>.dropdown-toggle.agent-systray-transparent-btn-light-red-with-border {
+  color: #fff !important;
+  background-color: rgb(246, 109, 99) !important;
+  border-color: rgb(246, 109, 99)
+}
+
+.agent-systray-transparent-btn-light-red-with-border:active>i,.agent-systray-transparent-btn-light-red-with-border.active>i {
+	color: #fff !important;
+}
+
+.agent-systray-transparent-btn-light-red-with-border.disabled:active>i,.agent-systray-transparent-btn-light-red-with-border.disabled:focus>i,.agent-systray-transparent-btn-light-red-with-border[disabled]:focus>i,fieldset[disabled] .agent-systray-transparent-btn-light-red-with-border:focus>i,.agent-systray-transparent-btn-light-red-with-border.disabled.focus>i,.agent-systray-transparent-btn-light-red-with-border[disabled].focus>i,fieldset[disabled] .agent-systray-transparent-btn-light-red-with-border.focus>i {
+	color: rgb(246, 109, 99);
+}
+
+.agent-systray-transparent-btn-light-red-with-border:active:hover,.agent-systray-transparent-btn-light-red-with-border.active:hover,.open>.dropdown-toggle.agent-systray-transparent-btn-light-red-with-border:hover,.agent-systray-transparent-btn-light-red-with-border:active:focus,.agent-systray-transparent-btn-light-red-with-border.active:focus,.open>.dropdown-toggle.agent-systray-transparent-btn-light-red-with-border:focus,.agent-systray-transparent-btn-light-red-with-border:active.focus,.agent-systray-transparent-btn-light-red-with-border.active.focus,.open>.dropdown-toggle.agent-systray-transparent-btn-light-red-with-border.focus {
+  color: #fff !important;
+  background-color: rgb(246, 109, 99);
+  border-color: rgb(246, 109, 99)			
+}
+
+.agent-systray-transparent-btn-light-red-with-border:active,.agent-systray-transparent-btn-light-red-with-border.active,.open>.dropdown-toggle.agent-systray-transparent-btn-light-red-with-border {
+  background-image: none
+}
+
+.agent-systray-transparent-btn-light-red-with-border.disabled:hover, .agent-systray-transparent-btn-light-red-with-border[disabled]:hover,fieldset[disabled] .agent-systray-transparent-btn-light-red-with-border:hover,.agent-systray-transparent-btn-light-red-with-border.disabled:focus,.agent-systray-transparent-btn-light-red-with-border[disabled]:focus,fieldset[disabled] .agent-systray-transparent-btn-light-red-with-border:focus,.agent-systray-transparent-btn-light-red-with-border.disabled.focus,.agent-systray-transparent-btn-light-red-with-border[disabled].focus,fieldset[disabled] .agent-systray-transparent-btn-light-red-with-border.focus {
+  background-color: transparent !important;
+  border-color: rgb(246, 109, 99) !important;
+	color: rgb(246, 109, 99) !important;
+}
+
+.agent-systray-transparent-btn-light-red-with-border.disabled:active, .agent-systray-transparent-btn-light-red-with-border[disabled]:active,fieldset[disabled] .agent-systray-transparent-btn-light-red-with-border:active,.agent-systray-transparent-btn-light-red-with-border.disabled:focus,.agent-systray-transparent-btn-light-red-with-border[disabled]:focus,fieldset[disabled] .agent-systray-transparent-btn-light-red-with-border:focus,.agent-systray-transparent-btn-light-red-with-border.disabled.focus,.agent-systray-transparent-btn-light-red-with-border[disabled].focus,fieldset[disabled] .agent-systray-transparent-btn-light-red-with-border.focus {
+  background-color: transparent !important;
+  border-color: rgb(246, 109, 99) !important;
+	color: rgb(246, 109, 99) !important;
+}
+
+.agent-systray-transparent-btn-light-red-with-border .badge {
+  color: rgb(246, 109, 99);
+  background-color: #fff
+}
+
+/* Help Buttons */
+.agent-systray-help-button {
+	box-shadow: none !important;
+  background-color: transparent !important;
+}
+
+.agent-systray-help-button-no-margin-left {
+	box-shadow: none !important;
+  background-color: transparent !important;
+  margin-right: -5px;
+}
+
+.agent-systray-help-button-no-margin-left + div {
+	display: inline-flex;
+	width: 87%;
+}
+
+.agent-systray-help-button > i, .agent-systray-help-button-margins > i, .agent-systray-help-button-no-margin-left > i {
+	color: #0854a0;
+}
+
+/*** Modal Dialog Boxes ***/
+.agent-systray-modal {
+	margin-left: 8px;
+}
+
+.agent-systray-modal, .agent-systray-modal .modal-content {
+	padding-right: 0px !important;
+	max-width: 380px;
+	top: 70px;
+}
+
+.agent-systray-modal .modal-body,.agent-systray-modal .modal-footer {
+	padding-right: 10px !important;
+	max-width: 380px;
+}
+
+.agent-systray-modal .modal-body {
+	color: #333;
+}
+
+.modal-footer {
+    border-top: 1px solid #e5e5e5
+}
+
+.modal-footer button {
+	margin-top: 0 !important;
+}
+
+/*** Lists ***/
+.list-group {
+    padding-left: 0;
+	border-style: none;
+	border-radius : 0px !important;
+	max-height: 250px;
+    overflow:auto;
+	box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+}
+
+.list-group-item {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: -1px;
+    background-color: #fff;
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 1px solid #e5e5e5;
+	border-top: 1px solid #e5e5e5;
+}
+
+.list-group-item:first-child {
+    border-top-right-radius: 0px !important;
+    border-top-left-radius: 0px !important;
+	border-top: 0;
+}
+
+.list-group-item:last-child {
+    margin-bottom: 0;
+    border-bottom-right-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;	
+}
+
+.agent-systray-list-group-item-clicked {
+  background-color: #e5f0fa !important;
+}
+
+.agent-systray-list-group-item-clicked > .badge {
+  background-color: #777 !important;
+}
+
+.agent-systray-list-group-item-clicked:hover {
+  background-color: #d8e8f7 !important;
+}
+
+.agent-systray-list-iconRight {
+	position: absolute;
+	left: 360px;
+	top: 13px;
+	font-size: 12px;
+}
+
+.agent-systray-scenario-li {
+	margin-bottom: 0px !important;
+}
+
+.agent-systray-scenario-li i {
+	color: #0854a0;
+}
+
+.agent-systray-scenario-li a.disabled, .agent-systray-scenario-li a.disabled > i {
+	color: #999999 !important;
+	background-color: #fff !important;
+	pointer-events: none;
+}
+
+.agent-systray-scenario-li > a.disabled:hover, .agent-systray-scenario-li > a.disabled:focus {
+  color: #999999 !important;
+  text-decoration: none !important;
+  background-color: #fff !important;
+  cursor: not-allowed !important;
+}
+
+/* To add icon to the left of menu item in main menu */
+.agent-systray-scenario-list-custom-icon {
+    height: 16px;
+    width: 16px;
+		line-height: 16px;
+    display: block;
+    float: left;
+    margin-right: 5px;
+}
+
+.agent-systray-tenant-li {
+	margin-bottom: 0px !important;
+}
+
+.agent-systray-project-list .list-group-item {
+	cursor: default;
+}
+
+/* Possibility of disabling a whole list group */
+.list-group.disabled > a {
+  color: #999999 !important;
+	background-color: #fff !important;
+	pointer-events: none;
+}
+
+.list-group.disabled > a:hover, .list-group.disabled > a:focus {
+  color: #999999 !important;
+  text-decoration: none !important;
+  background-color: #fff !important;
+  cursor: not-allowed !important;
+}
+
+/* Override max height for project list, main menu list, tenant list */
+.agent-systray-project-list .list-group, .agent-systray-tenant-li .list-group, .agent-systray-scenario-li .list-group {
+	max-height: 375px;
+}
+
+/*** Tables ***/
+/*
+* By default, label color is grey
+*/
+table .text-primary {
+	color: #555;
+}
+
+/*
+* Override "About" table height
+*/
+div#tableAbout_content {
+	max-height: 280px;
+}
+
+/*
+* Override "Job Progress"/"Job Details" table height
+*/
+div#tableJobProgress_content, div#tableJobDetails_content {
+	max-height: 373px;
+	min-height: 50px !important;
+}
+
+.agent-systray-table-job-progress thead th {
+	background: #f7f7f7;
+}
+
+.agent-systray-table-job-progress > tbody > tr {
+	cursor: pointer;
+}
+
+.agent-systray-table-details > tbody > tr > td {
+	border-top: none !important;
+}
+
+.agent-systray-table-details > tbody > tr > td.text-primary {
+	text-align: left;
+}
+
+/* Job Progress Table Rows */
+.agent-systray-job-progress-badge-new {
+	background-color: #0854a0 !important;
+}
+
+.agent-systray-successful-icon {
+	color: green;
+}
+
+.agent-systray-job-progress-failed-row {
+	color: #bb0000;
+}
+
+.agent-systray-job-progress-success-row {
+	color: #107e3e;
+}
+
+/*** Textareas ***/
+.agent-systray-textarea > textarea {
+	resize: none;
+	height: 80px !important;
+}
+
+/*** Dropdown ***/
+.open>.dropdown-toggle.agent-systray-transparent-btn {
+	box-shadow: none !important;
+  color: #0854a0 !important;
+  background-color: transparent !important;
+  border-color: transparent
+}
+
+.open>.dropdown-toggle.agent-systray-transparent-btn>i {
+	color: #0854a0 !important;
+}
+
+.open>.dropdown-toggle.agent-systray-transparent-btn:hover>i {
+	background-color: transparent !important;
+}
+
+.dropdown-menu>li>a:hover {
+  background-color: #fafafa !important;
+}
+
+.dropdown-menu>li>a {
+  color: #32363a !important;
+	background-image: none !important;
+}
+
+.dropdown-menu>li>a>i {
+  color: #6a6d70 !important;
+	margin-left: -10px;
+	margin-right: 5px;
+}
+
+.dropdown-menu>li>a:active {
+  background-color: #0854a0 !important;
+	color: #fff !important;
+}
+
+.dropdown-menu>li>a:active>i {
+  color: #fff !important;
+}
+
+.dropdown-menu {
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+}
+
+
+/*** Tooltips ***/
+/*
+* Do not display tooltip arrow
+*/
+.tooltip-arrow {
+	display: none;
+}
+
+.tooltip-inner {
+    max-width: 200px;
+    padding: 3px 8px;
+    color: #000;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 0px;
+	border: 1px solid black;
+}
+
+
+/*** Red Dot ***/
+.agent-systray-red-dot {
+	background-color: red;
+	color: red;
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	display: inline-block;
+}
+
+/*** Other Specific Page Customizations ***/
+/** About **/
+/* Trial Mode Ribbon */
+.trial-mode-alert {
+    background-color: #e1f1fc !important;
+    border-color: #0854a0 !important;
+    color: #333 !important;
+    margin-bottom: 7px !important;
+}
+
+.trial-mode-alert > div > i {
+	color: #0854a0;
+}
+
+/* Status Icon */
+.agent-systray-status-icon-ready {
+	background: url('icons/Ready.png') no-repeat !important;
+	height: 24px;
+	width: 24px;
+	background-size: 100% !important;
+	display: inline-block;
+	position: relative;
+  left: 0.2px;
+  top: 1.5px;
+}
+
+.agent-systray-status-icon-running {
+	background: url('icons/Running.png') no-repeat !important;
+	height: 24px;
+	width: 24px;
+	background-size: 100% !important;
+	display: inline-block;
+	position: relative;
+  left: 0.2px;
+  top: 1.5px;
+}
+
+.agent-systray-status-icon-idle {
+	background: url('icons/Idle.png') no-repeat !important;
+	height: 24px;
+	width: 24px;
+	background-size: 100% !important;
+	display: inline-block;
+	position: relative;
+  left: 0.2px;
+  top: 1.5px;
+}
+
+.agent-systray-status-icon-paused {
+	background: url('icons/Paused.png') no-repeat !important;
+	height: 24px;
+	width: 24px;
+	background-size: 100% !important;
+	display: inline-block;
+	position: relative;
+  left: 0.2px;
+  top: 1.5px;
+}
+
+.agent-systray-status-icon-warning {
+	background: url('icons/Warning.png') no-repeat !important;
+	height: 24px;
+	width: 24px;
+	background-size: 100% !important;
+	display: inline-block;
+	position: relative;
+  left: 0.2px;
+  top: 1.5px;
+}
+
+.agent-systray-status-icon-error {
+	background: url('icons/Error.png') no-repeat !important;
+	height: 24px;
+	width: 24px;
+	background-size: 100% !important;
+	display: inline-block;
+	position: relative;
+  left: 0.2px;
+  top: 1.5px;
+}
+
+/* about status */
+.about-status {
+	display: inline;
+}
+
+.container-about-status {
+	margin-left: 10px !important;
+}
+
+/** Project **/
+/* Project Switching Mode Combobox */
+.container-project-mode-select {
+	position: absolute;
+	right: 40px;
+}
+
+.project-mode-help-btn {
+	margin-bottom: 5px !important;
+}
+
+.agent-systray-project-mode-select {
+	width: 215px;
+	display: inline-flex;
+}
+
+/** Diagnostics **/
+/* Custom margin to align 'Add Comment' button */
+#btDiagnosticInsertComment {
+	margin-right: 17px;
+}
+
+/** Tenants **/
+/* Validation Text Tenant Page */
+.agent-systray-help-block {
+	margin-top: 0px !important;
+	font-size: 12px;
+	position: absolute;
+}
+
+/** Settings **/
+/* Settings Change */
+.agent-systray-alert {
+	margin-bottom: 0px !important;
+	font-size: 11px;
+	background-image: none;
+	text-shadow: none;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	padding: 10px !important;
+}
+
+.alert-danger {
+    background-color: #fdf3f2;
+    border-color: #fbdbdd;
+    color: #a82315
+}
+
+.alert-danger hr {
+    border-top-color: #f8c4c8
+}
+
+.alert-danger .alert-link {
+    color: #7b190f
+}

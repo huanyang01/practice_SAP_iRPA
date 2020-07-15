@@ -1,0 +1,14 @@
+/* extra CCS initializations */
+
+.ctx_container {
+  border: 1px black;
+	border-style: dotted;
+	padding:6px;
+	margin:0px;
+}
+
+.ctx_toolbar {
+	padding:2px;
+	margin:0px;
+	text-align:right;
+}
