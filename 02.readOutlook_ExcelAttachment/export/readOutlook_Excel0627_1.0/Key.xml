@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doc>
+	<Identification>
+		<Version Value="2.0.1.49"/>
+	</Identification>
+	<Properties>
+		<Property Name="projectFile" Value="readOutlook_Excel0627.debug.psc"/>
+		<Property Name="projectVersion" Value="1.0"/>
+		<Property Name="projectName" Value="readOutlook_Excel0627"/>
+		<Property Name="projectId" Value="f648a08b-4b33-4fda-9733-a338c4f19177"/>
+		<Property Name="projectDate" Value="27/06/2020"/>
+		<Property Name="projectLabel" Value="readOutlook_Excel"/>
+		<Property Name="projectClient" Value="SAP"/>
+		<Property Name="licenceURL" Value=""/>
+		<Property Name="archiveFile" Value="readOutlook_Excel0627.zip"/>
+		<Property Name="productVersion" Value="2.0.1.49"/>
+		<Property Name="sdkVersion" Value="2.0.1.49"/>
+		<Property Name="exportDate" Value="27/6/2020"/>
+		<Property Name="IsTrial" Value="True"/>
+		<Property Name="validity" Value=""/>
+		<Property Name="cyphering" Value="0"/>
+		<Property Name="compression" Value="1"/>
+	</Properties>
+	<Properties Name="scenario0">
+		<Property Name="appliName" Value="GLOBAL" Type="1"/>
+		<Property Name="scenario" Value="readOutlook_Excel" Type="1"/>
+		<Property Name="name" Value="" Type="1"/>
+		<Property Name="id" Value="b80df867-ea2a-45e1-baab-cd175c580e93" Type="1"/>
+		<Property Name="timeout" Value="600" Type="1"/>
+		<Property Name="task" Value="1" Type="1"/>
+		<Property Name="contextRoot" Value="" Type="1"/>
+		<Property Name="input" Value="" Type="1"/>
+		<Property Name="output" Value="" Type="1"/>
+	</Properties>
+	<Keys Name="scenario0">
+	</Keys>
+	<UpdatePackages>
+	</UpdatePackages>
+	<KeyNames Value="a46101af3a00fe983635ab2d8aebe242" Type="32771"/>
+	<KeyContent Value="0fcb9c725ed0d23370de649d97864dea" Type="32771"/>
+	<KeyProps Value="98391cf922ecbbaf20c0759b17cda01c" Type="32771"/>
+</doc>

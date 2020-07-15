@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Context Id="09eeda1c-9cf7-4424-ae6f-a868e50a85c0">
+  <Entities>
+    <Entity Id="14b73813-8060-4876-ac09-ed25e83cd62e" Name="ExcelFileName" IsArray="False" />
+    <Entity Id="4c698e23-8da3-4c19-b32f-fde39fc5ded0" Name="ExcelParameter" IsArray="False">
+      <Entities>
+        <Entity Id="c0770b01-8979-4174-abf8-ec5e1c1e6e61" Name="EndRow" IsArray="False" />
+        <Entity Id="25db1576-4715-40a2-89af-2044ed26e58d" Name="EndCol" IsArray="False" />
+      </Entities>
+    </Entity>
+    <Entity Id="badd2e53-fba5-43e8-9267-6eed7a940a81" Name="ExtractedData" IsArray="False" />
+  </Entities>
+</Context>

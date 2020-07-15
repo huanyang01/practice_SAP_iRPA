@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<USER>
+	<BREAKPOINTS>
+		<BREAKPOINT LineNumber="134" SearchPath="PROCESS[@Name='GLOBAL']/SCRIPTS/SCRIPT[@Name='readOutlook_Excel']" Offset="5171" Length="23"><![CDATA[ctx.excel.initialize();]]></BREAKPOINT>
+	</BREAKPOINTS>
+	<BOOKMARKS />
+	<FINDHISTORY>
+		<FINDWHAT><![CDATA[getAttachmentsName]]></FINDWHAT>
+		<FINDWHAT><![CDATA[searchByCriteria]]></FINDWHAT>
+		<FINDWHAT><![CDATA[search]]></FINDWHAT>
+		<FINDWHAT><![CDATA[ExcelFileName]]></FINDWHAT>
+		<FINDWHAT><![CDATA[move]]></FINDWHAT>
+		<FINDWHAT><![CDATA[getFilteredTable]]></FINDWHAT>
+		<FINDWHAT><![CDATA[rootData]]></FINDWHAT>
+		<FINDWHAT><![CDATA[root]]></FINDWHAT>
+		<FINDWHAT><![CDATA[attachmentSave]]></FINDWHAT>
+		<FINDWHAT><![CDATA[mails]]></FINDWHAT>
+	</FINDHISTORY>
+	<DEBUGTRACEFINDHISTORY />
+	<OPENDOCS>
+		<OPENDOC LineNumber="-1" SearchPath="PROCESS[@Name='GLOBAL']/WORKFLOWS/WORKFLOW[@Name='readOutlook_Excel']" Offset="0" Length="0"><![CDATA[madata]]></OPENDOC>
+		<OPENDOC LineNumber="512" SearchPath="PROCESS[@Name='GLOBAL']/SCRIPTS/SCRIPT[@Name='Ctx Core']" Offset="0" Length="0" />
+		<OPENDOC LineNumber="2477" SearchPath="PROCESS[@Name='GLOBAL']/SCRIPTS/SCRIPT[@Name='Ctx Scenario']" Offset="0" Length="0" />
+		<OPENDOC LineNumber="135" SearchPath="PROCESS[@Name='GLOBAL']/SCRIPTS/SCRIPT[@Name='readOutlook_Excel']" Offset="0" Length="0" />
+	</OPENDOCS>
+	<PROPERTIES>
+		<DebugTester><![CDATA[]]></DebugTester>
+		<CurPerspective><![CDATA[2]]></CurPerspective>
+	</PROPERTIES>
+	<WATCHES />
+	<APPLIFILTERS />
+	<EVENTFILTERS />
+	<WORKFLOW_MOSTUSED />
+</USER>

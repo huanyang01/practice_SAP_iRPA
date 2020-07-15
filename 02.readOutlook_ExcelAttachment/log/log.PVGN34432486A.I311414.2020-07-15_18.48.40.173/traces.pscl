@@ -1,0 +1,28 @@
+﻿{"ts":"18:48:53.973","ctx":"Action","action":"ctx.log","params":["Start: --- Scenario: readOutlook_Excel",0],"verb":"LOGMESS","parentId":75}
+{"ts":"18:48:53.996","ctx":"Action","action":"ctx.log","params":["End: --- Scenario: readOutlook_Excel",0],"verb":"LOGMESS","parentId":75}
+{"ts":"18:48:54.11","ctx":"Action","action":"ctx.log","params":["Start: --- Step: Init_Outlook",0],"verb":"LOGMESS","parentId":78}
+{"ts":"18:48:54.37","ctx":"Action","action":"ctx.log","params":["Start: --- Step: ReadMail",0],"verb":"LOGMESS","parentId":80}
+{"ts":"18:48:54.195","ctx":"Action","action":"ctx.log","params":["Start: --- Step: Release_Outlook_",0],"verb":"LOGMESS","parentId":82}
+{"ts":"18:48:54.207","ctx":"Action","action":"ctx.log","params":[" *** ctx.outlook.end() ***",0],"verb":"LOGMESS","parentId":82}
+{"ts":"18:48:54.240","ctx":"Action","action":"ctx.log","params":["Start: --- Step: Initialize_Excel",0],"verb":"LOGMESS","parentId":84}
+{"ts":"18:48:54.256","ctx":"Action","action":"ctx.log","params":["No excel found, create a new one",0],"verb":"LOGMESS","parentId":84}
+{"ts":"18:48:56.552","ctx":"Action","action":"ctx.log","params":["Start: --- Step: Open_existing_Excel_f",0],"verb":"LOGMESS","parentId":86}
+{"ts":"18:48:56.599","ctx":"Action","action":"ctx.log","params":["C:\\SAP\\rpa\\Reminder0715_1.xlsx",0],"verb":"LOGMESS","parentId":86}
+{"ts":"18:49:10.644","ctx":"Action","action":"ctx.log","params":["Start: --- Step: Get_values",0],"verb":"LOGMESS","parentId":88}
+{"ts":"18:49:10.684","ctx":"Action","action":"ctx.log","params":["End Row is 4 and End Column is C",0],"verb":"LOGMESS","parentId":88}
+{"ts":"18:49:10.723","ctx":"Action","action":"ctx.log","params":["Start: --- Step: Close_Excel_file",0],"verb":"LOGMESS","parentId":90}
+{"ts":"18:49:10.792","ctx":"Action","action":"ctx.log","params":["Start: --- Step: Release_Excel",0],"verb":"LOGMESS","parentId":92}
+{"ts":"18:49:10.818","ctx":"Action","action":"ctx.log","params":["Start: --- Step: End_Excel",0],"verb":"LOGMESS","parentId":94}
+{"ts":"18:49:10.835","ctx":"Action","action":"ctx.log","params":["Start: --- Step: Write_log",0],"verb":"LOGMESS","parentId":96}
+{"ts":"18:49:10.842","ctx":"Action","action":"ctx.log","params":["Supplier Name is TodayCompany Invoice Number is 1_19123456 Amount is 258",0],"verb":"LOGMESS","parentId":96}
+{"ts":"18:49:10.848","ctx":"Action","action":"ctx.log","params":["Supplier Name is TomorrowGroup Invoice Number is 1_20062721 Amount is 123",0],"verb":"LOGMESS","parentId":96}
+{"ts":"18:49:10.882","ctx":"Action","action":"ctx.log","params":["End: --- Step: Write_log",0],"verb":"LOGMESS","parentId":13}
+{"ts":"18:49:10.885","ctx":"Action","action":"ctx.log","params":["End: --- Step: End_Excel",0],"verb":"LOGMESS","parentId":13}
+{"ts":"18:49:10.890","ctx":"Action","action":"ctx.log","params":["End: --- Step: Release_Excel",0],"verb":"LOGMESS","parentId":13}
+{"ts":"18:49:10.897","ctx":"Action","action":"ctx.log","params":["End: --- Step: Close_Excel_file",0],"verb":"LOGMESS","parentId":13}
+{"ts":"18:49:10.903","ctx":"Action","action":"ctx.log","params":["End: --- Step: Get_values",0],"verb":"LOGMESS","parentId":13}
+{"ts":"18:49:10.911","ctx":"Action","action":"ctx.log","params":["End: --- Step: Open_existing_Excel_f",0],"verb":"LOGMESS","parentId":13}
+{"ts":"18:49:10.918","ctx":"Action","action":"ctx.log","params":["End: --- Step: Initialize_Excel",0],"verb":"LOGMESS","parentId":13}
+{"ts":"18:49:10.925","ctx":"Action","action":"ctx.log","params":["End: --- Step: Release_Outlook_",0],"verb":"LOGMESS","parentId":13}
+{"ts":"18:49:10.932","ctx":"Action","action":"ctx.log","params":["End: --- Step: ReadMail",0],"verb":"LOGMESS","parentId":13}
+{"ts":"18:49:10.945","ctx":"Action","action":"ctx.log","params":["End: --- Step: Init_Outlook",0],"verb":"LOGMESS","parentId":13}

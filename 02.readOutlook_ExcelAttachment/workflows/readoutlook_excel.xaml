@@ -1,0 +1,306 @@
+﻿<Flowchart mc:Ignorable="sap sap2010 sads" DisplayName="readOutlook_Excel" sap2010:WorkflowViewState.IdRef="Flowchart_1" StartNode="{x:Reference __ReferenceID9}"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+ xmlns:c="clr-namespace:CxFrameworkWPF;assembly=CxFrameworkWPF"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <FlowStep x:Name="__ReferenceID9" sap2010:WorkflowViewState.IdRef="FlowStep_3">
+    <c:SnippetActivity ActivityType="SnippetActivity" CtxtId="fe89e949-04dc-48ef-be3e-c726c86e5d34" DisplayName="Init Outlook" sap2010:WorkflowViewState.IdRef="SnippetActivity_1">
+      <c:SnippetActivity.CustomData>
+        <x:String x:Key="SnippetId">outlookinit</x:String>
+        <x:String x:Key="Description">Initialize Outlook</x:String>
+      </c:SnippetActivity.CustomData>
+    </c:SnippetActivity>
+    <FlowStep.Next>
+      <FlowStep x:Name="__ReferenceID0" sap2010:WorkflowViewState.IdRef="FlowStep_2">
+        <c:SnippetActivity ActivityType="SnippetActivity" CtxtId="6e1c3ace-3129-48de-8ca5-1dc84734bef2" DisplayName="Custom" sap2010:WorkflowViewState.IdRef="SnippetActivity_2">
+          <c:SnippetActivity.CustomData>
+            <x:String x:Key="SnippetId">comment_2</x:String>
+            <x:String x:Key="Description">Describe functionality to be implemented in JavaScript later in the project.</x:String>
+            <x:String x:Key="StepName">ReadMail</x:String>
+          </c:SnippetActivity.CustomData>
+        </c:SnippetActivity>
+        <FlowStep.Next>
+          <FlowStep x:Name="__ReferenceID1" sap2010:WorkflowViewState.IdRef="FlowStep_1">
+            <c:SnippetActivity ActivityType="SnippetActivity" CtxtId="f91a277e-11c9-4999-8677-c9d4a974c889" DisplayName="Release Outlook." sap2010:WorkflowViewState.IdRef="SnippetActivity_3">
+              <c:SnippetActivity.CustomData>
+                <x:String x:Key="SnippetId">outlookend</x:String>
+                <x:String x:Key="Description">Release Outlook.</x:String>
+              </c:SnippetActivity.CustomData>
+            </c:SnippetActivity>
+            <FlowStep.Next>
+              <FlowStep x:Name="__ReferenceID2" sap2010:WorkflowViewState.IdRef="FlowStep_9">
+                <c:SnippetActivity ActivityType="SnippetActivity" CtxtId="daa01931-1e36-49d6-89c1-8df2572b0aa4" DisplayName="Initialize Excel" sap2010:WorkflowViewState.IdRef="SnippetActivity_4">
+                  <c:SnippetActivity.CustomData>
+                    <x:String x:Key="SnippetId">initexcel</x:String>
+                    <x:String x:Key="Description">Initializes Excel Library with different modes.</x:String>
+                    <x:String x:Key="newInstance">false</x:String>
+                    <x:String x:Key="isVisible">true</x:String>
+                    <x:String x:Key="displayAlerts">false</x:String>
+                  </c:SnippetActivity.CustomData>
+                </c:SnippetActivity>
+                <FlowStep.Next>
+                  <FlowStep x:Name="__ReferenceID3" sap2010:WorkflowViewState.IdRef="FlowStep_8">
+                    <c:SnippetActivity ActivityType="SnippetActivity" CtxtId="9d1265a4-fde2-4923-a37b-b0e5a960e1f3" DisplayName="Open existing Excel file" sap2010:WorkflowViewState.IdRef="SnippetActivity_5">
+                      <c:SnippetActivity.CustomData>
+                        <x:String x:Key="SnippetId">openexcel</x:String>
+                        <x:String x:Key="Description">Open existing Excel file.</x:String>
+                        <x:String x:Key="filename">&lt;EXP&gt;&lt;![CDATA["C:\\SAP\\rpa\\"+rootData.ExcelFileName]]&gt;&lt;/EXP&gt;</x:String>
+                      </c:SnippetActivity.CustomData>
+                    </c:SnippetActivity>
+                    <FlowStep.Next>
+                      <FlowStep x:Name="__ReferenceID4" sap2010:WorkflowViewState.IdRef="FlowStep_7">
+                        <c:SnippetActivity ActivityType="SnippetActivity" CtxtId="389fe785-f656-4e99-97cc-02dc9446232b" DisplayName="Get values" sap2010:WorkflowViewState.IdRef="SnippetActivity_6">
+                          <c:SnippetActivity.CustomData>
+                            <x:String x:Key="SnippetId">getrangevalues</x:String>
+                            <x:String x:Key="Description">Get values from range on the active worksheet.</x:String>
+                            <x:String x:Key="defaultvalue">undefined</x:String>
+                            <x:String x:Key="expression">&lt;EXP&gt;&lt;![CDATA[$data$]]&gt;&lt;/EXP&gt;&lt;data&gt;badd2e53-fba5-43e8-9267-6eed7a940a81&lt;/data&gt;</x:String>
+                            <x:String x:Key="startcolumn">"A"</x:String>
+                            <x:String x:Key="startrow">1</x:String>
+                            <x:String x:Key="lastcolumn">rootData.ExcelParameter.EndCol</x:String>
+                            <x:String x:Key="lastrow">rootData.ExcelParameter.EndRow</x:String>
+                          </c:SnippetActivity.CustomData>
+                        </c:SnippetActivity>
+                        <FlowStep.Next>
+                          <FlowStep x:Name="__ReferenceID5" sap2010:WorkflowViewState.IdRef="FlowStep_6">
+                            <c:SnippetActivity ActivityType="SnippetActivity" CtxtId="fd91ae2a-d277-48c5-bb9e-7b2a70adf6ac" DisplayName="Close Excel file" sap2010:WorkflowViewState.IdRef="SnippetActivity_7">
+                              <c:SnippetActivity.CustomData>
+                                <x:String x:Key="SnippetId">closeexcel</x:String>
+                                <x:String x:Key="Description">Close Excel file.</x:String>
+                              </c:SnippetActivity.CustomData>
+                            </c:SnippetActivity>
+                            <FlowStep.Next>
+                              <FlowStep x:Name="__ReferenceID6" sap2010:WorkflowViewState.IdRef="FlowStep_5">
+                                <c:SnippetActivity ActivityType="SnippetActivity" CtxtId="be678db8-df8a-4eb6-9629-8d77fefd168c" DisplayName="Release Excel" sap2010:WorkflowViewState.IdRef="SnippetActivity_8">
+                                  <c:SnippetActivity.CustomData>
+                                    <x:String x:Key="SnippetId">releaseexcel</x:String>
+                                    <x:String x:Key="Description">Release Excel</x:String>
+                                  </c:SnippetActivity.CustomData>
+                                </c:SnippetActivity>
+                                <FlowStep.Next>
+                                  <FlowStep x:Name="__ReferenceID7" sap2010:WorkflowViewState.IdRef="FlowStep_4">
+                                    <c:SnippetActivity ActivityType="SnippetActivity" CtxtId="d2ddf6b7-c413-4e4d-8b14-37e9f073a2f7" DisplayName="End Excel" sap2010:WorkflowViewState.IdRef="SnippetActivity_9">
+                                      <c:SnippetActivity.CustomData>
+                                        <x:String x:Key="SnippetId">endexcel</x:String>
+                                        <x:String x:Key="Description">End Excel.</x:String>
+                                      </c:SnippetActivity.CustomData>
+                                    </c:SnippetActivity>
+                                    <FlowStep.Next>
+                                      <FlowStep x:Name="__ReferenceID8" sap2010:WorkflowViewState.IdRef="FlowStep_10">
+                                        <c:SnippetActivity ActivityType="SnippetActivity" CtxtId="a75a46b8-a670-4ac7-bff6-8c038e02e464" DisplayName="Write log" sap2010:WorkflowViewState.IdRef="SnippetActivity_10">
+                                          <c:SnippetActivity.CustomData>
+                                            <x:String x:Key="SnippetId">log_2</x:String>
+                                            <x:String x:Key="Description">Add a message to the log file and in the debug window along with a severity level.</x:String>
+                                            <x:String x:Key="level">Info</x:String>
+                                            <x:String x:Key="message">&lt;EXP&gt;&lt;![CDATA["Supplier Name"+rootData.ExtractedData]]&gt;&lt;/EXP&gt;</x:String>
+                                          </c:SnippetActivity.CustomData>
+                                        </c:SnippetActivity>
+                                      </FlowStep>
+                                    </FlowStep.Next>
+                                  </FlowStep>
+                                </FlowStep.Next>
+                              </FlowStep>
+                            </FlowStep.Next>
+                          </FlowStep>
+                        </FlowStep.Next>
+                      </FlowStep>
+                    </FlowStep.Next>
+                  </FlowStep>
+                </FlowStep.Next>
+              </FlowStep>
+            </FlowStep.Next>
+          </FlowStep>
+        </FlowStep.Next>
+      </FlowStep>
+    </FlowStep.Next>
+  </FlowStep>
+  <x:Reference>__ReferenceID0</x:Reference>
+  <x:Reference>__ReferenceID1</x:Reference>
+  <x:Reference>__ReferenceID2</x:Reference>
+  <x:Reference>__ReferenceID3</x:Reference>
+  <x:Reference>__ReferenceID4</x:Reference>
+  <x:Reference>__ReferenceID5</x:Reference>
+  <x:Reference>__ReferenceID6</x:Reference>
+  <x:Reference>__ReferenceID7</x:Reference>
+  <x:Reference>__ReferenceID8</x:Reference>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="SnippetActivity_1" sap:VirtualizedContainerService.HintSize="154,26">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="SnippetActivity_2" sap:VirtualizedContainerService.HintSize="154,26">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="SnippetActivity_3" sap:VirtualizedContainerService.HintSize="154,26">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="SnippetActivity_4" sap:VirtualizedContainerService.HintSize="154,26">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="SnippetActivity_5" sap:VirtualizedContainerService.HintSize="161,26">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="SnippetActivity_6" sap:VirtualizedContainerService.HintSize="154,26">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="SnippetActivity_7" sap:VirtualizedContainerService.HintSize="154,26">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="SnippetActivity_8" sap:VirtualizedContainerService.HintSize="154,26">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="SnippetActivity_9" sap:VirtualizedContainerService.HintSize="154,26">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="SnippetActivity_10" sap:VirtualizedContainerService.HintSize="154,26">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="FlowStep_10">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">253,537</av:Point>
+            <av:Size x:Key="ShapeSize">154,26</av:Size>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="FlowStep_4">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">393,467</av:Point>
+            <av:Size x:Key="ShapeSize">154,26</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">470,493 470,523 330,523 330,537</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="FlowStep_5">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">393,397</av:Point>
+            <av:Size x:Key="ShapeSize">154,26</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">470,423 470,467</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="FlowStep_6">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">393,337</av:Point>
+            <av:Size x:Key="ShapeSize">154,26</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">470,363 470,397</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="FlowStep_7">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">393,277</av:Point>
+            <av:Size x:Key="ShapeSize">154,26</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">470,303 470,337</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="FlowStep_8">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">389.5,197</av:Point>
+            <av:Size x:Key="ShapeSize">161,26</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">470,223 470,277</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="FlowStep_9">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">393,127</av:Point>
+            <av:Size x:Key="ShapeSize">154,26</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">470,153 470,197</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="FlowStep_1">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">103,267</av:Point>
+            <av:Size x:Key="ShapeSize">154,26</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">180,293 180,323 334,323 334,97 470,97 470,127</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="FlowStep_2">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">103,197</av:Point>
+            <av:Size x:Key="ShapeSize">154,26</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">180,223 180,267</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="FlowStep_3">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">103,117</av:Point>
+            <av:Size x:Key="ShapeSize">154,26</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">180,143 180,197</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Flowchart_1" sap:VirtualizedContainerService.HintSize="614,646">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+            <av:Size x:Key="ShapeSize">60,75</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,107.5 180,107.5 180,117</av:PointCollection>
+            <x:Double x:Key="Height">609.5</x:Double>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+  <sads:DebugSymbol.Symbol>d1tDOlxHaXRIdWJccHJhY3RpY2VfU0FQX2lSUEFcMDIucmVhZE91dGxvb2tfRXhjZWxBdHRhY2htZW50XHdvcmtmbG93c1xyZWFkb3V0bG9va19leGNlbC54YW1sCwEBsgINAQEMBREZAQsUCRodAQodDSIhAQklES0lAQgwFTYpAQc5GUQtAQZHHUwxAQVPIVQ1AQRXJVw5AQNfKWY9AQI=</sads:DebugSymbol.Symbol>
+</Flowchart>

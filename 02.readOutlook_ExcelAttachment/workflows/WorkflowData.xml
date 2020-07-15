@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WORKFLOWDATA>
+	<ITEM Name="ExcelFileName" CtxtId="14b73813-8060-4876-ac09-ed25e83cd62e" IsIndexed="N" />
+	<FOLDER Name="ExcelParameter" CtxtId="4c698e23-8da3-4c19-b32f-fde39fc5ded0" IsIndexed="N">
+		<ITEM Name="EndRow" CtxtId="c0770b01-8979-4174-abf8-ec5e1c1e6e61" IsIndexed="N" />
+		<ITEM Name="EndCol" CtxtId="25db1576-4715-40a2-89af-2044ed26e58d" IsIndexed="N" />
+	</FOLDER>
+	<ITEM Name="ExtractedData" CtxtId="badd2e53-fba5-43e8-9267-6eed7a940a81" IsIndexed="N" />
+</WORKFLOWDATA>
