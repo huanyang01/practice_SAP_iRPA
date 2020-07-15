@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WORKFLOWDATA>
+	<FOLDER Name="SAPGUIData" CtxtId="5c523efe-a1c5-45bf-9176-dcf121a98b8d" IsIndexed="N">
+		<FOLDER Name="pSAPEasyAccessUData" CtxtId="4e26597b-423c-4641-a8d5-20b651404948" IsIndexed="N">
+			<ITEM Name="oGuiOkCodeField" CtxtId="8328d824-b6ba-4823-9e62-bf7014ad9287" IsIndexed="N" />
+		</FOLDER>
+		<FOLDER Name="pUserMaintenanceIniData" CtxtId="ebed5564-ae09-4135-a71f-fb53ae461c3c" IsIndexed="N">
+			<ITEM Name="edUser" CtxtId="3041bbba-7c33-4b2e-8a01-d621658ad3ef" IsIndexed="N" />
+		</FOLDER>
+	</FOLDER>
+</WORKFLOWDATA>

@@ -25,3 +25,11 @@ Limitation:
 Open question: ctx.excel.initialize();
 [1]:ctx.excel.initialize(); 有时候会抛错，找不到excel，create excel；错误不能稳定重现
 [2]:Excel应用程序打开后，无法关闭；当前打开的Excel文件关闭了，但是Excel应用程序未关闭
+
+
+
+03.readECCdata_writeExcel
+-----------------------------------------------
+2020.07.15
+INT_RPA_STUDIO00P_11-80004527.MSI
+在ECC中读取数据，将其填写到Excel文件中

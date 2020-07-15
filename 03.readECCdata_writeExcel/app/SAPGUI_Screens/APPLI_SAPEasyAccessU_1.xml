@@ -1,0 +1,6 @@
+﻿<APPLI Techno="UIAutomation" Name="APPLI_SAPEasyAccessU_1" ParamName="SAP Easy Access  -  User Menu for I311414">
+	<PROPERTIES>
+		<EXE>SAPLOGON.EXE</EXE>
+		<TITLE>SAP Easy Access  -  User Menu for I311414</TITLE>
+	</PROPERTIES>
+</APPLI>

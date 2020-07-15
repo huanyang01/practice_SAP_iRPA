@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doc>
+	<Identification>
+		<Version Value="2.0.1.49"/>
+	</Identification>
+	<Properties>
+		<Property Name="projectFile" Value="Demo01.debug.psc"/>
+		<Property Name="projectVersion" Value="1.0"/>
+		<Property Name="projectName" Value="Demo01"/>
+		<Property Name="projectId" Value="ff0b0cdc-01ea-4867-bc19-6508d5fcc6ae"/>
+		<Property Name="projectDate" Value="25/06/2020"/>
+		<Property Name="projectLabel" Value="Demo01"/>
+		<Property Name="projectClient" Value="SAP"/>
+		<Property Name="licenceURL" Value=""/>
+		<Property Name="archiveFile" Value="Demo01.zip"/>
+		<Property Name="productVersion" Value="2.0.1.49"/>
+		<Property Name="sdkVersion" Value="2.0.1.49"/>
+		<Property Name="exportDate" Value="27/6/2020"/>
+		<Property Name="IsTrial" Value="True"/>
+		<Property Name="validity" Value=""/>
+		<Property Name="cyphering" Value="0"/>
+		<Property Name="compression" Value="1"/>
+	</Properties>
+	<Properties Name="scenario0">
+		<Property Name="appliName" Value="SAPGUI" Type="1"/>
+		<Property Name="scenario" Value="Modify_User" Type="1"/>
+		<Property Name="name" Value="" Type="1"/>
+		<Property Name="id" Value="6970a2d0-326c-4a6d-86eb-3c461ba607f4" Type="1"/>
+		<Property Name="timeout" Value="600" Type="1"/>
+		<Property Name="task" Value="1" Type="1"/>
+		<Property Name="contextRoot" Value="" Type="1"/>
+		<Property Name="input" Value="" Type="1"/>
+		<Property Name="output" Value="" Type="1"/>
+	</Properties>
+	<Keys Name="scenario0">
+	</Keys>
+	<UpdatePackages>
+	</UpdatePackages>
+	<KeyNames Value="e4f5ecff08deb11f6cad393a74c2957b" Type="32771"/>
+	<KeyContent Value="11abc5e70e07ec9fc32b75f8265b0d9a" Type="32771"/>
+	<KeyProps Value="a20ed0c8fbf94f76afb05c77ef993f05" Type="32771"/>
+</doc>

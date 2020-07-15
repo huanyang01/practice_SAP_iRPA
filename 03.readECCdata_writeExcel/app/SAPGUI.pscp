@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ConteXtorStudio Version="StudioReco V1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" noNamespaceSchemaLocation="XsdStudio.xsd">
+	<PROCESSUS>
+		<PROCESS Name="GLOBAL" Key="NoKey" Comment="Global Processus">
+			<_DECLAREVAR>
+				<STRUCTUREDON Name="GLOBAL" />
+			</_DECLAREVAR>
+			<SCRIPTS />
+			<RESOURCES />
+		</PROCESS>
+	</PROCESSUS>
+	<APPLICATIONS>
+		<APPLI Name="SAPGUI" CtxtId="5c523efe-a1c5-45bf-9176-dcf121a98b8d" Nature="UIAUTOMATION" TechnoSDK="V3" Sync="0" PendingDelay="0">
+			<CAPTURE Name="APPLI_SAPEasyAccessU_1" CtxtId="1" Techno="UIAutomation" />
+			<SCRIPTS />
+			<CRITERE>
+				<EXE Scan="Full"><![CDATA[SAPLOGON.EXE]]></EXE>
+			</CRITERE>
+			<_DECLAREVAR>
+				<STRUCTUREDON Name="SAPGUI" />
+			</_DECLAREVAR>
+			<_ECRANS>
+				<PAGE Name="pSAPEasyAccessU" Comment="GuiMainWindow - SAP Easy Access  -  User Menu for I311414" CtxtId="4e26597b-423c-4641-a8d5-20b651404948" CustomType="GuiMainWindow" Nature="SAPGUI" SubpagesType="Multiple" RefreshMode="No">
+					<CRITERE>
+						<Text Scan="start-with"><![CDATA[SAP Easy Access  -  User Menu for]]></Text>
+					</CRITERE>
+					<OBJETS>
+						<OBJET Name="oGuiOkCodeField" CtxtId="8328d824-b6ba-4823-9e62-bf7014ad9287" CustomType="GuiOkCodeField" SpecIndex="1">
+							<CRITERE>
+								<TAG Name="GuiOkCodeField" Scope="All" CapturedPos="1.R0R1R7">
+									<ATT Name="Name">
+										<VALUE Scan="Full"><![CDATA[okcd]]></VALUE>
+									</ATT>
+								</TAG>
+							</CRITERE>
+						</OBJET>
+						<OBJET Name="btGuiButton" CtxtId="fcb944c4-72e1-4aea-b184-f25814bbd617" CustomType="GuiButton" SpecIndex="2">
+							<CRITERE>
+								<TAG Name="GuiButton" Scope="All" CapturedPos="1.R0R1R0">
+									<ATT Name="Name">
+										<VALUE Scan="Full"><![CDATA[btn[0]]]></VALUE>
+									</ATT>
+								</TAG>
+							</CRITERE>
+						</OBJET>
+					</OBJETS>
+					<CAPTURE Name="PAGE_SAPEasyAccessU_2003186_1" Comment="GuiMainWindow - SAP Easy Access  -  User Menu for I311414" CtxtId="1" Techno="SAPGUI" CapturedPos="1.R0" Timestamp="25/06/2020 20:03:44" MaskRectangle="0|0|1644|930" />
+				</PAGE>
+				<PAGE Name="pUserMaintenanceIni" Comment="GuiMainWindow - User Maintenance: Initial Screen" CtxtId="ebed5564-ae09-4135-a71f-fb53ae461c3c" CustomType="GuiMainWindow" Nature="SAPGUI" SubpagesType="Multiple" RefreshMode="No">
+					<CRITERE>
+						<Text Scan="Full"><![CDATA[User Maintenance: Initial Screen]]></Text>
+					</CRITERE>
+					<OBJETS>
+						<OBJET Name="edUser" CtxtId="3041bbba-7c33-4b2e-8a01-d621658ad3ef" CustomType="GuiCTextField" SpecIndex="1">
+							<CRITERE>
+								<TAG Name="GuiCTextField" Scope="All" CapturedPos="2.R0R4R1">
+									<ATT Name="Name">
+										<VALUE Scan="Full"><![CDATA[SUID_ST_BNAME-BNAME]]></VALUE>
+									</ATT>
+								</TAG>
+							</CRITERE>
+						</OBJET>
+						<OBJET Name="btGuiButton" CtxtId="0b3ec53c-3200-476a-ae01-76a41a660b25" CustomType="GuiButton" SpecIndex="2">
+							<CRITERE>
+								<TAG Name="GuiButton" Scope="All" CapturedPos="2.R0R3R2">
+									<ATT Name="Name">
+										<VALUE Scan="Full"><![CDATA[btn[18]]]></VALUE>
+									</ATT>
+								</TAG>
+							</CRITERE>
+						</OBJET>
+					</OBJETS>
+					<CAPTURE Name="PAGE_UserMaintenanceIni_2008169_1" Comment="GuiMainWindow - User Maintenance: Initial Screen" CtxtId="2" Techno="SAPGUI" CapturedPos="2.R0" Timestamp="25/06/2020 20:08:44" MaskRectangle="0|0|1644|930" />
+				</PAGE>
+			</_ECRANS>
+			<PATH><![CDATA[C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplogon.exe]]></PATH>
+			<WORKFLOWS>
+				<WORKFLOW Name="readECCdata_writeExcel" Src="%workflows%\readeccdata_writeexcel.xaml" CtxtId="6970a2d0-326c-4a6d-86eb-3c461ba607f4" DisplayName="readECCdata_writeExcel" StepTimeout="30" ScenarioTimeout="600" GeneratedScenarioName="readECCdata_writeExcel" />
+			</WORKFLOWS>
+			<ACTIONS />
+			<EVENTS />
+			<SCENARII>
+				<Steps />
+			</SCENARII>
+		</APPLI>
+	</APPLICATIONS>
+</ConteXtorStudio>

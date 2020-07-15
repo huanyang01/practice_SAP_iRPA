@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Context Id="a6ec4a3f-dd28-4fa0-be7f-70ce23a3b797">
+  <Entities>
+    <Entity Id="5c523efe-a1c5-45bf-9176-dcf121a98b8d" Name="SAPGUIData" IsArray="False">
+      <Entities>
+        <Entity Id="4e26597b-423c-4641-a8d5-20b651404948" Name="pSAPEasyAccessUData" IsArray="False">
+          <Entities>
+            <Entity Id="8328d824-b6ba-4823-9e62-bf7014ad9287" Name="oGuiOkCodeField" IsArray="False" />
+          </Entities>
+        </Entity>
+        <Entity Id="ebed5564-ae09-4135-a71f-fb53ae461c3c" Name="pUserMaintenanceIniData" IsArray="False">
+          <Entities>
+            <Entity Id="3041bbba-7c33-4b2e-8a01-d621658ad3ef" Name="edUser" IsArray="False" />
+          </Entities>
+        </Entity>
+      </Entities>
+    </Entity>
+  </Entities>
+</Context>
