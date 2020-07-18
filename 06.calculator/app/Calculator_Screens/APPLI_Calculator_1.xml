@@ -1,0 +1,6 @@
+﻿<APPLI Techno="UIAutomation" Name="APPLI_Calculator_1" ParamName="Calculator">
+	<PROPERTIES>
+		<EXE>APPLICATIONFRAMEHOST.EXE</EXE>
+		<TITLE>Calculator</TITLE>
+	</PROPERTIES>
+</APPLI>

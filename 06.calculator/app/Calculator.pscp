@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ConteXtorStudio Version="StudioReco V1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" noNamespaceSchemaLocation="XsdStudio.xsd">
+	<PROCESSUS>
+		<PROCESS Name="GLOBAL" Key="NoKey" Comment="Global Processus">
+			<_DECLAREVAR>
+				<STRUCTUREDON Name="GLOBAL" />
+			</_DECLAREVAR>
+			<SCRIPTS />
+			<RESOURCES />
+		</PROCESS>
+	</PROCESSUS>
+	<APPLICATIONS>
+		<APPLI Name="Calculator" CtxtId="9b6ee07f-2397-4fdd-a212-d23e6e16dd5f" Nature="UIAUTOMATION" TechnoSDK="V3" Sync="0" PendingDelay="0">
+			<CAPTURE Name="APPLI_Calculator_1" CtxtId="2" Techno="UIAutomation" />
+			<SCRIPTS />
+			<CRITERE>
+				<EXE Scan="Full"><![CDATA[APPLICATIONFRAMEHOST.EXE]]></EXE>
+			</CRITERE>
+			<_DECLAREVAR>
+				<STRUCTUREDON Name="Calculator" />
+			</_DECLAREVAR>
+			<_ECRANS>
+				<PAGE Name="pWindowCalculator" Comment="Window - Calculator" CtxtId="b9dee015-2164-4e93-b4de-ae58c2714182" SubpagesType="Multiple" RefreshMode="Polling">
+					<CRITERE>
+						<Name Scan="Full"><![CDATA[Calculator]]></Name>
+					</CRITERE>
+					<TRACK_EVENTS>
+						<TRACK_EVENT Name="REFRESH(POLLING)" />
+					</TRACK_EVENTS>
+					<OBJETS>
+						<OBJET Name="btNum4Button" CtxtId="08bddfcb-1f67-43aa-bf91-677f6675a24a" SpecIndex="1">
+							<CRITERE>
+								<TAG Name="Button" Scope="All" CapturedPos="2.R0R1R1R6R4">
+									<ATT Name="AutomationId">
+										<VALUE Scan="Full"><![CDATA[num4Button]]></VALUE>
+									</ATT>
+								</TAG>
+							</CRITERE>
+							<TRACK_EVENTS>
+								<TRACK_EVENT Name="CLICK" />
+							</TRACK_EVENTS>
+						</OBJET>
+						<OBJET Name="btNum2Button" CtxtId="407ebe4f-8bbb-4466-87f3-360f69b3f526" SpecIndex="2">
+							<CRITERE>
+								<TAG Name="Button" Scope="All" CapturedPos="2.R0R1R1R6R2">
+									<ATT Name="AutomationId">
+										<VALUE Scan="Full"><![CDATA[num2Button]]></VALUE>
+									</ATT>
+								</TAG>
+							</CRITERE>
+							<TRACK_EVENTS>
+								<TRACK_EVENT Name="CLICK" />
+							</TRACK_EVENTS>
+						</OBJET>
+					</OBJETS>
+					<CAPTURE Name="PAGE_WindowCalculator_2128239_1" Comment="Window - Calculator" CtxtId="2" Techno="UIAutomation" CapturedPos="2.R0" Timestamp="18/07/2020 21:28:25" MaskRectangle="0|0|666|1078" />
+				</PAGE>
+			</_ECRANS>
+			<WORKFLOWS>
+				<WORKFLOW Name="calWorkflow" Src="%workflows%\calWorkflow.xaml" CtxtId="519bf614-13dd-45d0-ba6a-e87fcf425c36" DisplayName="calWorkflow" StepTimeout="30" ScenarioTimeout="600" GeneratedScenarioName="calWorkflow" />
+			</WORKFLOWS>
+			<PATH><![CDATA[calc.exe]]></PATH>
+		</APPLI>
+	</APPLICATIONS>
+</ConteXtorStudio>

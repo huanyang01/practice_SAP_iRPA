@@ -9,7 +9,10 @@ Learn to use SAP iRPA
 INT_RPA_STUDIO00P_11-80004527.MSI
 读取 C:\SAP\rpa\Sample.config
 弹窗显示 Hello World
+
+参见
 https://help.sap.com/viewer/515fae5c9d04482d98c8fa9138975328/Cloud/en-US/eb62a00fd911425cb9bfc450d0c597b4.html
+https://www.youtube.com/watch?v=ai21r8daOg0 
 
 
 
@@ -89,3 +92,24 @@ Open question: log
     12:39:25.968 Log: End --- Step: Start_loop
     12:39:25.975 Log: Index value is: -1
 
+
+
+06.calculator
+-----------------------------------------------
+2020.07.18
+INT_RPA_STUDIO00P_11-80004527.MSI
+
+注：
+[1] Select the Screenshot radio button in the Capture mode area
+[2] In the properties of application, enter calc.exe as the launch path to finalize.
+[3] In the Parameters window, set the Refresh Mode to Polling.
+    Refresh Mode
+    Sets the way page recognition is refreshed
+    - No: no refresh needed
+    - Window: refresh on WINDOWOPENED event notification
+    - Polling: refresh by polling
+[4] Don't forget to add calc.exe to the properties in the page. (经测试，在application层面设置了calc.exe，就不需要在page中设置)
+[5] In the Activities window, find the Wait Exist activity under Item - Wait and drag and drop it to button 4. （否则，界面还没出来，点击事件捕获不到控件，将失效）
+
+参见
+https://help.sap.com/viewer/515fae5c9d04482d98c8fa9138975328/Cloud/en-US/90c6ba59a0a843a89a073df65360e3b7.html

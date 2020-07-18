@@ -1,0 +1,103 @@
+﻿<Flowchart mc:Ignorable="sap sap2010 sads" DisplayName="calWorkflow" sap2010:WorkflowViewState.IdRef="Flowchart_1" StartNode="{x:Reference __ReferenceID1}"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+ xmlns:c="clr-namespace:CxFrameworkWPF;assembly=CxFrameworkWPF"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <FlowStep x:Name="__ReferenceID1" sap2010:WorkflowViewState.IdRef="FlowStep_2">
+    <c:SnippetActivity ActivityType="SnippetActivity" CtxtId="87e3bed9-1fff-4d44-aba9-3d09846fee5d" DisplayName="Start 'Calculator'" sap2010:WorkflowViewState.IdRef="SnippetActivity_1">
+      <c:SnippetActivity.CustomData>
+        <x:String x:Key="SnippetId">appli_start_2</x:String>
+        <x:String x:Key="Description">Starts an application.</x:String>
+        <x:String x:Key="bWaitStart">true</x:String>
+        <x:String x:Key="AppliId">9b6ee07f-2397-4fdd-a212-d23e6e16dd5f</x:String>
+      </c:SnippetActivity.CustomData>
+    </c:SnippetActivity>
+    <FlowStep.Next>
+      <FlowStep x:Name="__ReferenceID0" sap2010:WorkflowViewState.IdRef="FlowStep_3">
+        <c:PageActivity ActivityType="PageActivity" CtxtId="41859b16-0d48-42b9-8309-674939b8c449" DisplayName="pWindowCalculator management" sap2010:WorkflowViewState.IdRef="PageActivity_2">
+          <c:PageActivity.CustomData>
+            <x:String x:Key="PageId">b9dee015-2164-4e93-b4de-ae58c2714182</x:String>
+          </c:PageActivity.CustomData>
+          <Sequence>
+            <c:SnippetActivity ActivityType="wait" CtxtId="f2657a6d-e12b-4b62-8efa-d47ca904bd7a" DisplayName="Wait until 'btNum4Button (1)' exists">
+              <c:SnippetActivity.CustomData>
+                <x:String x:Key="SnippetId">item_wait_exist</x:String>
+                <x:String x:Key="ItemId">08bddfcb-1f67-43aa-bf91-677f6675a24a</x:String>
+                <x:String x:Key="timeout">10000</x:String>
+              </c:SnippetActivity.CustomData>
+            </c:SnippetActivity>
+            <c:SnippetActivity ActivityType="SnippetActivity" CtxtId="c7fdfd05-619f-4dde-9fe4-302b8f6972f1" DisplayName="Click on 'btNum4Button (1)'">
+              <c:SnippetActivity.CustomData>
+                <x:String x:Key="SnippetId">item_click</x:String>
+                <x:String x:Key="ItemId">08bddfcb-1f67-43aa-bf91-677f6675a24a</x:String>
+              </c:SnippetActivity.CustomData>
+            </c:SnippetActivity>
+            <c:SnippetActivity ActivityType="SnippetActivity" CtxtId="c996708d-6130-4cc0-a615-351ac27b4750" DisplayName="Click on 'btNum2Button (2)'">
+              <c:SnippetActivity.CustomData>
+                <x:String x:Key="SnippetId">item_click</x:String>
+                <x:String x:Key="ItemId">407ebe4f-8bbb-4466-87f3-360f69b3f526</x:String>
+              </c:SnippetActivity.CustomData>
+            </c:SnippetActivity>
+            <c:SnippetActivity ActivityType="wait_end" CtxtId="c71882c3-0dda-4e7c-9402-5881a081152d" DisplayName="Wait (end)">
+              <c:SnippetActivity.CustomData>
+                <x:String x:Key="SnippetId">wait_end</x:String>
+              </c:SnippetActivity.CustomData>
+            </c:SnippetActivity>
+          </Sequence>
+        </c:PageActivity>
+      </FlowStep>
+    </FlowStep.Next>
+  </FlowStep>
+  <x:Reference>__ReferenceID0</x:Reference>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="SnippetActivity_1" sap:VirtualizedContainerService.HintSize="154,26">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="PageActivity_2" sap:VirtualizedContainerService.HintSize="150,200">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="FlowStep_3">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">221.683333333333,203.5</av:Point>
+            <av:Size x:Key="ShapeSize">150,200</av:Size>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="FlowStep_2">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">223,127.5</av:Point>
+            <av:Size x:Key="ShapeSize">154,26</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">300,153.5 300,183.5 296.683333333333,183.5 296.683333333333,203.5</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Flowchart_1" sap:VirtualizedContainerService.HintSize="614,636">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+            <av:Size x:Key="ShapeSize">60,75</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,127.5</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+  <sads:DebugSymbol.Symbol>d0RDOlxHaXRIdWJccHJhY3RpY2VfU0FQX2lSUEFcMDYuY2FsY3VsYXRvclx3b3JrZmxvd3NcY2Fsd29ya2Zsb3cueGFtbAMBAWcNAQEMBRMZAQMWCTQaAQI=</sads:DebugSymbol.Symbol>
+</Flowchart>
