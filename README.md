@@ -50,3 +50,32 @@ INT_RPA_STUDIO00P_11-80004527.MSI
 参见  
 https://blogs.sap.com/2020/04/16/how-to-use-credentials-and-variables-with-cloud-factory-in-sap-intelligent-rpa/
 https://www.youtube.com/watch?v=14WBpDyKrs8&feature=youtu.be
+
+
+
+05.use_flow_loop
+-----------------------------------------------
+2020.07.18
+INT_RPA_STUDIO00P_11-80004527.MSI
+使用 loop 进行循环处理
+
+注：
+[1] 先添加 start loop，紧跟着设置 exit loop 并在其中设置循环结束的条件，然后是循环体，最后是 loop to start
+[2] exit loop 中通常用一个变量进行循环退出的判断，这个变量通常在 loop to start 中进行 ++ 或 --
+
+Open question: log
+    循环退出时，为何是以下的顺序
+    12:39:25.855 Log: Start --- Step: Exit_loop
+    12:39:25.880 Log: Start --- Step: Loops_to_the_start_bl
+    12:39:25.911 Log: End --- Step: Loops_to_the_start_bl
+    12:39:25.914 Log: End --- Step: Start_loop
+    12:39:25.920 Log: End --- Step: Exit_loop
+    12:39:25.928 Log: End --- Step: Start_loop
+    12:39:25.934 Log: End --- Step: Exit_loop
+    12:39:25.942 Log: End --- Step: Start_loop
+    12:39:25.949 Log: End --- Step: Exit_loop
+    12:39:25.955 Log: End --- Step: Start_loop
+    12:39:25.961 Log: End --- Step: Exit_loop
+    12:39:25.968 Log: End --- Step: Start_loop
+    12:39:25.975 Log: Index value is: -1
+

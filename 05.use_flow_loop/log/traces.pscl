@@ -1,0 +1,6 @@
+﻿{"ts":"12:20:10.372","ctx":"Action","action":"ctx.diagnostic.zipArchiveFolder","params":["C:\\GitHub\\practice_SAP_iRPA\\05.use_flow_loop\\log\\record.PVGN34432486A.I311414.2020-07-18_12.20.09.476"],"parentId":13}
+{"ts":"12:20:10.383","ctx":"Action","action":"ctx.fso.folder.exist","params":["C:\\GitHub\\practice_SAP_iRPA\\05.use_flow_loop\\log\\record.PVGN34432486A.I311414.2020-07-18_12.20.09.476"],"parentId":13}
+{"ts":"12:20:10.386","ctx":"Action","action":"ctx.fso.file.zip","params":[["C:\\GitHub\\practice_SAP_iRPA\\05.use_flow_loop\\log\\record.PVGN34432486A.I311414.2020-07-18_12.20.09.476"],"C:\\GitHub\\practice_SAP_iRPA\\05.use_flow_loop\\log\\record.PVGN34432486A.I311414.2020-07-18_12.20.09.476.zip",1556],"parentId":13}
+{"ts":"12:20:10.533","ctx":"Action","action":"ctx.sleep","params":[100],"result":"","verb":"SLEEP","parentId":13,"appliName":"ctx","appliInst":-1}
+{"ts":"12:20:11.39","ctx":"Action","action":"ctx.sleep","params":[500],"result":"","verb":"SLEEP","parentId":13,"appliName":"ctx","appliInst":-1}
+{"ts":"12:20:11.47","ctx":"Action","action":"ctx.fso.folder.remove","params":["C:\\GitHub\\practice_SAP_iRPA\\05.use_flow_loop\\log\\record.PVGN34432486A.I311414.2020-07-18_12.20.09.476"],"parentId":13}

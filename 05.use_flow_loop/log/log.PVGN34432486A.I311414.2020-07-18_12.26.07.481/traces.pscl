@@ -1,0 +1,4 @@
+﻿{"ts":"12:26:18.925","ctx":"Action","action":"ctx.log","params":["In the loop: 3",0],"verb":"LOGMESS","parentId":81}
+{"ts":"12:26:18.994","ctx":"Action","action":"ctx.log","params":["In the loop: 2",0],"verb":"LOGMESS","parentId":81}
+{"ts":"12:26:19.68","ctx":"Action","action":"ctx.log","params":["In the loop: 1",0],"verb":"LOGMESS","parentId":81}
+{"ts":"12:26:19.156","ctx":"Action","action":"ctx.log","params":["In the loop: 0",0],"verb":"LOGMESS","parentId":81}
