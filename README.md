@@ -3,6 +3,16 @@ Learn to use SAP iRPA
 
 
 
+00.hello world
+-----------------------------------------------
+2020.07.18
+INT_RPA_STUDIO00P_11-80004527.MSI
+读取 C:\SAP\rpa\Sample.config
+弹窗显示 Hello World
+https://help.sap.com/viewer/515fae5c9d04482d98c8fa9138975328/Cloud/en-US/eb62a00fd911425cb9bfc450d0c597b4.html
+
+
+
 01.readLocalConfigurationFile
 -----------------------------------------------
 2020.07.15
