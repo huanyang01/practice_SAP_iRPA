@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ConteXtorStudio Version="StudioReco V1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" noNamespaceSchemaLocation="XsdStudio.xsd">
+	<PROCESSUS>
+		<PROCESS Name="GLOBAL" Key="NoKey" Comment="Global Processus">
+			<_DECLAREVAR>
+				<STRUCTUREDON Name="GLOBAL" />
+			</_DECLAREVAR>
+			<SCRIPTS />
+			<RESOURCES />
+		</PROCESS>
+	</PROCESSUS>
+	<APPLICATIONS>
+		<APPLI Name="appLilo" CtxtId="618aa707-086e-4a09-a625-24342347a514" Nature="WEB3" TechnoSDK="V3" Sync="250">
+			<CAPTURE Name="APPLI_LiloOrgSearchEngin_1" CtxtId="1" Techno="WEB" />
+			<SCRIPTS />
+			<CRITERE>
+				<URL Scan="Full"><![CDATA[https://www.lilo.org/#]]></URL>
+			</CRITERE>
+			<_DECLAREVAR>
+				<STRUCTUREDON Name="appLilo" />
+			</_DECLAREVAR>
+			<_ECRANS>
+				<PAGE Name="pHome" Comment="Lilo.org Search Engine - France" CtxtId="ed2786be-b7e0-46dd-9f7b-bba713cab38b">
+					<CRITERE>
+						<URL Scan="Full"><![CDATA[https://www.lilo.org/#]]></URL>
+					</CRITERE>
+					<PATH><![CDATA[https://www.lilo.org/#]]></PATH>
+					<OBJETS>
+						<OBJET Name="oQuery" CtxtId="4f5b2f9e-edc4-485f-9e60-4ecbebccb2a7" SpecIndex="1">
+							<CRITERE>
+								<TAG Name="INPUT" Scope="All" CapturedPos="1.R0R1R1R0R0R1R0R0R1R0">
+									<ATT Name="name">
+										<VALUE Scan="Full"><![CDATA[q]]></VALUE>
+									</ATT>
+								</TAG>
+							</CRITERE>
+						</OBJET>
+						<OBJET Name="btSearch" CtxtId="502973c0-5aac-43b3-8178-50a9479ad2b6" SpecIndex="2">
+							<CRITERE>
+								<TAG Name="path" Scope="All" CapturedPos="1.R0R1R1R0R0R1R0R0R2R0R0R0">
+									<ATT Name="id">
+										<VALUE Scan="Full"><![CDATA[Shape]]></VALUE>
+									</ATT>
+								</TAG>
+							</CRITERE>
+						</OBJET>
+					</OBJETS>
+					<CAPTURE Name="PAGE_LiloOrgSearchEngin_1416325_1" Comment="Lilo.org Search Engine - France" CtxtId="1" Techno="WEB" Timestamp="19/07/2020 14:16:35" />
+				</PAGE>
+			</_ECRANS>
+			<PATH><![CDATA[https://www.lilo.org/#]]></PATH>
+		</APPLI>
+	</APPLICATIONS>
+</ConteXtorStudio>

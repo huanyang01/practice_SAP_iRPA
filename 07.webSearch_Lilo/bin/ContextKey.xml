@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Context Id="119ead44-9ca5-491d-aaf4-8f6e3ada5156">
+  <Entities>
+    <Entity Id="618aa707-086e-4a09-a625-24342347a514" Name="appLiloData" IsArray="False">
+      <Entities>
+        <Entity Id="ed2786be-b7e0-46dd-9f7b-bba713cab38b" Name="pHomeData" IsArray="False">
+          <Entities>
+            <Entity Id="4f5b2f9e-edc4-485f-9e60-4ecbebccb2a7" Name="oQuery" IsArray="False" />
+          </Entities>
+        </Entity>
+      </Entities>
+    </Entity>
+  </Entities>
+</Context>

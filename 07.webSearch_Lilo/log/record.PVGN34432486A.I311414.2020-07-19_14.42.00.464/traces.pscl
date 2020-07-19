@@ -1,0 +1,28 @@
+﻿{"ts":"14:42:00.465","ctx":"Event","event":"scFindLilo","appliName":"GLOBAL","appliInst":0,"pageName":"SYSTRAY1","pageInst":0,"data":{}}
+{"ts":"14:42:00.470","ctx":"State","type":"scenario","name":"scFindLilo","id":70,"action":"start","appliName":"GLOBAL","parentId":64,"data":{"ctxType":"ctx.application","name":"GLOBAL","instance":0,"data":{"ctxType":"ctx.dataClass","appliName":"GLOBAL","appliInst":0,"currentDir":"C:\\GitHub\\practice_SAP_iRPA\\07.webSearch_Lilo\\log","currentURL":"C:\\GitHub\\practice_SAP_iRPA\\07.webSearch_Lilo\\bin","execDir":"C:\\Program Files (x86)\\SAP\\Intelligent RPA\\Desktop Agent\\","resourceURL":"C:\\GitHub\\practice_SAP_iRPA\\07.webSearch_Lilo\\bin","serverURL":"C:\\GitHub\\practice_SAP_iRPA\\07.webSearch_Lilo\\server"}}}
+{"ts":"14:42:00.474","ctx":"State","type":"once","name":"timeout(scFindLilo)","id":71,"action":"set","parentName":"scFindLilo","parentId":70}
+{"ts":"14:42:00.477","ctx":"State","type":"step","name":"Start_appLilo","id":73,"action":"add","appliName":"GLOBAL","parentName":"scFindLilo","parentId":70}
+{"ts":"14:42:00.479","ctx":"State","type":"step","name":"pHome_management","id":75,"action":"add","appliName":"GLOBAL","parentName":"scFindLilo","parentId":70}
+{"ts":"14:42:00.481","ctx":"State","type":"step","name":"Start_appLilo","id":73,"action":"start","appliName":"GLOBAL","parentName":"scFindLilo","parentId":70}
+{"ts":"14:42:00.485","ctx":"State","type":"once","name":"timeout(Start_appLilo)","id":76,"action":"set","parentName":"Start_appLilo","parentId":73}
+{"ts":"14:42:00.488","ctx":"Action","action":"ctx.workflow","params":["scFindLilo","99da887d-67ba-40ba-aac5-7791e0f75cf5"],"parentId":73}
+{"ts":"14:42:00.490","ctx":"Action","action":"ctx.log","params":["Step: Start_appLilo -- before events START",0],"verb":"LOGMESS","parentId":73}
+{"ts":"14:42:00.494","ctx":"State","type":"once","name":"appLilo:START","id":77,"action":"set","parentName":"Start_appLilo","parentId":73}
+{"ts":"14:42:00.498","ctx":"Action","action":"ctx.log","params":["Step: Start_appLilo -- before appLilo.start()",0],"verb":"LOGMESS","parentId":73}
+{"ts":"14:42:00.506","ctx":"Action","action":"start","params":[],"result":"","parentId":73,"appliName":"appLilo","appliInst":-1}
+{"ts":"14:42:00.509","ctx":"Action","action":"count","params":[],"result":0,"parentId":73,"appliName":"appLilo","appliInst":-1}
+{"ts":"14:42:00.511","ctx":"Action","action":"exist","params":[],"result":false,"parentId":73,"appliName":"appLilo","appliInst":-1}
+{"ts":"14:42:00.513","ctx":"Action","action":"getPath","params":[],"result":"","parentId":73,"appliName":"appLilo","appliInst":-1}
+{"ts":"14:42:00.592","ctx":"Action","action":"ctx.shellexec","params":["iexplore.exe","https://www.lilo.org/#"],"result":"","verb":"SHELLEXEC","parentId":73,"appliName":"ctx","appliInst":-1}
+{"ts":"14:42:00.594","ctx":"State","type":"on","name":"GLOBAL:evReceiveMessage","id":13,"action":"set"}
+{"ts":"14:42:15.103","ctx":"Event","event":"QUIT","appliName":"POPUPS","appliInst":0}
+{"ts":"14:42:15.166","ctx":"State","type":"on","name":"POPUPS:QUIT","id":24,"action":"run"}
+{"ts":"14:42:15.169","ctx":"State","type":"on","name":"POPUPS:QUIT","id":24,"action":"set"}
+{"ts":"14:42:15.174","ctx":"Event","event":"END","appliName":"POPUPS","appliInst":0}
+{"ts":"14:42:15.188","ctx":"Event","event":"QUIT","appliName":"GLOBAL","appliInst":0}
+{"ts":"14:42:15.191","ctx":"State","type":"on","name":"GLOBAL:QUIT","id":0,"action":"run"}
+{"ts":"14:42:15.196","ctx":"State","type":"on","name":"GLOBAL:QUIT","id":0,"action":"set"}
+{"ts":"14:42:15.202","ctx":"State","type":"on","name":"GLOBAL:QUIT","id":29,"action":"run"}
+{"ts":"14:42:15.206","ctx":"State","type":"on","name":"GLOBAL:QUIT","id":29,"action":"set"}
+{"ts":"14:42:15.207","ctx":"State","type":"on","name":"GLOBAL:QUIT","id":36,"action":"run"}
+{"ts":"14:42:15.209","ctx":"State","type":"on","name":"GLOBAL:QUIT","id":36,"action":"set"}

@@ -113,3 +113,18 @@ INT_RPA_STUDIO00P_11-80004527.MSI
 
 参见
 https://help.sap.com/viewer/515fae5c9d04482d98c8fa9138975328/Cloud/en-US/90c6ba59a0a843a89a073df65360e3b7.html
+
+
+
+07.webSearch_Lilo
+-----------------------------------------------
+2020.07.19
+INT_RPA_STUDIO00P_11-80004527.MSI
+
+Open question:
+[1] Capture 时，选择 WEB，可以捕捉到IE浏览器，但是不能捕捉到Google Chrome浏览器
+[2] Debug时，发现application（即IE浏览器）启动后，无法进入 appLilo.pHome.wait(function(ev) { ... } 或 appLilo.pHome.waitReady(function(ev) { ... }
+
+参见
+https://help.sap.com/viewer/515fae5c9d04482d98c8fa9138975328/Cloud/en-US/ad6a8078969d4fc3ae1bd17d536d1a6b.html 
+https://www.youtube.com/watch?v=C_rMvteUNVU 

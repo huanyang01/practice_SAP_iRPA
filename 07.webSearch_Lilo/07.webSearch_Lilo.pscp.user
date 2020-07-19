@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<USER>
+	<BREAKPOINTS>
+		<BREAKPOINT LineNumber="58" SearchPath="PROCESS[@Name='GLOBAL']/SCRIPTS/SCRIPT[@Src='scfindlilo.js']" Offset="2318" Length="50"><![CDATA[ctx.log('Step: pHome_management -- before oQuery')]]></BREAKPOINT>
+		<BREAKPOINT LineNumber="57" SearchPath="PROCESS[@Name='GLOBAL']/SCRIPTS/SCRIPT[@Src='scfindlilo.js']" Offset="2277" Length="38"><![CDATA[appLilo.pHome.waitReady(function(ev) {]]></BREAKPOINT>
+	</BREAKPOINTS>
+	<BOOKMARKS />
+	<FINDHISTORY />
+	<DEBUGTRACEFINDHISTORY />
+	<OPENDOCS />
+	<PROPERTIES>
+		<CurPerspective><![CDATA[-1]]></CurPerspective>
+		<DebugTester><![CDATA[]]></DebugTester>
+	</PROPERTIES>
+	<WATCHES />
+	<APPLIFILTERS />
+	<EVENTFILTERS />
+	<WORKFLOW_MOSTUSED />
+</USER>
