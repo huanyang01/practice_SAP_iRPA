@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<openPDFErrPrefix>FAILURE: Opening </openPDFErrPrefix>
+	<openPDFErrSuffix> failed</openPDFErrSuffix>
+	<SAPLogon760>
+		<system0>
+			<SID>Q1A</SID>
+			<User>baoshe11</User>
+			<Password>11nmtc!09q1a</Password>
+		</system0>
+		<system1>
+			<SID>QS1</SID>
+			<User>baoshe22</User>
+			<Password>22nmtc!09qs1</Password>
+		</system1>
+		<system2>
+			<SID>QSE</SID>
+			<User>baoshe33</User>
+			<Password>33123456</Password>
+		</system2>
+	</SAPLogon760>
+	<mail>
+		<emailBox>Ziqin.li@sap.com44</emailBox>
+		<searchFolder>test55</searchFolder>
+		<unknownFolder>unknown66</unknownFolder>
+		<processedFolder>processed77</processedFolder>
+	</mail>
+</root>

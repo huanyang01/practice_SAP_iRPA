@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Context Id="05be68bb-1ea7-4033-98b6-04eeac208e04">
+  <Entities>
+    <Entity Id="d833400e-4df1-425f-8c1a-6c25f7ecd0e0" Name="Config" IsArray="False" />
+  </Entities>
+</Context>

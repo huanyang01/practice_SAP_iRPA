@@ -130,3 +130,16 @@ Open question:
 参见
 https://help.sap.com/viewer/515fae5c9d04482d98c8fa9138975328/Cloud/en-US/ad6a8078969d4fc3ae1bd17d536d1a6b.html 
 https://www.youtube.com/watch?v=C_rMvteUNVU 
+
+
+
+
+08.updateConfigFilewithSCPVariables
+-----------------------------------------------
+2020.07.21
+INT_RPA_STUDIO00P_11-80004527.MSI
+
+读取本地的configuration 配置文件 log/config.xml
+在SCP中创建3个Credential类型的变量，分别为Q1A、QS1、QSE；创建4个Text类型的变量，分别为emailBox、searchFolder、unknownFolder、processedFolder
+使用SCP中读取到的变量的值，修改配置参数，并进行log输出
+之前的项目文件使用本地的config.xml,现在想要使用SCP传参数，为了尽可能小的影响后续代码，采用此法
