@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<USER>
+	<BREAKPOINTS />
+	<BOOKMARKS />
+	<FINDHISTORY>
+		<FINDWHAT><![CDATA[java]]></FINDWHAT>
+	</FINDHISTORY>
+	<DEBUGTRACEFINDHISTORY />
+	<OPENDOCS>
+		<OPENDOC LineNumber="-1" SearchPath="APPLI[@Name='SAPLogon760']" Offset="0" Length="0" />
+		<OPENDOC LineNumber="-1" SearchPath="PROCESS[@Name='GLOBAL']/WORKFLOWS/WORKFLOW[@Name='opencloseSAPGUI']" Offset="0" Length="0"><![CDATA[madata]]></OPENDOC>
+		<OPENDOC LineNumber="87" SearchPath="PROCESS[@Name='GLOBAL']/SCRIPTS/SCRIPT[@Name='opencloseSAPGUI']" Offset="0" Length="0" />
+	</OPENDOCS>
+	<PROPERTIES>
+		<CurPerspective><![CDATA[2]]></CurPerspective>
+		<DebugTester><![CDATA[]]></DebugTester>
+	</PROPERTIES>
+	<WATCHES />
+	<APPLIFILTERS />
+	<EVENTFILTERS />
+	<WORKFLOW_MOSTUSED />
+</USER>

@@ -143,3 +143,13 @@ INT_RPA_STUDIO00P_11-80004527.MSI
 在SCP中创建3个Credential类型的变量，分别为Q1A、QS1、QSE；创建4个Text类型的变量，分别为emailBox、searchFolder、unknownFolder、processedFolder
 使用SCP中读取到的变量的值，修改配置参数，并进行log输出
 之前的项目文件使用本地的config.xml,现在想要使用SCP传参数，为了尽可能小的影响后续代码，采用此法
+
+
+
+09.openAndCloseSAPGUI
+-----------------------------------------------
+2020.07.30
+INT_RPA_STUDIO00P_11-80004527.MSI
+INT_RPA_STUDIO00P_13-80004527.MSI
+
+让 iRPA 启动电脑上面的 SAPGUI，然后等待5秒后，关闭 SAPGUI

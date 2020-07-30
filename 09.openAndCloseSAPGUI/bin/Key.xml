@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doc>
+	<Identification>
+		<Version Value="2.0.2.131"/>
+	</Identification>
+	<Properties>
+		<Property Name="projectFile" Value="09.openAndCloseSAPGUI.debug.psc"/>
+		<Property Name="projectVersion" Value="1.0"/>
+		<Property Name="projectName" Value="09.openAndCloseSAPGUI"/>
+		<Property Name="projectId" Value="a5c958ad-a93f-4bf3-af12-7897a27e1087"/>
+		<Property Name="projectDate" Value="30/07/2020"/>
+		<Property Name="projectLabel" Value="09.openAndCloseSAPGUI"/>
+		<Property Name="projectClient" Value="SAP"/>
+		<Property Name="licenceURL" Value=""/>
+		<Property Name="archiveFile" Value=""/>
+		<Property Name="productVersion" Value="2.0.2.131"/>
+		<Property Name="sdkVersion" Value="2.0.2.131"/>
+		<Property Name="exportDate" Value="30/7/2020"/>
+		<Property Name="IsTrial" Value="True"/>
+		<Property Name="validity" Value=""/>
+		<Property Name="cyphering" Value="0"/>
+		<Property Name="compression" Value="1"/>
+	</Properties>
+	<Properties Name="scenario0">
+		<Property Name="appliName" Value="GLOBAL" Type="1"/>
+		<Property Name="scenario" Value="opencloseSAPGUI" Type="1"/>
+		<Property Name="name" Value="" Type="1"/>
+		<Property Name="id" Value="70bcecc9-ec87-4e96-a54e-b42c41be5228" Type="1"/>
+		<Property Name="timeout" Value="600" Type="1"/>
+		<Property Name="task" Value="1" Type="1"/>
+		<Property Name="contextRoot" Value="" Type="1"/>
+		<Property Name="input" Value="" Type="1"/>
+		<Property Name="output" Value="" Type="1"/>
+	</Properties>
+	<Keys Name="scenario0">
+	</Keys>
+	<Properties Name="authentication">
+		<Property Name="result" Value="MIIBJwYJKoZIhvcNAQcCoIIBGDCCARQCAQExDzANBgkqhkiG9w0BAQUFADAvBgkq
+hkiG9w0BBwGgIgQgQwB0AHgAdABEAGUAZgBhAHUAbAB0AE0AYQByAGsAAAAxgcww
+gckCAQEwJDAcMRowGAYDVQQDExFOTyBDRVJUIFNJR05BVFVSRQIEEjRWeDANBgkq
+hkiG9w0BAQUFADAMBggqhkiG9w0DBAUABIGAP2OkZ4hnmbM+dj84tJaIXATDu7ps
+IojUKEPqmEO9gjXJSAEhLJMWSWN0aMG7ABWDRqD4hdrOs3D6WLedTG+Hw2yCJaLI
+B+wftN/234BO6cfrPmV3xIwiil/EULJtfGy29z3DWgR86IgJ6boyqEj36uaiPz/2
+YuGoI4kJ2AbjQAg=
+" Type="1"/>
+	</Properties>
+	<Keys Name="authentication">
+	</Keys>
+	<UpdatePackages>
+	</UpdatePackages>
+	<KeyNames Value="" Type="32771"/>
+	<KeyContent Value="" Type="32771"/>
+	<KeyProps Value="d2f83663b9fb31eb632d2627f073944b" Type="32771"/>
+</doc>

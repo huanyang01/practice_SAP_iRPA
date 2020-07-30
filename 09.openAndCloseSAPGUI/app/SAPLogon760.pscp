@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ConteXtorStudio Version="StudioReco V1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" noNamespaceSchemaLocation="XsdStudio.xsd">
+	<PROCESSUS>
+		<PROCESS Name="GLOBAL" Key="NoKey" Comment="Global Processus">
+			<_DECLAREVAR>
+				<STRUCTUREDON Name="GLOBAL" />
+			</_DECLAREVAR>
+			<SCRIPTS />
+			<RESOURCES />
+		</PROCESS>
+	</PROCESSUS>
+	<APPLICATIONS>
+		<APPLI Name="SAPLogon760" CtxtId="f089abfd-2bda-47a7-a018-369665c4d019" Nature="UIAUTOMATION" TechnoSDK="V3" Sync="0" PendingDelay="0">
+			<CAPTURE Name="APPLI_SAPLogon760_2" CtxtId="1" Techno="UIAutomation" />
+			<SCRIPTS />
+			<CRITERE>
+				<EXE Scan="Full"><![CDATA[SAPLOGON.EXE]]></EXE>
+			</CRITERE>
+			<_DECLAREVAR>
+				<STRUCTUREDON Name="SAPLogon760" />
+			</_DECLAREVAR>
+			<_ECRANS>
+				<PAGE Name="pWindowSAPLogon76" Comment="Window - SAP Logon 760" CtxtId="238b494b-6d5a-43c3-bd54-2062b6f0388d" SubpagesType="Multiple" RefreshMode="Window">
+					<CRITERE>
+						<Name Scan="Full"><![CDATA[SAP Logon 760]]></Name>
+					</CRITERE>
+					<TRACK_EVENTS>
+						<TRACK_EVENT Name="REFRESH(WINDOWOPENED(DESCENDANTS))" />
+					</TRACK_EVENTS>
+					<OBJETS>
+						<OBJET Name="stQ7QPUBLIC_YANGHUAN" CtxtId="28274538-db50-466a-b640-5f487f6ddbb3" SpecIndex="2">
+							<CRITERE>
+								<TAG Name="Text" Scope="All" CapturedPos="1.R0R11R0R1R0R0R0R0R0R3R0">
+									<ATT Name="Name">
+										<VALUE Scan="Full"><![CDATA[Q7Q [PUBLIC]_YANGHUAN_Initial0]]></VALUE>
+									</ATT>
+								</TAG>
+							</CRITERE>
+						</OBJET>
+						<OBJET Name="st_I311414_" CtxtId="a6db76a5-11b1-41bb-97bd-c4831a866ca8" SpecIndex="3">
+							<CRITERE>
+								<TAG Name="Text" Scope="All" CapturedPos="1.R0R11R0R1R0R0R0R0R0R2R0">
+									<ATT Name="Name">
+										<VALUE Scan="Full"><![CDATA[10.173.15.73_I311414_Initial0]]></VALUE>
+									</ATT>
+								</TAG>
+							</CRITERE>
+						</OBJET>
+					</OBJETS>
+					<CAPTURE Name="PAGE_WindowSAPLogon76_2141024_1" Comment="Window - SAP Logon 760" CtxtId="1" Techno="UIAutomation" CapturedPos="1.R0" Timestamp="30/07/2020 21:41:04" MaskRectangle="0|0|1000|1000" />
+				</PAGE>
+			</_ECRANS>
+			<PATH><![CDATA[C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplogon.exe]]></PATH>
+			<ACTIONS />
+			<EVENTS />
+			<SCENARII>
+				<Steps />
+			</SCENARII>
+		</APPLI>
+	</APPLICATIONS>
+</ConteXtorStudio>
