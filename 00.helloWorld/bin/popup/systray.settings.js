@@ -2672,7 +2672,7 @@ var loadSystraySettings = function() {
 		icon: e.item.icon.none,
 		iconSide: e.item.side.right,
 		label: "",
-		placeholder: "Comment",
+		placeholder: GLOBAL.labels.systray.diagnostic.comment,
 		myClass: "agent-systray-textarea",
 		iconStyle: e.item.style.None,
 		inputStyle: e.item.inputStyle.None,

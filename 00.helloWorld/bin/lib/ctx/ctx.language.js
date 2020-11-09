@@ -2821,7 +2821,6 @@ ctx.ajax = (function _CtxAjax() {
     *   * optional user/login management,
     *   * ...,
     *
-    * The syntax and approach are similar to [[http://www.w3schools.com/jquery/ajax_ajax.asp|jQuery ajax() Method]].
     *
     * The function is called with a '**ctx.ajaxParams**' object :
     *

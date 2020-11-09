@@ -148,7 +148,7 @@ var ctx = ( function () {
   * @const
   * @type {string}
   */
-	 var _coreVersion = "2.0.0.173";
+	 var _coreVersion = "2.0.2.131";
 
   // verbs saved anyway
   var _forceSave = {

@@ -168,16 +168,16 @@ function _initHelpButtons() {
 }
 
 function _addDialogBoxes() {
-	_addDialogBoxOnButton("btTenantRestart", GLOBAL.labels.systray.switchTenantText, "OK", GLOBAL.labels.systray.cancel, _onRestartTenant);
-	_addDialogBoxOnButton("btTenantDelete", GLOBAL.labels.systray.deleteTenantText, "OK", GLOBAL.labels.systray.cancel, _onDeleteTenant);
+	_addDialogBoxOnButton("btTenantRestart", GLOBAL.labels.systray.switchTenantText, GLOBAL.labels.buttons.ok, GLOBAL.labels.systray.cancel, _onRestartTenant);
+	_addDialogBoxOnButton("btTenantDelete", GLOBAL.labels.systray.deleteTenantText, GLOBAL.labels.buttons.ok, GLOBAL.labels.systray.cancel, _onDeleteTenant);
 	_initButtonQuitDialogBox();
 	//Dialog box on "Start project" button
-	_createConfirmationDialogBox('restartOnProject', GLOBAL.labels.systray.switchProjectText, 'OK', GLOBAL.labels.systray.cancel, _onSwitchProject, jQueryInsertTypes.APPEND, 'containerProjects');
+	_createConfirmationDialogBox('restartOnProject', GLOBAL.labels.systray.switchProjectText, GLOBAL.labels.buttons.ok, GLOBAL.labels.systray.cancel, _onSwitchProject, jQueryInsertTypes.APPEND, 'containerProjects');
 	//Dialog box on "Stop project" button
-	_createConfirmationDialogBox('switchDefaultProject', GLOBAL.labels.systray.restartOnDefaultProject, 'OK', GLOBAL.labels.systray.cancel, _onDefaultModeItemDialogOKClick, jQueryInsertTypes.APPEND, 'containerProjects');
+	_createConfirmationDialogBox('switchDefaultProject', GLOBAL.labels.systray.restartOnDefaultProject, GLOBAL.labels.buttons.ok, GLOBAL.labels.systray.cancel, _onDefaultModeItemDialogOKClick, jQueryInsertTypes.APPEND, 'containerProjects');
 	//Dialog boxes on "Attended/Unattended" project mode dropdown
-	_createConfirmationDialogBox('manualSwitchProject', GLOBAL.labels.systray.switchToManualProjectSwitchMode, 'OK', GLOBAL.labels.systray.cancel, _onManualSwitchProjectModeDialogOKClick, jQueryInsertTypes.AFTER, 'projectModeSelect');
-	_createConfirmationDialogBox('autoSwitchProject', GLOBAL.labels.systray.switchToAutoProjectSwitchMode, 'OK', GLOBAL.labels.systray.cancel, _onAutoSwitchProjectModeDialogOKClick, jQueryInsertTypes.AFTER, 'projectModeSelect');
+	_createConfirmationDialogBox('manualSwitchProject', GLOBAL.labels.systray.switchToManualProjectSwitchMode, GLOBAL.labels.buttons.ok, GLOBAL.labels.systray.cancel, _onManualSwitchProjectModeDialogOKClick, jQueryInsertTypes.AFTER, 'projectModeSelect');
+	_createConfirmationDialogBox('autoSwitchProject', GLOBAL.labels.systray.switchToAutoProjectSwitchMode, GLOBAL.labels.buttons.ok, GLOBAL.labels.systray.cancel, _onAutoSwitchProjectModeDialogOKClick, jQueryInsertTypes.AFTER, 'projectModeSelect');
 	$('#manualSwitchProject_modal').on('hidden.bs.modal', function () { POPUPS.Systray.projectModeSelect.set(_previousSwitchProjectMode) });
 	$('#autoSwitchProject_modal').on('hidden.bs.modal', function () { POPUPS.Systray.projectModeSelect.set(_previousSwitchProjectMode) });
 }
@@ -361,7 +361,12 @@ function _showMenu(aMenuList, sMenuId) {
 	_currentMenuId = sMenuId || 'root';
 	var aFlatMenuList = _aFlatMenuList;
 	var menuToShow = sMenuId ? _findObjectInArrayById(aFlatMenuList, sMenuId, "id") : null;
-	POPUPS.Systray.itemMainTitle.set(menuToShow && menuToShow.name ? menuToShow.name : GLOBAL.labels.systray.desktopAgent);
+	if (_isStudioMode) {
+		//SAPMLIPA-9742 - In Studio mode: append " - Test Mode" to systray title (only "About", "Projects", "Main" screens)
+		POPUPS.Systray.itemMainTitle.set(menuToShow && menuToShow.name ? menuToShow.name : GLOBAL.labels.systray.desktopAgent + " - " + GLOBAL.labels.systray.testMode);
+	} else {
+		POPUPS.Systray.itemMainTitle.set(menuToShow && menuToShow.name ? menuToShow.name : GLOBAL.labels.systray.desktopAgent);
+	}
 	POPUPS.Systray.projectMenuList.update({ items: null });
 	POPUPS.Systray.projectMenuList.update({ items: sMenuId ? _menuJSONToArray(menuToShow.content) : _menuJSONToArray(aMenuList) });
 	$("#projectMenuList a").click({ flatMenuList: aFlatMenuList }, _onClickMenuItem);
@@ -887,7 +892,7 @@ function _onChangeInSettingsPage() {
 	$("#btSettingsSave").prop('disabled', !bIsSettingsHaveChanged);
 	if (!_isAlreadyChangeInSettingsPage) {
 		$("#btSettingsBack").unbind('click');
-		_addDialogBoxOnButton("btSettingsBack", GLOBAL.labels.systray.unsavedDataLoss, "OK", GLOBAL.labels.systray.cancel, _onClickSettingsBackDialogBoxOKButton);
+		_addDialogBoxOnButton("btSettingsBack", GLOBAL.labels.systray.unsavedDataLoss, GLOBAL.labels.buttons.ok, GLOBAL.labels.systray.cancel, _onClickSettingsBackDialogBoxOKButton);
 		_isAlreadyChangeInSettingsPage = true;
 	}
 	if (!bIsSettingsHaveChanged) {
@@ -976,7 +981,12 @@ function _onShutdownAgentButton() {
 function updateMainMenu(aMenuList) {
 	if (!Array.isArray(aMenuList)) return;
 	_initialMenuList = aMenuList;
-	POPUPS.Systray.itemMainTitle.set(GLOBAL.labels.systray.desktopAgent);
+	if (_isStudioMode) {
+		//SAPMLIPA-9742 - In Studio mode: append " - Test Mode" to systray title (only "About", "Projects", "Main" screens)
+		POPUPS.Systray.itemMainTitle.set(GLOBAL.labels.systray.desktopAgent + " - " + GLOBAL.labels.systray.testMode);
+	} else {
+		POPUPS.Systray.itemMainTitle.set(GLOBAL.labels.systray.desktopAgent);
+	}
 	$("#btMainBack").unbind('click');
 	$("#btMainBack").hide();
 	_showMenuList(_initialMenuList, _isStudioMode, _isDefaultMode);
@@ -1003,7 +1013,7 @@ function updateProjectList(aInputProjectList, sCurrentProjectUid) {
 				id: aInputProjectList[i].packageVersionUid,
 				value: "<b>" + _truncateTextIfOverLength(aInputProjectList[i].name, MAX_PROJECT_LIST_ITEM_STRING_LENTH) + "</b><br/>" + _truncateTextIfOverLength(aInputProjectList[i].environmentClassifier + ' - ' + aInputProjectList[i].version, MAX_PROJECT_LIST_ITEM_STRING_LENTH),
 				myClass: bIsProjectActive ? 'agent-systray-list-group-item-clicked' : '',
-				badge: bIsProjectActive ? "ACTIVE" : null
+				badge: bIsProjectActive ? GLOBAL.labels.systray.active : null
 			});
 		}
 		POPUPS.Systray.projectList.update({ items: aProjectArray });
@@ -1052,7 +1062,7 @@ function updateTenantList(aInputTenantList) {
 				id: aInputTenantList[i].id,
 				value: "<b>" + _truncateTextIfOverLength(aInputTenantList[i].name, MAX_TENANT_LIST_ITEM_STRING_LENTH) + "</b><br/>" + _truncateTextIfOverLength(aInputTenantList[i].url, MAX_TENANT_LIST_ITEM_STRING_LENTH),
 				myClass: aInputTenantList[i].active ? 'agent-systray-list-group-item-clicked' : '',
-				badge: aInputTenantList[i].active ? "ACTIVE" : null
+				badge: aInputTenantList[i].active ? GLOBAL.labels.systray.active : null
 			});
 		}
 	}
@@ -1201,6 +1211,11 @@ function postUpdate() {
 	//In Studio mode: hide 'project switching mode' combobox
 	POPUPS.Systray.btHelpProjectMode.show(!_isStudioMode);
 	POPUPS.Systray.projectModeSelect.show(!_isStudioMode);
+	//SAPMLIPA-9742 - In Studio mode: append " - Test Mode" to systray title (only "About", "Projects", "Main" screens)
+	if (_isStudioMode) {		
+		POPUPS.Systray.itemAboutTitle.set(GLOBAL.labels.systray.about + " - " + GLOBAL.labels.systray.testMode);
+		POPUPS.Systray.itemProjectsTitle.set(GLOBAL.labels.systray.projects + " - " + GLOBAL.labels.systray.testMode);
+	}
 }
 
 function setIsDefaultModeAndUpdateUI(bDefaultMode) {

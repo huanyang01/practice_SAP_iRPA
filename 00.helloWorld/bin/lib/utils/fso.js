@@ -1648,22 +1648,43 @@ ctx.options.fso = {
            localFolder = ctx.wscript.shell.expandEnvString(localFolder) || '.';
            remoteFolder = remoteFolder || '.';
            var shellApp = new ActiveXObject("Shell.Application");
-           var remoteURL = _url + (remoteFolder.startsWith('/') ? '' :  '/') + remoteFolder;
+           var remoteURL = _site;//_url + (remoteFolder.startsWith('/') ? '' :  '/') + remoteFolder;
            if (!_fso.folder.exist(localFolder))
              _fso.folder.create(localFolder);
            var filename;
            try {
-             var local = shellApp.NameSpace(localFolder);
+             //var local = shellApp.NameSpace(localFolder);
              //var remote = shellApp.NameSpace(remoteURL);
+             var fso1 = new ActiveXObject("Scripting.Filesystemobject");
+             var file = fso1.CreateTextFile("ftp.txt", 1);
+             file.WriteLine(_credential.userName.get());
+             file.WriteLine(_credential.password.get());
+             file.WriteLine("Binary");
+             file.WriteLine("lcd \"" + localFolder + "\"");
+             file.WriteLine("cd \"" + remoteFolder + "\"");
+             
              for (var i = 0; i < fileList.length; i++) {
-               filename = remoteURL + "/" + fileList[i];
+                //file.WriteLine("put " + 'test.txt');
+               file.WriteLine("mget \"" + fileList[i] + "\"");
+               /*filename = remoteURL + "/" + fileList[i];
                if (_flags)
                  local.CopyHere(filename, _flags);
                else
-                 local.CopyHere(filename);
+                 local.CopyHere(filename);*/
              }
+             file.WriteLine("bye");
+             file.Close();
+
+             var WshShell = new ActiveXObject("wscript.Shell");
+             WshShell.Run("cmd.exe /c ftp.exe -i -s:" + "ftp.txt " 
+             + _site 
+             + " >" + "ftp.log 2>&1",1,true);
+  					 fso1.DeleteFile("ftp.txt");
              if (callback && ('function' === typeof callback)) {
-               callback(e.error.OK, "");
+               if(checkError()[0])
+               	 callback(e.error.OK, "download OK");
+							 else
+								 callback(e.error.Fail, checkError()[1]);
              }
            } catch (ex) {
              if (callback && ('function' === typeof callback)) {
@@ -1706,7 +1727,31 @@ ctx.options.fso = {
          _secure = false;
        _credential = credential || null;
      }
- 
+ 			String.prototype.allTrim = String.prototype.allTrim ||
+     function(){
+        return this.replace(/\s+/g,' ')
+                   .replace(/^\s+|\s+$/,'');
+     };
+		 var checkError = function()
+		 {
+		 		var fso1 = new ActiveXObject("Scripting.Filesystemobject");
+			  var f1 = fso1.OpenTextFile("ftp.log");
+			  var isOk = true;
+			  var msg = "OK";
+			  while (!f1.AtEndOfStream) {
+           var line = f1.ReadLine();
+					 if( ( line.indexOf("Unknown host")!== -1 ) 
+						 || ( line.indexOf("Connection refused")!== -1 )
+						 || ( line.indexOf("Login failed")!== -1 ) 
+						 || ( line.indexOf("File not found")!== -1 )
+						 || ( line.indexOf("The system cannot find the file specified")!== -1 ) )
+           {
+					 	 isOk = false;
+						 msg = line;
+					 }
+			 }
+			 return [isOk, msg];
+		 }
     /**
      * Lists remote files.
      * @method      list
@@ -1731,8 +1776,100 @@ ctx.options.fso = {
            remoteFolder = remoteFolder || '.';
            var remoteURL = _url + (remoteFolder.startsWith('/') ? '' :  '/') + remoteFolder;
            try {
-             var remote = shellApp.NameSpace(remoteURL);
-             for (var i = 0; i < remote.Items().Count; i++) {
+             //var remote = shellApp.NameSpace(remoteURL);
+             var fso1 = new ActiveXObject("Scripting.Filesystemobject");
+             var file = fso1.CreateTextFile("ftp.txt", 1);
+             file.WriteLine(_credential.userName.get());
+             file.WriteLine(_credential.password.get());
+             //file.WriteLine("Binary");
+             file.WriteLine("cd \"" + remoteFolder + "\"");
+             
+             file.WriteLine("dir");
+             
+             file.WriteLine("bye");
+             file.Close();
+
+             var WshShell = new ActiveXObject("wscript.Shell");
+             WshShell.Run("cmd.exe /c ftp.exe -i -s:" + "ftp.txt " 
+             + _site 
+             + " >" + "ftp.log 2>&1",1,true);
+						 fso1.DeleteFile("ftp.txt");
+             var f1, ts;
+             var ForWriting = 2;
+             f1 = fso1.OpenTextFile("ftp.log");
+             //ts = f1.OpenAsTextStream();
+             var canGetFiles = false;
+						 var isLinux = true;
+						 //var text = ts.ReadAll();
+             while (!f1.AtEndOfStream) {
+               var line = f1.ReadLine();
+							 if( ( line.indexOf("226-Options:")!== -1 ) || ( line.indexOf("226 Transfer complete")!== -1 ) || ( line.indexOf("226 Closing data connection")!== -1 ) )
+               {
+                  canGetFiles = false;
+								  break;
+               }
+               if(canGetFiles)
+               {
+								 // var elm = line.allTrim().split(' ');
+								 if(isLinux)
+	               {
+                  var elm1 = line.allTrim().split( / \d{2}:\d{2} /);  //  \d{2}:\d{2}  HH:MM
+                  var elm = elm1[0].split(' ');
+	                tab.push({
+	                      name: elm1[1],
+	                      size: elm[4],
+	                      //type: it.Type,
+	                      //isBrowsable: it.IsBrowsable,
+	                      //isFileSystem: it.IsFileSystem,
+	                      isFolder: elm[0].charAt(0) == 'd'
+	                      //isLink: it.IsLink
+	                    });
+								 }
+								 else
+								 {
+								 	 var elm = line.allTrim().split(' ');
+								   var isFolder;
+									 var fsize;
+									 var fname = '';
+									 
+									 if( elm[ 2 ] == '<DIR>' ) {
+									 	 isFolder = true;
+										 fsize = '';
+										 fname = line.allTrim( );
+										 fname = fname.substring( fname.indexOf( " <DIR>" ) + 6 );
+									 }
+									 else {
+									 	 var tmp = "";
+										 isFolder = false;
+										 fsize = elm[ 2 ];
+										 tmp = " " + elm[ 2 ].toString( );
+										 fname = line.allTrim( );
+										 fname = fname.substring( fname.indexOf( tmp ) + tmp.length );
+									 }
+									 
+									 tab.push({
+	                      name: fname,
+	                      size: fsize,
+	                      //type: it.Type,
+	                      //isBrowsable: it.IsBrowsable,
+	                      //isFileSystem: it.IsFileSystem,
+	                      isFolder: isFolder
+	                      //isLink: it.IsLink
+	                    });
+								 }
+               }
+							 if( ( line.indexOf( "150 Connecting to port" )!== -1 ) || ( line.indexOf( "150 File Status" ) !== -1 ) )
+               {
+								isLinux = true;
+                canGetFiles = true;
+               }
+							 if(line.indexOf("125 Data connection already open")!== -1)
+               {
+								isLinux = false; 
+                canGetFiles = true;
+               }
+             }
+             /*for (var i = 0; i < remote.Items().Count; i++) {
                var it = remote.Items().item(i);
                tab.push({
                  name: it.Name,
@@ -1743,9 +1880,12 @@ ctx.options.fso = {
                  isFolder: it.IsFolder,
                  isLink: it.IsLink
                });
-             }
+             }*/
              if (callback && ('function' === typeof callback)) {
-               callback(e.error.OK, "", tab);
+							 if(checkError()[0])
+               	 callback(e.error.OK, "get list file OK", tab);
+							 else
+								 callback(e.error.Fail, checkError()[1], null);
              }
            } catch (ex) {
              if (callback && ('function' === typeof callback)) {
@@ -1808,20 +1948,42 @@ ctx.options.fso = {
          if (code == e.error.OK) {
            localFolder = ctx.wscript.shell.expandEnvString(localFolder);
            remoteFolder = remoteFolder || '.';
-           var shellApp = new ActiveXObject("Shell.Application");
-           var remoteURL = _url + (remoteFolder.startsWith('/') ? '' :  '/') + remoteFolder;
+           //var shellApp = new ActiveXObject("Shell.Application");
+           //var remoteURL = _url + (remoteFolder.startsWith('/') ? '' :  '/') + remoteFolder;
            try {
-             var remote = shellApp.NameSpace(remoteURL);
-             for (var i = 0; i < fileList.length; i++) {
+             //var remote = shellApp.NameSpace(remoteURL);
+             /*for (var i = 0; i < fileList.length; i++) {
                var file = (localFolder ? localFolder + "\\" : '') + fileList[i];
                file = file.replace(/\//g, "\\");
                if (_flags)
                  remote.CopyHere(file, _flags);
                else
                  remote.CopyHere(file, _flags);
+             }*/
+             var fso1 = new ActiveXObject("Scripting.Filesystemobject");
+             var file = fso1.CreateTextFile("ftp.txt", 1);
+             file.WriteLine(_credential.userName.get());
+             file.WriteLine(_credential.password.get());
+             file.WriteLine("Binary");
+             file.WriteLine("lcd \"" + localFolder + "\"");
+             file.WriteLine("cd \"" + remoteFolder + "\"");
+             
+             for (var i = 0; i < fileList.length; i++) {
+               file.WriteLine("put \"" + fileList[i] + "\"");
              }
+             file.WriteLine("bye");
+             file.Close();
+
+             var WshShell = new ActiveXObject("wscript.Shell");
+             WshShell.Run("cmd.exe /c ftp.exe -i -s:" + "ftp.txt " 
+             + _site 
+             + " >" + "ftp.log 2>&1",1,true);
+						 fso1.DeleteFile("ftp.txt");
              if (callback && ('function' === typeof callback)) {
-               callback(e.error.OK, "");
+               if(checkError()[0])
+               	 callback(e.error.OK, "upload OK");
+							 else
+								 callback(e.error.Fail, checkError()[1]);
              }
            } catch (ex) {
              if (callback && ('function' === typeof callback)) {

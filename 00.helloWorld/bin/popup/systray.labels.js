@@ -87,6 +87,8 @@
 		switchToManualProjectSwitchMode : { _comment:"Switch from automatic to manual mode", _type:"XBUT", en:"You are currently in Background mode (unattended). If you switch to Interactive mode (attended), only the projects you will manually start will be executed. Do you wish to continue?" },
 		switchToAutoProjectSwitchMode : { _comment:"Switch from manual to automatic mode", _type:"XBUT", en:"You are currently in Interactive mode (attended). If you switch to Background mode (unattended), projects may be executed automatically  on your machine without any notification. Do you wish to continue?" },
 		tenantNameNotUnique: { _comment:"Tenant name is not unique", _type:"XFLD", en:"Tenant name is not unique" },
-		tenantNameNoSpecialCharacters: { _comment:"Tenant name must not contain special characters", _type:"XFLD", en:"Tenant name must not contain special characters" }
+		tenantNameNoSpecialCharacters: { _comment:"Tenant name must not contain special characters", _type:"XFLD", en:"Tenant name must not contain special characters" },
+		testMode: { _comment:"Test Mode", _type:"XFLD", en:"Test Mode" },
+    active: { _comment:"ACTIVE", _type:"XFLD", en:"ACTIVE" }
 	}
 });

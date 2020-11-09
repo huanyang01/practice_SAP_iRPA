@@ -1,4 +1,4 @@
-﻿<Flowchart mc:Ignorable="sap sap2010 sads" DisplayName="HelloWorldFlow" sap2010:WorkflowViewState.IdRef="Flowchart_1" StartNode="{x:Reference __ReferenceID0}"
+﻿<Flowchart mc:Ignorable="sap sap2010 sads" DisplayName="HelloWorldFlow" sap2010:WorkflowViewState.IdRef="Flowchart_1" StartNode="{x:Reference __ReferenceID1}"
  xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
  xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
  xmlns:c="clr-namespace:CxFrameworkWPF;assembly=CxFrameworkWPF"
@@ -8,7 +8,7 @@
  xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
  xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-  <FlowStep x:Name="__ReferenceID0" sap2010:WorkflowViewState.IdRef="FlowStep_1">
+  <FlowStep x:Name="__ReferenceID1" sap2010:WorkflowViewState.IdRef="FlowStep_1">
     <c:SnippetActivity ActivityType="SnippetActivity" CtxtId="482dca14-6d4f-40d8-b5a1-3d08199d34e5" DisplayName="Display msgbox 'HelloWorldMessagebox'" sap2010:WorkflowViewState.IdRef="SnippetActivity_1">
       <c:SnippetActivity.CustomData>
         <x:String x:Key="SnippetId">messagebox_open</x:String>
@@ -20,7 +20,20 @@
         <x:String x:Key="message">Hello to intelligent RPA world</x:String>
       </c:SnippetActivity.CustomData>
     </c:SnippetActivity>
+    <FlowStep.Next>
+      <FlowStep x:Name="__ReferenceID0" sap2010:WorkflowViewState.IdRef="FlowStep_2">
+        <c:SnippetActivity ActivityType="SnippetActivity" CtxtId="90c094d7-a791-47d8-a6e3-4ff8f21c87d7" DisplayName="Write log" sap2010:WorkflowViewState.IdRef="SnippetActivity_2">
+          <c:SnippetActivity.CustomData>
+            <x:String x:Key="SnippetId">log_2</x:String>
+            <x:String x:Key="Description">Add a message to the log file and in the debug window along with a severity level.</x:String>
+            <x:String x:Key="level">Info</x:String>
+            <x:String x:Key="message">&lt;EXP&gt;&lt;![CDATA['Hello World, iRPA']]&gt;&lt;/EXP&gt;</x:String>
+          </c:SnippetActivity.CustomData>
+        </c:SnippetActivity>
+      </FlowStep>
+    </FlowStep.Next>
   </FlowStep>
+  <x:Reference>__ReferenceID0</x:Reference>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
       <sap2010:ViewStateData Id="SnippetActivity_1" sap:VirtualizedContainerService.HintSize="254,26">
@@ -30,11 +43,27 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="SnippetActivity_2" sap:VirtualizedContainerService.HintSize="154,26">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="FlowStep_2">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">265.855,203.5</av:Point>
+            <av:Size x:Key="ShapeSize">154,26</av:Size>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
       <sap2010:ViewStateData Id="FlowStep_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <av:Point x:Key="ShapeLocation">215.855,127.5</av:Point>
             <av:Size x:Key="ShapeSize">254,26</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">342.855,153.5 342.855,203.5</av:PointCollection>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
@@ -50,5 +79,5 @@
       </sap2010:ViewStateData>
     </sap2010:ViewStateManager>
   </sap2010:WorkflowViewState.ViewStateManager>
-  <sads:DebugSymbol.Symbol>d0dDOlxHaXRIdWJccHJhY3RpY2VfU0FQX2lSUEFcMDAuaGVsbG9Xb3JsZFx3b3JrZmxvd3NcaGVsbG93b3JsZGZsb3cueGFtbAIBATYNAQEMBRYZAQI=</sads:DebugSymbol.Symbol>
+  <sads:DebugSymbol.Symbol>d0dDOlxHaXRIdWJccHJhY3RpY2VfU0FQX2lSUEFcMDAuaGVsbG9Xb3JsZFx3b3JrZmxvd3NcaGVsbG93b3JsZGZsb3cueGFtbAMBAVMNAQEMBRYZAQMZCSAdAQI=</sads:DebugSymbol.Symbol>
 </Flowchart>

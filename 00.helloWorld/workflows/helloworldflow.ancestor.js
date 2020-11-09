@@ -28,7 +28,8 @@ GLOBAL.scenario({ HelloWorldFlow: function(ev, sc) {
 	sc.setScenarioTimeout(600000); // Default timeout for global scenario.
 	sc.onError(function(sc, st, ex) { sc.endScenario(); }); // Default error handler.
 	sc.onTimeout(30000, function(sc, st) { sc.endScenario(); }); // Default timeout handler for each step.
-	sc.step(GLOBAL.steps.Display_msgbox_Hello);
+	sc.step(GLOBAL.steps.Display_msgbox_Hello, GLOBAL.steps.Write_log);
+	sc.step(GLOBAL.steps.Write_log, null);
 }}, ctx.dataManagers.rootData).setId('95837d18-f39d-48ab-8f4d-5874fa8c9f94') ;
 
 // ----------------------------------------------------------------
@@ -44,7 +45,19 @@ GLOBAL.step({ Display_msgbox_Hello: function(ev, sc, st) {
 	// Wait until the end user closes the popup.
 	HelloWorldMessagebox.waitResult(function(res) {
 	// End user has closed the popup, continue monitoring.
-		sc.endStep(); // end Scenario
+		sc.endStep(); // Write_log
 		return;
 	});
+}});
+
+// ----------------------------------------------------------------
+//   Step: Write_log
+// ----------------------------------------------------------------
+GLOBAL.step({ Write_log: function(ev, sc, st) {
+	var rootData = sc.data;
+	ctx.workflow('HelloWorldFlow', '90c094d7-a791-47d8-a6e3-4ff8f21c87d7') ;
+	// Add a message to the log file and in the debug window along with a severity level.
+	ctx.log('Hello World, iRPA', e.logIconType.Info);
+	sc.endStep(); // end Scenario
+	return;
 }});

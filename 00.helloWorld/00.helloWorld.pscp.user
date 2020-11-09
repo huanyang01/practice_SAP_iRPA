@@ -4,9 +4,12 @@
 	<BOOKMARKS />
 	<FINDHISTORY />
 	<DEBUGTRACEFINDHISTORY />
-	<OPENDOCS />
+	<OPENDOCS>
+		<OPENDOC LineNumber="-1" SearchPath="PROCESS[@Name='GLOBAL']/WORKFLOWS/WORKFLOW[@Name='HelloWorldFlow']" Offset="0" Length="0"><![CDATA[madata]]></OPENDOC>
+	</OPENDOCS>
 	<PROPERTIES>
-		<CurPerspective><![CDATA[-1]]></CurPerspective>
+		<CurPerspective><![CDATA[0]]></CurPerspective>
+		<DebugTester><![CDATA[]]></DebugTester>
 	</PROPERTIES>
 	<WATCHES />
 	<APPLIFILTERS />

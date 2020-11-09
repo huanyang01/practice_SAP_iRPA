@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ConteXtorStudio Version="Desktop Studio 2.0.0.173" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="XsdStudio.xsd">
+<ConteXtorStudio Version="Desktop Studio 2.0.0.173" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" noNamespaceSchemaLocation="XsdStudio.xsd">
 	<UpdatePackages />
 	<Evolutions>
 		<Evolution Version="1.0" Date="7/18/2020"><![CDATA[Project creation]]></Evolution>
@@ -9,10 +9,10 @@
 		<PROCESS Name="GLOBAL" Key="NoKey" Comment="Global Processus" CtxtId="5564f25f-064c-4d86-8557-c87c2b032935">
 			<_DECLAREVAR>
 				<STRUCTUREDON Name="GLOBAL">
-					<OBJDON Name="PrjVersion">1.0</OBJDON>
+					<OBJDON Name="PrjVersion">1.1</OBJDON>
 					<OBJDON Name="PrjClient"><![CDATA[HelloWorld]]></OBJDON>
 					<OBJDON Name="PrjName">00.helloWorld</OBJDON>
-					<OBJDON Name="PrjDate">7/18/2020</OBJDON>
+					<OBJDON Name="PrjDate">18/07/2020</OBJDON>
 					<OBJDON Name="PrjLabel"><![CDATA[00.helloWorld]]></OBJDON>
 					<OBJDON Name="PrjComment"><![CDATA[My first intelligent RPA project]]></OBJDON>
 					<OBJDON Name="LicenceURL" />
@@ -92,7 +92,9 @@
 		</PROCESS>
 		<PROCESS Name="POPUPS" CtxtId="fecc2d93-7581-463f-a9f9-f28411f6e127" Nature="POPUP">
 			<SCRIPTS />
-			<SCENARII />
+			<SCENARII>
+				<Steps />
+			</SCENARII>
 			<ACTIONS />
 			<EVENTS />
 			<_DECLAREVAR>

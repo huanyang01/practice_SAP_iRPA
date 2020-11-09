@@ -833,7 +833,8 @@ div#tableJobProgress_content, div#tableJobDetails_content {
     text-align: center;
     background-color: #fff;
     border-radius: 0px;
-	border: 1px solid black;
+    border: 1px solid black;
+    white-space: nowrap;
 }
 
 

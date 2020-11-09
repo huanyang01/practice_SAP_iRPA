@@ -587,7 +587,7 @@ var _updateEnvironmentListLegacy = function (availableEnvironmentList, bStudioMo
 var _openPopupOnPosition = function (x, y, edge) {
   var XRelative;
   var YRelative;
-  switch (edge) {
+  /* switch (edge) {
     case 'TOP':
     {
       XRelative = e.popup.position.Center;
@@ -613,11 +613,11 @@ var _openPopupOnPosition = function (x, y, edge) {
       YRelative = e.popup.position.Top;
       break;
     }
-  }
+  } */
   _popup.open({
     visible: true,
-    XRelative: XRelative,
-    YRelative: YRelative,
+    XRelative: e.popup.position.Center,
+    YRelative: e.popup.position.Center,
     X : x,
     Y : y
   });

@@ -12,8 +12,8 @@
  *
  * // :!: __Caution:__ this page is auto-generated from source code and should not be modified from wiki application.//
  *
- * @author      Contextor R&D team
- * @copyright   © 2003-2019 SAP
+ * @author      SAP MLIRPA team
+ * @copyright   © 2003-2020 SAP
  */
 
 /**
@@ -37,15 +37,15 @@ ctx.options.sapui5 = {
     * @default     false
     * @path        ctx.options.sapui5.traceLevel
    */
-    useRecordReplayForExecution: false, 
-   
+    useRecordReplayForExecution: false,
+
    /**
     * Use recordReplay API to manage busy status of a page
     * @ignore
     * @property    {boolean} useWaitForUI5
     * @default     true
     * @path        ctx.options.sapui5.useWaitForUI5
-    */    
+    */
     useWaitForUI5: true,
 
    /**
@@ -63,7 +63,7 @@ ctx.options.sapui5 = {
     * @property    {boolean} ui5MinorVersionSupported
     * @default     61
     * @path        ctx.options.sapui5.ui5MinorVersionSupported
-    */    
+    */
     ui5MinorVersionSupported: 61,
 
    /**
@@ -72,7 +72,7 @@ ctx.options.sapui5 = {
     * @property    {boolean} ui5MinorVersionSupported
     * @default     0
     * @path        ctx.options.sapui5.ui5MinorVersionSupported
-    */    
+    */
     ui5PatchVersionSupported: 0,
 
    /**
@@ -81,7 +81,7 @@ ctx.options.sapui5 = {
     * @property    {boolean} timeoutReady
     * @default     5000
     * @path        ctx.options.sapui5.timeoutReady
-    */    
+    */
     timeoutReady: 5000,
 
    /**
@@ -90,88 +90,9 @@ ctx.options.sapui5 = {
     * @property    {boolean} timeoutReadyRRAPI
     * @default     15000
     * @path        ctx.options.sapui5.timeoutReadyRRAPI
-    */       
+    */
     timeoutReadyRRAPI: 15000
 };
-
-///**
-//* Class to sap.ui.core.Item
-//* @class ctx.SAPUI5.sap.ui.core.Item
-//* @path ctx.SAPUI5.sap.ui.core.Item
-//* @constructor
-//*/
-//function Type(type) {
-//	this.type = type;
-//}
-//function Item(type) {
-//	Type.call(this, type);
-//  /** class type
-//  * @ignore
-//  * @const
-//  * @path ctx.SAPUI5.Item.text
-//  * @property {string} */ this.text = undefined;
-//	/** class type
-//	* @ignore
-//  * @const
-//  * @path ctx.SAPUI5.Item.key
-//  * @property {string} */ this.key = undefined;
-//}
-///**
-//* Class to sap.ui.core.Item
-//* @class ctx.SAPUI5.sap.ui.core.Item
-//* @path ctx.SAPUI5.sap.ui.core.Item
-//* @constructor
-//*/
-//function UiItem() {
-//	Item.call(this, 'sap.ui.core.Item');
-//}
-
-///**
-//* Class to sap.ui.unified.CalendarAppointment
-//* @class ctx.SAPUI5.sap.ui.unified.CalendarAppointment
-//* @path ctx.SAPUI5.sap.ui.unified.CalendarAppointment
-//* @constructor
-//*/
-
-//function CalendarAppointment() {
-//	Item.call(this, 'sap.ui.unified.CalendarAppointment');
-//	/** class type
-//  * @ignore
-//  * @const
-//  * @path ctx.SAPUI5.sap.ui.unified.CalendarAppointment.title
-//  * @property {string} */ this.title = undefined;
-//  /** class type
-//  * @ignore
-//  * @const
-//  * @path ctx.SAPUI5.sap.ui.unified.CalendarAppointment.endDate
-//  * @property {Date} */ this.endDate = undefined;
-//	/** class type
-//	* @ignore
-//  * @const
-//  * @path ctx.SAPUI5.sap.ui.unified.CalendarAppointment.startDate
-//  * @property {Date} */ this.startDate = undefined;
-//}
-//function Token() {
-//	Item.call(this, 'sap.m.Token');
-//}
-//function NavigationListItem() {
-//	Item.call(this, 'sap.tnt.NavigationListItem');
-//}
-//function SegmentedButtonItem() {
-//	Item.call(this, 'sap.m.SegmentedButtonItem');
-//}
-//function UploadCollectionItem() {
-//	Item.call(this, 'sap.m.UploadCollectionItem');
-//}
-
-//function TAccountItem() {
-//	ctx.SAPUI5.Item.call(this, 'sap.suite.ui.commons.taccount.TAccountItem');
-//	/** class type
-//  * @ignore
-//  * @const
-//  * @path ctx.SAPUI5.sap.suite.ui.commons.taccount.value
-//  * @property {number} */ this.account = undefined;
-//}
 
 /**
  * @ignore
@@ -192,7 +113,7 @@ ctx.apiui5 = {
 	callFunc: function(item, funcName, args){
 		var desc = item.getObjectDescriptor();
     ctx.noNotify = true;
-		
+
 		var timeout = item.parent.getPageWaitReadyTimeout();
     ctx.noNotify = true;
     var res = item.execScript('SAPUI5CallFunction', args, funcName, timeout);
@@ -213,15 +134,15 @@ ctx.apiui5 = {
 		var desc = item.getObjectDescriptor();
 		var timeout = item.parent.getPageWaitReadyTimeout();
     ctx.noNotify = true;
-		
+
 		var currentValue = ctx.options.sapui5.useRecordReplayForExecution;
-		
+
 		var RRStatus = item.execScript('SAPUi5RecordReplayStatus', timeout);
 		ctx.options.sapui5.useRecordReplayForExecution = (RRStatus === "true");
 
 		if(item.customType == 'SAPUI5.tablerow'){
 				ctx.options.sapui5.useRecordReplayForExecution = true;
-		}	
+		}
 		var sFuncName =  ctx.options.sapui5.useRecordReplayForExecution ? 'SAPUI5ButtonClickRRAPI' : 'SAPUI5ButtonClick';
 		if(item.customType === 'SAPUI5.toggleButton' && sFuncName === 'SAPUI5ButtonClick'){
       sFuncName = 'SAPUI5ToggleClick';
@@ -329,13 +250,13 @@ ctx.apiui5 = {
     if ((typeof value === 'undefined') || (ifDefined && (!value)) || (testExist && (!item.exist()))) {
       return '';
     }
-		
+
     var timeout = item.parent.getPageWaitReadyTimeout();
     ctx.noNotify = true;
 		var res;
-		
+
 		var currentValue = ctx.options.sapui5.useRecordReplayForExecution;
-		
+
 		var RRStatus = item.execScript('SAPUi5RecordReplayStatus', value, timeout);
 		ctx.options.sapui5.useRecordReplayForExecution = (RRStatus === "true");
 		if (ctx.options.sapui5.useRecordReplayForExecution) {
@@ -344,7 +265,7 @@ ctx.apiui5 = {
 			switch (item.customType) {
 				case 'SAPUI5.input' :
 					res = item.execScript('SAPUI5InputSet', value, timeout);
-					break;	
+					break;
 				default:
 					res = item.execScript('SAPUI5CallFunction', [value], 'setValue', timeout);
 					break;
@@ -402,14 +323,14 @@ ctx.apiui5 = {
    */
 	setRange : function(item, min, max, testExist, ifDefined) {
 
-    if ((typeof min === 'undefined') || (typeof max === 'undefined') 
+    if ((typeof min === 'undefined') || (typeof max === 'undefined')
 			|| (ifDefined && (!min) && (!max)) || (testExist && (!item.exist()))) {
       return '';
     }
 		var range = [min, max];
 		var value = [range];
     return ctx.apiui5.callFunc(item, 'setRange', value);
-  },		
+  },
 	/**
    * Call the api ui5 control method.
 	 * @description
@@ -534,25 +455,6 @@ ctx.apiui5 = {
 	 * @description
    *  <wrap help> //Example://</wrap>
    *  <code javascript> </code>
-   * @method fireRegionClick
-   * @path   ctx.apiui5.fireRegionClick
-	 * @param {Object} item
-	 * @param {string} value value to be set
-   * @param {boolean} [testExist] if true, test existence before setting value
-   * @param {boolean} [ifDefined] if true, set value only if defined
-	 * @return {string} result value
-   */
-//	fireRegionClick : function(item, value, testExist, ifDefined) {
-//    if ((typeof value === 'undefined') || (ifDefined && (!value)) || (testExist && (!item.exist()))) {
-//      return '';
-//    }
-//    return ctx.apiui5.callFunc(item, 'fireRegionClick', [value]);
-//  },
-	/**
-   * Call the api ui5 control method.
-	 * @description
-   *  <wrap help> //Example://</wrap>
-   *  <code javascript> </code>
    * @method clearSelection
    * @path   ctx.apiui5.clearSelection
 	 * @param {Object} item
@@ -658,24 +560,6 @@ ctx.apiui5 = {
     }
     return ctx.apiui5.callFunc(item, 'getItems', ['']);
   },
-	/**
-   * Call the api ui5 control method.
-	 * @description
-   *  <wrap help> //Example://</wrap>
-   *  <code javascript> </code>
-   * @method getRegions
-   * @path   ctx.apiui5.getRegions
-	 * @param {Object} item
-	 * @param {boolean} [testExist] if true, test existence before setting value
-   * @param {boolean} [ifDefined] if true, set value only if defined
-	 * @return {string} result value
-   */
-//	getRegions : function(item, testExist, ifDefined) {
-//    if ((testExist && (!item.exist()))) {
-//      return '';
-//    }
-//    return ctx.apiui5.callFunc(item, 'getRegions', ['']);
-//  },
 	/**
    * Call the api ui5 control method.
 	 * @description
@@ -794,27 +678,6 @@ ctx.apiui5 = {
 		data.type = "sap.tnt.NavigationListItem";
     return ctx.apiui5.callFunc(item, 'addItem', [data]);
   },
-	/**
-   * Call the api ui5 control method.
-   * @description
-   *  <wrap help> //Example://</wrap>
-   *  <code javascript> </code>
-   * @method addUploadCollectionItem
-   * @path   ctx.apiui5.addUploadCollectionItem
-	 * @param {Object} item
-	 * @param {string} data value to be set
-   * @param {boolean} [testExist] if true, test existence before setting value
-   * @param {boolean} [ifDefined] if true, set value only if defined
-	 * @return {string} result value
-   */
-//	addUploadCollectionItem : function(item, data, testExist, ifDefined) {
-//    if ((typeof data === 'undefined') || (ifDefined && (!data)) || (testExist && (!item.exist()))) {
-//      return '';
-//    }
-//		data.type = "sap.m.UploadCollectionItem";
-//    return ctx.apiui5.callFunc(item, 'addItem', [data]);
-//  },
-	
 	/**
 	* Call the api ui5 control method.
 	* @description
@@ -957,7 +820,7 @@ ctx.apiui5 = {
 		data.type = "sap.suite.ui.commons.taccount.TAccountItem";
     return ctx.apiui5.callFunc(item, 'addCredit', [data]);
   },
-	
+
 	/**
    * Call the api ui5 control method.
    * @description
@@ -976,7 +839,7 @@ ctx.apiui5 = {
     }
     return ctx.apiui5.callFunc(item, 'getValue', ['']);
   },
-	
+
 	/**
    * Call the api ui5 control method.
    * @description
@@ -996,7 +859,7 @@ ctx.apiui5 = {
     }
     return ctx.apiui5.callFunc(item, 'setValue', [data]);
   },
-	
+
 	/**
    * Call the api ui5 control method.
    * @description
@@ -1015,7 +878,7 @@ ctx.apiui5 = {
     }
     return ctx.apiui5.callFunc(item, 'getSubheader', ['']);
   },
-	
+
 	/**
    * Call the api ui5 control method.
    * @description
@@ -1035,7 +898,7 @@ ctx.apiui5 = {
     }
     return ctx.apiui5.callFunc(item, 'setSubheader', [data]);
   },
-	
+
 	/**
    * Call the api ui5 control method.
    * @description
@@ -1055,7 +918,7 @@ ctx.apiui5 = {
     }
     return ctx.apiui5.callFunc(item, 'setContentText', [data]);
   },
-	
+
 	/**
    * Call the api ui5 control method.
    * @description
@@ -1074,7 +937,7 @@ ctx.apiui5 = {
     }
     return ctx.apiui5.callFunc(item, 'getAltText', ['']);
   },
-	
+
 	/**
    * Call the api ui5 control method.
    * @description
@@ -1111,7 +974,7 @@ ctx.apiui5 = {
     }
 		return ctx.apiui5.callFunc(item, 'previous', ['']);
   },
-	
+
 	/**
    * Call the api ui5 control method.
    * @description
@@ -1131,7 +994,7 @@ ctx.apiui5 = {
     ctx.notifyAction('MultiComboboxSelectItems', res, desc);
     return res;
   },
-  
+
   /**
    * Call the api ui5 control method.
    * @description
@@ -1167,7 +1030,131 @@ ctx.apiui5 = {
     var res = item.execScript('MultiComboboxGetSelectedItems', timeout);
     ctx.notifyAction('getSelectedItems', res, desc);
     return res;
-  }
+  },
+ /**
+   * Call the api ui5 control method.
+	 * @description
+   *  <wrap help> //Example://</wrap>
+   *  <code javascript> </code>
+   * @method removeAllTokens
+   * @path   ctx.apiui5.removeAllTokens
+	 * @param {Object} item
+	 * @param {boolean} [testExist] if true, test existence before setting value
+   * @param {boolean} [ifDefined] if true, set value only if defined
+	 * @return {string} result value
+   */
+  removeAllTokens : function(item, testExist, ifDefined) {
+    if ((testExist && (!item.exist()))) {
+      return '';
+    }
+    return ctx.apiui5.callFunc(item, 'removeAllTokens', ['']);
+  },
+/**
+   * Call the api ui5 control method.
+   * @description
+   *  <wrap help> //Example://</wrap>
+   *  <code javascript> </code>
+   * @method selectItems
+   * @path   ctx.apiui5.selectItemByValue
+   * @param {Object} [item] items
+   * @param {Object} [values] values
+   * @return {string} result value
+   */
+  selectItemByValue: function(item, data, testExist, ifDefined){
+    if ((typeof data === 'undefined') || (ifDefined && (!data)) || (testExist && (!item.exist()))) {
+      return '';
+    }
+    var desc = item.getObjectDescriptor();
+    var timeout = item.parent.getPageWaitReadyTimeout();
+    ctx.noNotify = true;
+    var res = item.execScript('SAPUI5ComboboxSelectItemByValue', data, timeout);
+    ctx.notifyAction('SAPUI5ComboboxSelectItemByValue', res, desc);
+    return res;
+  },
+/**
+   * Call the api ui5 control method.
+   * @description
+   *  <wrap help> //Example://</wrap>
+   *  <code javascript> </code>
+   * @method selectItems
+   * @path   ctx.apiui5.removeToken
+   * @param {Object} [item] items
+   * @param {Object} [values] values
+   * @return {string} result value
+   */
+  removeToken: function(item, data, testExist, ifDefined){
+    if ((typeof data === 'undefined') || (ifDefined && (!data)) || (testExist && (!item.exist()))) {
+      return '';
+    }
+    var desc = item.getObjectDescriptor();
+    var timeout = item.parent.getPageWaitReadyTimeout();
+    ctx.noNotify = true;
+    var res = item.execScript('SAPUI5MultiInputRemoveToken', data, timeout);
+    ctx.notifyAction('SAPUI5MultiInputRemoveToken', res, desc);
+    return res;
+  },
+  /**
+   * Call the api ui5 control method.
+   * @description
+   *  <wrap help> //Example://</wrap>
+   *  <code javascript> </code>
+   * @method getEnable
+   * @path   ctx.apiui5.getEnable
+   * @param {Object} item
+   * @param {boolean} [testExist] if true, test existence before setting value
+   * @return {string} result value
+   */
+    getEnable: function(item,testExist) {
+    	if ((testExist && (!item.exist()))) {
+      		return '';
+    	}
+    	return ctx.apiui5.callFunc(item, 'getEnabled', ['']);
+	},
+	 /**
+   * Call the api ui5 control method.
+   * @description
+   *  <wrap help> //Example://</wrap>
+   *  <code javascript> </code>
+   * @method getToken
+   * @path   ctx.apiui5.getToken
+   * @param {Object} item
+   * @param {boolean} [testExist] if true, test existence before setting value
+   * @return {string} result value
+   */
+		getToken:function(item,testExist) {
+			if ((testExist && (!item.exist()))) {
+		      return '';
+		   }
+		  var desc = item.getObjectDescriptor();
+		  var timeout = item.parent.getPageWaitReadyTimeout();
+		  ctx.noNotify = true;
+		  var res = item.execScript('SAPUI5GetToken', timeout);
+		  ctx.notifyAction('SAPUI5GetToken', res, desc);
+		  return res;
+	}
+}
+/**
+ * @ignore
+ * Common Api for Common SAPUI5 objects
+ * @class ctx.apiui5.common
+ * @path  ctx.apiui5.common
+ */
+ctx.apiui5.common={
+	  /**
+   * Call the api ui5 control method.
+   * @description
+   *  <wrap help> //Example://</wrap>
+   *  <code javascript> </code>
+   * @method get
+   * @path   ctx.apiui5.common.get
+   * @param {Object} item
+   * @return {string} result value
+   */
+	get:function(item){
+		item.get=function(){
+				return ctx.apiui5.callFunc(this, 'getValue', ['']);
+			}
+		}
 }
 /**
  * @ignore
@@ -1225,21 +1212,21 @@ ctx.customTypes.SAPUI5 = {
     function CtxPolyfill() {
       // Polyfill: IE doesn't support closest
       if (!Element.prototype.matches) {
-        Element.prototype.matches = Element.prototype.msMatchesSelector || 
+        Element.prototype.matches = Element.prototype.msMatchesSelector ||
                                     Element.prototype.webkitMatchesSelector;
       }
-      
+
       if (!Element.prototype.closest) {
 				  /**
 				   * @ignore
 				   * closest polyfill for ie
 				   * @method closest
 				   * @param  {string} s Node
-					 * @return 	{Node} 
+					 * @return 	{Node}
 				   */
         Element.prototype.closest = function(s) {
           var el = this;
-      
+
           do {
             if (el.matches(s)) return el;
             el = el.parentElement || el.parentNode;
@@ -1257,12 +1244,12 @@ ctx.customTypes.SAPUI5 = {
 	        evt.initCustomEvent(event, params.bubbles, params.cancelable, params.detail)
 	        return evt
 	      }
-	    
+
 	      CustomEvent.prototype = window['Event']['prototype'];
-	    
+
 	      window['CustomEvent'] = CustomEvent;
 			}
-    }  
+    }
 
     /**
      * @ignore
@@ -1302,8 +1289,9 @@ ctx.customTypes.SAPUI5 = {
     */
     function SAPUI5PageWaitReady(eventName, timeout) {
 			var checkBusy = function(){
+				var coreBusy = false;
 				var isBusy = false;
-				window['sap']['ui'].core.Element.registry.forEach(function(oControl) { 
+				window['sap']['ui'].core.Element.registry.forEach(function(oControl) {
 					try{
 						if(oControl.getBusy() === true)
 						{
@@ -1311,7 +1299,10 @@ ctx.customTypes.SAPUI5 = {
 						}
 					}catch(er){}
 				});
-				if(!isBusy) {
+				if(window['sap']['ui'].core.BusyIndicator.oDomRef){
+					coreBusy = (window['sap']['ui'].core.BusyIndicator.oDomRef.offsetHeight > 0)? true: false;
+				}
+				if(!isBusy && !coreBusy) {
 					clearInterval(checkBusyTimer);
 					checkBusyTimer = false;
 					Contextor.Event(eventName, '', '', '', -1, -1, '');
@@ -1320,10 +1311,10 @@ ctx.customTypes.SAPUI5 = {
 			}
 			var checkBusyTimer = setInterval(function(){ checkBusy() }, 1000);
 			if(timeout && timeout > 1000){
-				setTimeout(function() 
+				setTimeout(function()
 				{
 					if(checkBusyTimer !== false){
-						clearInterval(checkBusyTimer); 
+						clearInterval(checkBusyTimer);
 						return '';
 					}
 				}, timeout);
@@ -1353,7 +1344,7 @@ ctx.customTypes.SAPUI5 = {
         Contextor.Event(eventName, '', '', '', -1, -1, '');
       }
       return '';
-    } 
+    }
 
     /**
      * @ignore
@@ -1361,7 +1352,7 @@ ctx.customTypes.SAPUI5 = {
      */
     function CtxLoadRecordReplay () {
       Contextor.Event('evRecordReplayLoaded', "", "", "", -1, -1, 'notused');
-    } 
+    }
 
     /**
      * @ignore
@@ -1370,7 +1361,7 @@ ctx.customTypes.SAPUI5 = {
      * @param {number} ui5MinVersion Minimal Minor of UI5 supported
      * @param {number} ui5PatchVersion Minimal Patch of UI5 supported
      */
-    function CtxLoadRecordReplayRRAPI (ui5MajVersion, ui5MinVersion, ui5PatchVersion) { 
+    function CtxLoadRecordReplayRRAPI (ui5MajVersion, ui5MinVersion, ui5PatchVersion) {
 
       // SAP UI5 UI Recording support starting at 1.61.0
       var nMajorVersionSupported = 1;
@@ -1381,7 +1372,7 @@ ctx.customTypes.SAPUI5 = {
         nMinorVersionSupported = ui5MinVersion;
         nPatchVersionSupported = ui5PatchVersion;
       }
-      
+
 			var fireEventRecordReplayLoaded = function (loaded) {
 				Contextor.Event('evRecordReplayLoaded', "", "", "", -1, -1, loaded ? 'used': 'notused');
 			};
@@ -1397,7 +1388,7 @@ ctx.customTypes.SAPUI5 = {
         var nPatchVersion = new Number(aVersion[2]);
         return nMajorVersion >= nMajorVersionSupported && nMinorVersion >= nMinorVersionSupported && nPatchVersion >= nPatchVersionSupported;
       }
-    
+
       if (window.recordReplay) {
 				fireEventRecordReplayLoaded(true);
         return;
@@ -1414,7 +1405,7 @@ ctx.customTypes.SAPUI5 = {
       } else {
         fireEventRecordReplayLoaded(false);
       }
-    }   
+    }
 
     /**
      * @ignore
@@ -1444,11 +1435,11 @@ ctx.customTypes.SAPUI5 = {
      */
     function SAPUI5ButtonClick( element , timeout) {
 
-      var oControl = CtxFindUI5Control(element);     
+      var oControl = CtxFindUI5Control(element);
       if (oControl) {
-        try {				 	
+        try {
           oControl.firePress();
-        } catch(oErr) {	
+        } catch(oErr) {
 			SAPUI5ButtonClickDEFAULT(element);
         }
       } else {
@@ -1464,20 +1455,12 @@ ctx.customTypes.SAPUI5 = {
      * @param {number} [timeout] optional Timeout for execution
      */
     function SAPUI5ToggleClick(element, timeout) {
-      var oControl = CtxFindUI5Control(element);     
+      var oControl = CtxFindUI5Control(element);
        try {
 				 if(oControl){
 	 				if(oControl.getEnabled()){
-         /*  var bValue = oControl.getPressed();
-           if (!bValue) {
-             oControl.setPressed('true');
-           }
-           else {
-             oControl.setPressed(''); 
-           }
-           oControl.firePress();*/
-	   oControl.setPressed(!oControl.getPressed()); 
-	   oControl.firePress({ pressed: oControl.getPressed() });					
+					  oControl.setPressed(!oControl.getPressed());
+					  oControl.firePress({ pressed: oControl.getPressed() });
 					}
 	 }
        } catch(oErr) {
@@ -1493,7 +1476,7 @@ ctx.customTypes.SAPUI5 = {
      * @param {number} [timeout] optional Timeout for execution
      */
     function SAPUI5SetPressed(element, value, timeout) {
-      var oControl = CtxFindUI5Control(element);     
+      var oControl = CtxFindUI5Control(element);
        try {
 				 if(oControl){
 					 if(oControl.getEnabled()){
@@ -1517,13 +1500,13 @@ ctx.customTypes.SAPUI5 = {
           interval: 400,
           timeout: timeout
       	}).then(function () {
-							return window['recordReplay']['findControlSelectorByDOMElement']({ domElement: oControl['getDomRef']() });   
+							return window['recordReplay']['findControlSelectorByDOMElement']({ domElement: oControl['getDomRef']() });
          	}).then(function (controlSelector) {
-          	if (controlSelector) {	
-             		return window['recordReplay']['interactWithControl']({interactionType: window['recordReplay']['InteractionType']['Press'], selector: controlSelector}); 	 
+          	if (controlSelector) {
+             		return window['recordReplay']['interactWithControl']({interactionType: window['recordReplay']['InteractionType']['Press'], selector: controlSelector});
            	} else {
             	SAPUI5ButtonClickDEFAULT(element);
-           	}    
+           	}
          	})['catch'](function(error){
 							SAPUI5ButtonClickDEFAULT(element);
 					})
@@ -1583,7 +1566,7 @@ ctx.customTypes.SAPUI5 = {
 					var item = res[index];
 					items.push(
 					{
-						key : 'getKey' in item ? item['getKey']() : undefined, 
+						key : 'getKey' in item ? item['getKey']() : undefined,
 						code : 'getCode' in item ? item['getCode']() : undefined,
 						text : 'getText' in item ? item['getText']() : undefined,
 						items : 'getItems' in item ? SAPUI5GetItems(item['getItems']()) : undefined
@@ -1618,7 +1601,7 @@ ctx.customTypes.SAPUI5 = {
 								return 'Wrong row index provided.';
 	        		}
 	        		return data;
-	        	}			
+	        	}
 					} else {
 							var oJsDynamic = oControl.getModel().getProperty('/');
 							var keys = Object.keys(oJsDynamic);
@@ -1642,7 +1625,7 @@ ctx.customTypes.SAPUI5 = {
 						return '';
 				  }
       }
-			
+
 			/**
 			* @ignore
 			* @method SAPUI5Calendar
@@ -1657,7 +1640,7 @@ ctx.customTypes.SAPUI5 = {
 				var oControl = CtxFindUI5Control(element);
 				var sYear, sMonth, sDay, sHour, sMin, sSec;
 				var eYear, eMonth, eDay, eHour, eMin, eSec;
-				
+
 				function validation(date){
 					var dateList = date.split(',');
 					var dYear, dMonth, dDay, dHour, dMin, dSec;
@@ -1666,40 +1649,40 @@ ctx.customTypes.SAPUI5 = {
 						// Year Validation
 						dYear =  Number(dateList[0]);
 						if (dYear < 2016 || dYear > 2050) {return -1;}
-						
+
 						// Month Validation
 						dMonth =  Number(dateList[1])-1;
 						if (sMonth < 0 || sMonth > 11) {return -1;}
-						
+
 						// Day Validation
 						dDay = Number(dateList[2])
 						var monthLength = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
 						// Adjust for leap years
 						if (dYear % 400 == 0 || (dYear % 100 != 0 && dYear % 4 == 0)) {monthLength[1] = 29;}
 						if (dDay < 0 || dDay > monthLength[dMonth]) {return -1;}
-						
+
 						// Hour Validation
 						if(!dateList[3]) {dHour = 0} else {dHour =  Number(dateList[3])}
 						if (dHour < 0 || dHour > 23) {return -2;}
-						
+
 						// Minute Validation
 						if(!dateList[4]) {dMin = 0} else {dMin =  Number(dateList[4])}
 						if (dMin < 0 || dMin > 59) {return -2;}
-						
+
 						// Sec Validation
 						if(!dateList[5]) {dSec = 0} else {dSec =  Number(dateList[5])}
 						if (dSec < 0 || dSec > 59) {return -2;}
-					}				
-					return { 
-									year : dYear, 
-									month : dMonth, 
-									day : dDay, 
+					}
+					return {
+									year : dYear,
+									month : dMonth,
+									day : dDay,
 									hour : dHour,
-									min : dMin, 
+									min : dMin,
 									sec : dSec
 								};
 				}
-				
+
 				if (oControl){
 					var startValue = validation(startDate);
 					if (startValue == -1) {return "Provide a Valid Start Date";}
@@ -1710,12 +1693,12 @@ ctx.customTypes.SAPUI5 = {
 					sHour = startValue.hour;
 					sMin = startValue.min;
 					sSec = startValue.sec;
-					
+
 					var endValue = validation(endDate);
 					if (endValue == -1) {return "Provide a Valid End Date";}
 					if (endValue == -2) {return "Provide a Valid End Time";}
 					eYear = endValue.year;
-					eMonth = endValue.month; 
+					eMonth = endValue.month;
 					eDay = endValue.day;
 					eHour = endValue.hour;
 					eMin = endValue.min;
@@ -1724,7 +1707,7 @@ ctx.customTypes.SAPUI5 = {
 					if (new Date(eYear, eMonth, eDay, eHour, eMin, eSec) - new Date(sYear, sMonth, sDay, sHour, sMin, sSec) < 0) {
 						return "Start Date vaule is higher then end Date, change it and try again";
 					}
-					
+
 					try{
 						var oModel = oControl.getModel();
 						if (oModel.sPath) {
@@ -1762,14 +1745,24 @@ ctx.customTypes.SAPUI5 = {
 			 if (oControl) {
         try {
 					/*
-					* If the function need a sap type object 
+					* If the function need a sap type object
 					*/
 					if(args[0].type != undefined)
 					{
 						var data = SAPUI5Convert(args[0]);
 						var res = oControl[functionName].apply(oControl, [data]);
 					}else{
-			 			var res = oControl[functionName].apply(oControl, args);
+						if(functionName.substring(0,3) == 'get' && oControl.getText ){
+							var res = oControl['getText'].apply(oControl, args);
+						}
+						else if (functionName.substring(0,3) == 'get' && !oControl.getValue && !oControl.getText){
+							var htmlControlId=oControl.getId();
+							var htmlControl=document.getElementById(htmlControlId);
+							var res = htmlControl.innerText;
+						}
+			 			else{
+							var res = oControl[functionName].apply(oControl, args);
+						}
 						if(functionName == 'setValue')
 						{
 							setTimeout(function(){
@@ -1789,10 +1782,10 @@ ctx.customTypes.SAPUI5 = {
 						}
 					}
 					return '';
-					} 
+					}
 				catch (oErr) {
 					return '';
-        }	
+        }
 		  }
 			return '';
 		 }
@@ -1804,7 +1797,7 @@ ctx.customTypes.SAPUI5 = {
 		 function SAPUI5Convert(data) {
 			 try{
 				 var item = eval("new " + data.type + "()");
-				 
+
 				 if(data.type == "sap.ui.core.Item"
 					 || data.type == "sap.tnt.NavigationListItem"
 					 || data.type == "sap.m.Token"
@@ -1813,16 +1806,6 @@ ctx.customTypes.SAPUI5 = {
 					 item['setText'](data.text);
 					 item['setKey'](data.key);
 				 }
-//				 if(data.type == "sap.m.UploadCollectionItem")
-//				 {
-//					 item['setUrl'](data.url);
-//					 item['setFileName'](data.fileName);
-//					 var fileUploader = eval("new sap.ui.unified.FileUploader()");
-//					 fileUploader['setUploadUrl'](data.url);
-//					 fileUploader['setValue'](data.url);
-//					 fileUploader['upload']();
-//					 item['setFileUploader'](fileUploader);
-//				 }
 				 if(data.type == "sap.suite.ui.commons.taccount.TAccountItem")
 				 {
 					 item.setValue(data.value);
@@ -1842,12 +1825,12 @@ ctx.customTypes.SAPUI5 = {
       * @param {number} [timeout] optional Timeout for execution
       */
      function SAPUI5InputSet( element, value, timeout) {
-     	
+
       var oControl = CtxFindUI5Control(element);
-			 
+
       if (oControl) {
         try {
-					if(element.type == 'checkbox' 
+					if(element.type == 'checkbox'
 						|| element.type == 'radio')
 					{
 						oControl.setSelected(value);
@@ -1856,24 +1839,24 @@ ctx.customTypes.SAPUI5 = {
 					{
 						oControl.setRange(value);
 					}
-					//sapMActionSelect
-//					if(element.id.includes('select-hiddenInput'))
-//					{
-//						oControl.setSelectedItemId(oControl.getButtons()[0]);
-//					}
+					if(oControl["getMetadata"]()["_sClassName"]==="sap.m.DateRangeSelection" ||oControl["getMetadata"]()["_sClassName"]==="sap.m.DatePicker"|| oControl["getMetadata"]()["_sClassName"]==="sap.m.DateTimePicker"){
+						return SAPUI5InputSetDate(element,value);
+					}
 					else
 					{
-          	oControl.fireChange(oControl.setValue(value));
-						//setTimeout(function(){
+          	oControl.setValue(value);
+		oControl.fireChange({value: oControl.getValue()});
+		if(oControl.getValueState()==="Error"){
+			return oControl.getValueState();
+		}
             	oControl['getModel']().refresh(true);
-          	//},200)
 					}
         } catch (oErr) {
-			SAPUI5InputSetDEFAULT(element, value);   
-        }				 
+			SAPUI5InputSetDEFAULT(element, value);
+        }
       } else {
-        SAPUI5InputSetDEFAULT(element, value);   
-      }    
+        SAPUI5InputSetDEFAULT(element, value);
+      }
       return '';
     }
 
@@ -1960,7 +1943,7 @@ ctx.customTypes.SAPUI5 = {
        }
        return '';
      }
-   
+
     /**
     * @ignore
     * @method SAPUI5InputSearch
@@ -1969,7 +1952,7 @@ ctx.customTypes.SAPUI5 = {
     * @param {number} [timeout] optional Timeout for execution
     */
     function SAPUI5InputSearch( element, value, timeout) {
-   
+
       var oControl = CtxFindUI5Control(element);
       if (oControl) {
         try {
@@ -1977,14 +1960,14 @@ ctx.customTypes.SAPUI5 = {
           //setTimeout(function(){
            // oControl['fireLiveChange']();
          // },400)
-		 //oControl['getModel']().refresh(true); //[need refresh]
+		 //oControl['getModel']().refresh(true); //[need refresh] //keeping it for future referances
 		oControl.fireLiveChange(); //[need refresh]
         } catch (oErr) {
-			SAPUI5InputSearchDEFAULT(element, value); 
-        }				 
+			SAPUI5InputSearchDEFAULT(element, value);
+        }
       } else {
-        SAPUI5InputSearchDEFAULT(element, value);   
-      }    
+        SAPUI5InputSearchDEFAULT(element, value);
+      }
       return '';
     }
 
@@ -2026,7 +2009,7 @@ ctx.customTypes.SAPUI5 = {
 			}
 		return '';
 	}
-	 
+
 	 /**
     * @ignore
     * @method SAPUI5SuggestionSearch
@@ -2063,10 +2046,10 @@ ctx.customTypes.SAPUI5 = {
           }, 3000);
         } catch (oErr) {
         }
-      }  
+      }
     return "Search Initiated for the provided value!";
   }
-	 
+
 	/**
    * @ignore
    * @method MultiComboboxSelectItems
@@ -2074,7 +2057,7 @@ ctx.customTypes.SAPUI5 = {
    * @param {number} [timeout] optional Timeout for execution
    */
   function MultiComboboxGetSelectedItems(element, timeout){
-    var oControl = CtxFindUI5Control(element);     
+    var oControl = CtxFindUI5Control(element);
     if (oControl) {
       try {
         var items = [];
@@ -2087,7 +2070,7 @@ ctx.customTypes.SAPUI5 = {
     }
     return "";
   }
-	
+
 	/**
    * @ignore
    * @method MultiComboboxSelectItems
@@ -2096,7 +2079,7 @@ ctx.customTypes.SAPUI5 = {
    * @param {number} [timeout] optional Timeout for execution
    */
   function MultiComboboxSelectItems(element, values, timeout) {
-    var oControl = CtxFindUI5Control(element);     
+    var oControl = CtxFindUI5Control(element);
     if (oControl) {
       try {
         var keys = oControl.getSelectedKeys();
@@ -2104,12 +2087,12 @@ ctx.customTypes.SAPUI5 = {
           keys[keys.length] = oControl['getItemByText'](value).getKey();
         });
         oControl.fireChange(oControl.setSelectedKeys(keys));
-      } catch(oErr) {         
+      } catch(oErr) {
       }
     }
     return '';
   }
-	
+
 	/**
    * @ignore
    * @method MultiComboboxSelectItems
@@ -2118,7 +2101,7 @@ ctx.customTypes.SAPUI5 = {
    * @param {number} [timeout] optional Timeout for execution
    */
   function MultiComboboxClearSelectItems(element, values, timeout) {
-    var oControl = CtxFindUI5Control(element);     
+    var oControl = CtxFindUI5Control(element);
     if (oControl) {
       try {
 				if(typeof values === 'undefined'){
@@ -2131,12 +2114,141 @@ ctx.customTypes.SAPUI5 = {
 	        });
 	        oControl.fireChange();
 				}
-      } catch(oErr) {         
+      } catch(oErr) {
       }
     }
     return '';
   }
-	
+ 	/**
+   * @ignore
+   * @method SAPUI5ComboboxSelectItemByValue
+   * @param  {HTMLElement} element DOM element
+   * @param {Object} values to be selected
+   * @param {number} [timeout] optional Timeout for execution
+   */
+function SAPUI5ComboboxSelectItemByValue(element, values, timeout) {
+    var oControl = CtxFindUI5Control(element);
+    var itemKey;
+    if (oControl) {
+	    try {
+			oControl["getItems"]().forEach(function(value){
+				if(value.getText().toUpperCase().trim()===values.toUpperCase().trim()){
+					itemKey=value.getKey();
+				}
+			})
+			if(itemKey){
+				oControl.setSelectedKey(itemKey);
+
+			}
+			else{
+				return "No Item Found";
+			}
+		}catch(oErr) {
+      	}
+    }
+   return '';
+}
+/**
+   * @ignore
+   * @method SAPUI5MultiInputRemoveToken
+   * @param  {HTMLElement} element DOM element
+   * @param {Object} values to be selected
+   * @param {number} [timeout] optional Timeout for execution
+   */
+function SAPUI5MultiInputRemoveToken(element, values, timeout) {
+    var oControl = CtxFindUI5Control(element);
+    var token;
+    if (oControl) {
+	    try {
+			oControl["getTokens"]().forEach(function(value){
+				if(value.getText().toUpperCase().trim()===values.toUpperCase().trim()){
+					token=value;
+					oControl.removeToken(value);
+				}
+			})
+			if(!token){
+				return "No Token Found";
+			}
+		}catch(oErr) {
+      	}
+    }
+    return '';
+}
+/**
+   * @ignore
+   * @method SAPUI5InputSetDATE
+   * @param  {HTMLElement} element DOM element
+   * @param {Object} values to be selected
+   */
+function SAPUI5InputSetDate(element, values){
+	 var oControl = CtxFindUI5Control(element);
+	if(oControl){
+		if(oControl["getMetadata"]()["_sClassName"]==="sap.m.DateRangeSelection"){
+			var delimiter= oControl.getDelimiter();
+			var dates;
+			if(values.indexOf(oControl.getDelimiter())>-1){
+				dates= values.split(delimiter);
+			}
+			try{
+				var delimiter= oControl.getDelimiter();
+				var dates;
+				if(values.indexOf(oControl.getDelimiter())>-1){
+					dates= values.split(delimiter);
+				}
+				else{
+					throw "delimiter not supported";
+				}
+					var date1=new Date(dates[0]);
+					var date2=new Date(dates[1]);
+					if(Object.prototype.toString.call(date1) === '[object Date]' && isNaN(date1)){
+						throw date1.toString();
+					}
+					if(Object.prototype.toString.call(date2) === '[object Date]' && isNaN(date2)){
+						throw date2.toString();
+					}
+					oControl.setDateValue(new Date(dates[0]));
+					oControl.setSecondDateValue(new Date(dates[1]));
+					oControl.onChange();
+					oControl.fireChange({from:oControl.getDateValue(),to:oControl.getSecondDateValue(),valid : oControl._bValid});
+					if(oControl.getValueState()==="Error"){
+					return  "Invalid input";
+				}
+			}catch(err){
+				return err;
+			}
+		}
+		else{
+			oControl.setDateValue(new Date(values));
+			oControl.fireChange({value: oControl.getValue(),valid:oControl._bValid});
+			if(oControl.getValueState()==="Error"){
+				return oControl.getValueState();
+			}
+		}
+
+	}
+	return '';
+}
+/**
+* @ignore
+* @method SAPUI5InputSetDATE
+* @param  {HTMLElement} element DOM element
+* @param {Object} values to be selected
+*/
+function SAPUI5GetToken(element, timeout){
+	 var oControl = CtxFindUI5Control(element);
+    var items=[];
+    if (oControl) {
+	    try {
+				oControl["getTokens"]().forEach(function(value){
+					items[items.length] = value['getText']();
+			})
+				return items;
+		}catch(oErr) {
+    }
+    }
+    return '';
+}
+
   var map = {
     CtxPolyfill: CtxPolyfill,
     CtxFindUI5Control: CtxFindUI5Control,
@@ -2164,9 +2276,13 @@ ctx.customTypes.SAPUI5 = {
     MultiComboboxGetSelectedItems:MultiComboboxGetSelectedItems,
   	MultiComboboxClearSelectItems: MultiComboboxClearSelectItems,
 		SAPUi5RecordReplayStatus: SAPUi5RecordReplayStatus,
-		SAPUI5Calendar: SAPUI5Calendar
+		SAPUI5Calendar: SAPUI5Calendar,
+	  SAPUI5ComboboxSelectItemByValue:SAPUI5ComboboxSelectItemByValue,
+	  SAPUI5MultiInputRemoveToken: SAPUI5MultiInputRemoveToken,
+   	SAPUI5InputSetDate:SAPUI5InputSetDate,
+		SAPUI5GetToken:SAPUI5GetToken
   };
-     
+
     return {name: functionName, func:map[functionName], execute: bExecute}
   }
 };
@@ -2194,16 +2310,16 @@ ctx.customTypes.SAPUI5.page = function(page) {
     USED: 'used',
     NOTUSED: 'notused',
     NOTINITIALIZED: 'notinitialized'
-  };  
+  };
   var recordReplayStatus = eRecordReplayStatus.NOTINITIALIZED;
 
   // Events
 	page.addEvent({ evReadyPage: null});
   page.events['evReadyPage'].internal = true;
-  
+
   page.addEvent({ evRecordReplayLoaded: null});
 	page.events['evRecordReplayLoaded'].internal = true;
-  
+
   // *********************************************
   // *** Add custom methods to the parent page ***
   // *********************************************
@@ -2228,10 +2344,10 @@ ctx.customTypes.SAPUI5.page = function(page) {
   * @return {string} The status of Record Replay API
   * @path   ctx.customTypes.SAPUI5.page.getPageWaitReadyFunctionName
   */
-   
+
 	page.getPageWaitReadyFunctionName = function () {
     return 'SAPUI5PageWaitReady';
-  } 
+  }
 
 	/**
   * Retrieves the WaitReady function to be used according to the RecordReplay status.
@@ -2241,7 +2357,7 @@ ctx.customTypes.SAPUI5.page = function(page) {
   */
   page.getPageWaitReadyTimeout = function () {
     return recordReplayStatus === eRecordReplayStatus.USED ? ctx.options.sapui5.timeoutReadyRRAPI : ctx.options.sapui5.timeoutReady;
-  } 
+  }
 
 	/**
   * Waits until a page is ready.
@@ -2269,7 +2385,7 @@ ctx.customTypes.SAPUI5.page = function(page) {
             }
           });
 					page.execScript(this.getPageWaitReadyFunctionName(), 'evReadyPage', 60000);
-		});
+		}, delay);
     return '';
   }
 }
@@ -2286,13 +2402,13 @@ ctx.customTypes.SAPUI5.button = function(item) {
   // *********************************************
   // *** Add custom methods to the parent page ***
   // *********************************************
-  
+
   item.parent.customMethods.CtxFindUI5Control = ctx.customTypes.SAPUI5.findCodeToInject('CtxFindUI5Control');
   item.parent.customMethods.SAPUI5ButtonClickDEFAULT = ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5ButtonClickDEFAULT');
   item.parent.customMethods.SAPUI5ButtonClickRRAPI = ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5ButtonClickRRAPI');
 	item.parent.customMethods.SAPUi5RecordReplayStatus =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUi5RecordReplayStatus');
   item.parent.customMethods.SAPUI5ButtonClick = ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5ButtonClick');
-
+	ctx.apiui5.common.get(item);
  /**
   * Click on a item.
   * @description
@@ -2305,7 +2421,7 @@ ctx.customTypes.SAPUI5.button = function(item) {
 	item.click = function () {
 		return ctx.apiui5.click(item);
   };
-	
+
 }
 
 /**
@@ -2320,13 +2436,13 @@ ctx.customTypes.SAPUI5.pseudobutton = function(item) {
   // *********************************************
   // *** Add custom methods to the parent page ***
   // *********************************************
-  
+
   item.parent.customMethods.CtxFindUI5Control = ctx.customTypes.SAPUI5.findCodeToInject('CtxFindUI5Control');
   item.parent.customMethods.SAPUI5ButtonClickDEFAULT = ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5ButtonClickDEFAULT');
   item.parent.customMethods.SAPUI5ButtonClickRRAPI = ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5ButtonClickRRAPI');
 	item.parent.customMethods.SAPUi5RecordReplayStatus =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUi5RecordReplayStatus');
   item.parent.customMethods.SAPUI5ButtonClick = ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5ButtonClick');
-
+	ctx.apiui5.common.get(item);
  /**
   * Click on a item.
   * @description
@@ -2354,13 +2470,14 @@ ctx.customTypes.SAPUI5.input = function(item) {
    // *** Add custom methods to the parent page ***
    // *********************************************
 
-  item.parent.customMethods.CtxFindUI5Control = ctx.customTypes.SAPUI5.findCodeToInject('CtxFindUI5Control');    
-  item.parent.customMethods.SAPUI5InputSetDEFAULT = ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5InputSetDEFAULT');  
-  item.parent.customMethods.SAPUI5InputSetRRAPI = ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5InputSetRRAPI');    
-  item.parent.customMethods.SAPUI5InputSet =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5InputSet');     
-  item.parent.customMethods.SAPUI5CallFunction =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5CallFunction');   
+  item.parent.customMethods.CtxFindUI5Control = ctx.customTypes.SAPUI5.findCodeToInject('CtxFindUI5Control');
+  item.parent.customMethods.SAPUI5InputSetDEFAULT = ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5InputSetDEFAULT');
+  item.parent.customMethods.SAPUI5InputSetRRAPI = ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5InputSetRRAPI');
+  item.parent.customMethods.SAPUI5InputSet =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5InputSet');
+  item.parent.customMethods.SAPUI5InputSetDate =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5InputSetDate');
+  item.parent.customMethods.SAPUI5CallFunction =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5CallFunction');
 	item.parent.customMethods.SAPUi5RecordReplayStatus =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUi5RecordReplayStatus');
- 
+ 	ctx.apiui5.common.get(item);
   /**
    * Sets the value of item.
    * @description
@@ -2377,7 +2494,7 @@ ctx.customTypes.SAPUI5.input = function(item) {
     return ctx.apiui5.setValue(item, value, testExist, ifDefined);
   };
 }
- 
+
 /**
  * @ignore
  * SAPUI5 slider
@@ -2392,8 +2509,8 @@ ctx.customTypes.SAPUI5.slider = function(item) {
    // *** Add custom methods to the parent page ***
    // *********************************************
   item.parent.customMethods.CtxFindUI5Control = ctx.customTypes.SAPUI5.findCodeToInject('CtxFindUI5Control');
-  item.parent.customMethods.SAPUI5CallFunction =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5CallFunction');   
- 
+  item.parent.customMethods.SAPUI5CallFunction =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5CallFunction');
+ 	ctx.apiui5.common.get(item);
 	/**
    * Sets the value of item.
    * @description
@@ -2427,8 +2544,8 @@ ctx.customTypes.SAPUI5.checkbox = function(item) {
    // *** Add custom methods to the parent page ***
    // *********************************************
   item.parent.customMethods.CtxFindUI5Control = ctx.customTypes.SAPUI5.findCodeToInject('CtxFindUI5Control');
-  item.parent.customMethods.SAPUI5CallFunction =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5CallFunction'); 
- 
+  item.parent.customMethods.SAPUI5CallFunction =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5CallFunction');
+ 	ctx.apiui5.common.get(item);
   /**
    * Sets the value of item.
    * @description
@@ -2508,8 +2625,8 @@ ctx.customTypes.SAPUI5.inputswitch = function(item) {
    // *** Add custom methods to the parent page ***
    // *********************************************
   item.parent.customMethods.CtxFindUI5Control = ctx.customTypes.SAPUI5.findCodeToInject('CtxFindUI5Control');
-  item.parent.customMethods.SAPUI5CallFunction =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5CallFunction');   
- 
+  item.parent.customMethods.SAPUI5CallFunction =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5CallFunction');
+  ctx.apiui5.common.get(item);
   /**
    * Sets the value of item.
    * @description
@@ -2542,8 +2659,8 @@ ctx.customTypes.SAPUI5.radio = function(item) {
    // *** Add custom methods to the parent page ***
    // *********************************************
   item.parent.customMethods.CtxFindUI5Control = ctx.customTypes.SAPUI5.findCodeToInject('CtxFindUI5Control');
-  item.parent.customMethods.SAPUI5CallFunction =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5CallFunction');   
- 
+  item.parent.customMethods.SAPUI5CallFunction =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5CallFunction');
+  ctx.apiui5.common.get(item);
   /**
    * Sets the value of item.
    * @description
@@ -2575,9 +2692,11 @@ ctx.customTypes.SAPUI5.combobox = function(item) {
    // *** Add custom methods to the parent page ***
    // *********************************************
   item.parent.customMethods.CtxFindUI5Control = ctx.customTypes.SAPUI5.findCodeToInject('CtxFindUI5Control');
-  item.parent.customMethods.SAPUI5CallFunction =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5CallFunction');   
+  item.parent.customMethods.SAPUI5CallFunction =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5CallFunction');
   item.parent.customMethods.SAPUI5Convert =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5Convert');
 	item.parent.customMethods.SAPUI5GetItems =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5GetItems');
+  item.parent.customMethods.SAPUI5Convert =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5ComboboxSelectItemByValue');
+	ctx.apiui5.common.get(item);
   /**
    * Sets the value of item.
    * @description
@@ -2628,6 +2747,38 @@ ctx.customTypes.SAPUI5.combobox = function(item) {
   item.addItem = function (data, testExist, ifDefined) {
     return ctx.apiui5.addItem(item, data, testExist, ifDefined);
   };
+ /**
+   * Select Item By Value.
+   * @description
+   *  <wrap help> //Example://</wrap>
+   *  <code javascript> SAPUI5.pUI5.oItem.set(
+   *        "Cuba"
+   *);</code>
+   * @method setByValue
+   * @path   ctx.customTypes.SAPUI5.combobox.setByValue
+   * @see https://openui5nightly.hana.ondemand.com/#/api/sap.m.ComboBox/methods/setSelectedKey
+   * @param {string} data value to be set
+   * @param {boolean} [testExist] if true, test existence before setting value
+   * @param {boolean} [ifDefined] if true, set value only if defined
+   * @return {string} result value
+   */
+  item.setByValue = function (data, testExist, ifDefined) {
+    return ctx.apiui5.selectItemByValue(item, data, testExist, ifDefined);
+  };
+  /**
+   * Get status of item enabled or not.
+   * @description
+   *  <wrap help> //Example://</wrap>
+   *  <code javascript> SAPUI5.pUI5.oItem.getEnabled();</code>
+   * @method getEnabled
+   * @path   ctx.customTypes.SAPUI5.combobox.setByValue
+   * @see https://openui5nightly.hana.ondemand.com/#/api/sap.m.ComboBox/methods/getEnabled
+   * @param {boolean} [testExist] if true, test existence before setting value
+   * @return {string} result value
+   */
+    item.getEnabled=function(testExist){
+    	return ctx.apiui5.getEnable(item,testExist);
+    }
 }
 /**
  * @ignore
@@ -2643,9 +2794,9 @@ ctx.customTypes.SAPUI5.calendar = function(item) {
    // *** Add custom methods to the parent page ***
    // *********************************************
   item.parent.customMethods.CtxFindUI5Control = ctx.customTypes.SAPUI5.findCodeToInject('CtxFindUI5Control');
-  item.parent.customMethods.SAPUI5CallFunction =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5CallFunction'); 
-	item.parent.customMethods.SAPUI5Calendar =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5Calendar'); 
-
+  item.parent.customMethods.SAPUI5CallFunction =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5CallFunction');
+	item.parent.customMethods.SAPUI5Calendar =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5Calendar');
+	ctx.apiui5.common.get(item);
 	/**
 	* Add a Item of item.
 	* @path  ctx.customTypes.SAPUI5.calendar.addItem
@@ -2676,7 +2827,8 @@ ctx.customTypes.SAPUI5.actionselect = function(item) {
    // *** Add custom methods to the parent page ***
    // *********************************************
   item.parent.customMethods.CtxFindUI5Control = ctx.customTypes.SAPUI5.findCodeToInject('CtxFindUI5Control');
-  item.parent.customMethods.SAPUI5CallFunction =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5CallFunction');   
+  item.parent.customMethods.SAPUI5CallFunction =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5CallFunction');
+	ctx.apiui5.common.get(item);
 	/**
    * Sets the value of item.
    * @description
@@ -2706,11 +2858,12 @@ ctx.customTypes.SAPUI5.menu = function(item) {
    // *** Add custom methods to the parent page ***
    // *********************************************
   item.parent.customMethods.CtxFindUI5Control = ctx.customTypes.SAPUI5.findCodeToInject('CtxFindUI5Control');
-  item.parent.customMethods.SAPUI5CallFunction =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5CallFunction');  
+  item.parent.customMethods.SAPUI5CallFunction =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5CallFunction');
 	item.parent.customMethods.SAPUI5ButtonClickDEFAULT = ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5ButtonClickDEFAULT');
   item.parent.customMethods.SAPUI5ButtonClickRRAPI = ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5ButtonClickRRAPI');
 	item.parent.customMethods.SAPUi5RecordReplayStatus =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUi5RecordReplayStatus');
   item.parent.customMethods.SAPUI5ButtonClick = ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5ButtonClick');
+	ctx.apiui5.common.get(item);
 	/**
    * Sets the value of item.
    * @description
@@ -2739,13 +2892,13 @@ ctx.customTypes.SAPUI5.searchfield = function(item) {
   // *** Add custom methods to the parent page ***
   // *********************************************
 
-	item.parent.customMethods.CtxFindUI5Control = ctx.customTypes.SAPUI5.findCodeToInject('CtxFindUI5Control');    
-	item.parent.customMethods.SAPUI5InputSearchDEFAULT = ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5InputSearchDEFAULT');  
-	item.parent.customMethods.SAPUI5InputSearchRRAPI = ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5InputSearchRRAPI');    
-	item.parent.customMethods.SAPUI5InputSearch =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5InputSearch'); 
+	item.parent.customMethods.CtxFindUI5Control = ctx.customTypes.SAPUI5.findCodeToInject('CtxFindUI5Control');
+	item.parent.customMethods.SAPUI5InputSearchDEFAULT = ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5InputSearchDEFAULT');
+	item.parent.customMethods.SAPUI5InputSearchRRAPI = ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5InputSearchRRAPI');
+	item.parent.customMethods.SAPUI5InputSearch =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5InputSearch');
 	item.parent.customMethods.SAPUi5RecordReplayStatus =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUi5RecordReplayStatus');
-	item.parent.customMethods.SAPUI5CallFunction =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5CallFunction'); 
-
+	item.parent.customMethods.SAPUI5CallFunction =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5CallFunction');
+	ctx.apiui5.common.get(item);
  /**
   * Sets the value to be search.
   * @description
@@ -2760,7 +2913,7 @@ ctx.customTypes.SAPUI5.searchfield = function(item) {
   */
 	item.set = function (value, testExist, ifDefined) {
  		return ctx.apiui5.setSearch(item, value, testExist, ifDefined);
-	};  
+	};
  /**
    * Sets the value of item.
    * @description
@@ -2783,7 +2936,7 @@ ctx.customTypes.SAPUI5.searchfield = function(item) {
  * @class       ctx.customTypes.SAPUI5.multiinput
  * @constructor
  * @path        ctx.customTypes.SAPUI5.multiinput
- * @see https://sapui5.hana.ondemand.com/#/api/sap.m.MultiInput 
+ * @see https://sapui5.hana.ondemand.com/#/api/sap.m.MultiInput
  */
 ctx.customTypes.SAPUI5.multiinput = function(item) {
 
@@ -2791,10 +2944,11 @@ ctx.customTypes.SAPUI5.multiinput = function(item) {
    // *** Add custom methods to the parent page ***
    // *********************************************
 
-  item.parent.customMethods.CtxFindUI5Control = ctx.customTypes.SAPUI5.findCodeToInject('CtxFindUI5Control');    
-  item.parent.customMethods.SAPUI5CallFunction =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5CallFunction');   
+  item.parent.customMethods.CtxFindUI5Control = ctx.customTypes.SAPUI5.findCodeToInject('CtxFindUI5Control');
+  item.parent.customMethods.SAPUI5CallFunction =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5CallFunction');
 	item.parent.customMethods.SAPUI5Convert =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5Convert');
- 
+  item.parent.customMethods.SAPUI5MultiInputRemoveToken =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5MultiInputRemoveToken');
+	item.parent.customMethods.SAPUI5GetToken =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5GetToken');
   /**
    * Sets the value of item.
    * @description
@@ -2814,6 +2968,50 @@ ctx.customTypes.SAPUI5.multiinput = function(item) {
   item.set = function (data, testExist, ifDefined) {
     return ctx.apiui5.addToken(item, data, testExist, ifDefined);
   };
+   /**
+   * Remove All Token.
+   * @description
+   *  <wrap help> //Example://</wrap>
+   *  <code javascript> SAPUI5.pUI5.oItem.removeAllTokens();</code>
+   * @method removeAllTokens
+   * @path   ctx.customTypes.SAPUI5.multiinput.removeAllTokens
+   * @see https://openui5nightly.hana.ondemand.com/#/api/sap.m.sample.MultiInput/methods/remoremoveAllTokens
+   * @return {string} result value
+   */
+  item.removeAllTokens = function (testExist, ifDefined) {
+		return ctx.apiui5.removeAllTokens(item);
+  };
+	  /**
+   * Remove Token By Value.
+   * @description
+   *  <wrap help> //Example://</wrap>
+   *  <code javascript> SAPUI5.pUI5.oItem.reMoveToken("Token 1");</code>
+   * @method setByValue
+   * @path   ctx.customTypes.SAPUI5.multiinput.reMoveToken
+   * @see https://openui5nightly.hana.ondemand.com/#/api/sap.m.sample.MultiInput/methods/removeToken
+   * @param {string} data value to be remove
+   * @param {boolean} [testExist] if true, test existence before removing value
+   * @param {boolean} [ifDefined] if true, remove value only if defined
+   * @return {string} result value
+   */
+  item.removeToken = function (item, data, testExist, ifDefined) {
+    return ctx.apiui5.removeToken(item, data, testExist, ifDefined);
+  };
+	/**
+   * Sets the value of item.
+   * @description
+   *  <wrap help> //Example://</wrap>
+   *  <code javascript> SAPUI5.pUI5.oItem.get();</code>
+   * @method get
+   * @path   ctx.customTypes.SAPUI5.multiinput.get
+	 * @see https://sapui5.hana.ondemand.com/#/api/sap.m.MultiInput/methods/addToken
+   * @param {boolean} [testExist] if true, test existence before setting value
+   * @param {boolean} [ifDefined] if true, set value only if defined
+	 * @return {string} result value
+   */
+	item.get=function (testExist, ifDefined) {
+    return ctx.apiui5.getToken(item, testExist, ifDefined);
+  };
 }
 /**
  * @ignore
@@ -2829,14 +3027,13 @@ ctx.customTypes.SAPUI5.feedcontent = function(item) {
    // *** Add custom methods to the parent page ***
    // *********************************************
 
-  item.parent.customMethods.CtxFindUI5Control = ctx.customTypes.SAPUI5.findCodeToInject('CtxFindUI5Control');      
+  item.parent.customMethods.CtxFindUI5Control = ctx.customTypes.SAPUI5.findCodeToInject('CtxFindUI5Control');
   item.parent.customMethods.SAPUI5CallFunction =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5CallFunction');
 	item.parent.customMethods.SAPUI5InputSetDEFAULT = ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5InputSetDEFAULT');
-	item.parent.customMethods.SAPUI5InputSetRRAPI = ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5InputSetRRAPI'); 
+	item.parent.customMethods.SAPUI5InputSetRRAPI = ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5InputSetRRAPI');
 	item.parent.customMethods.SAPUI5ButtonClickDEFAULT = ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5ButtonClickDEFAULT');
 	item.parent.customMethods.SAPUI5ButtonClickRRAPI = ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5ButtonClickRRAPI');
 	item.parent.customMethods.SAPUi5RecordReplayStatus =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUi5RecordReplayStatus');
-	
   /**
    * Sets the value of item.
    * @description
@@ -2853,7 +3050,7 @@ ctx.customTypes.SAPUI5.feedcontent = function(item) {
   item.set = function (value, testExist, ifDefined) {
     return ctx.apiui5.setValueFc(item, value, testExist, ifDefined);
   };
-	
+
 	/**
    * Gets the value of item.
    * @description
@@ -2869,7 +3066,7 @@ ctx.customTypes.SAPUI5.feedcontent = function(item) {
   item.get = function (testExist, ifDefined) {
     return ctx.apiui5.getValueFc(item, testExist, ifDefined);
   };
-	
+
 	/**
    * Sets the value of sub header.
    * @description
@@ -2886,7 +3083,7 @@ ctx.customTypes.SAPUI5.feedcontent = function(item) {
   item.setSubheader = function (value, testExist, ifDefined) {
     return ctx.apiui5.setSubheader(item, value, testExist, ifDefined);
   };
-	
+
 	/**
    * Gets the value of sub header.
    * @description
@@ -2902,7 +3099,7 @@ ctx.customTypes.SAPUI5.feedcontent = function(item) {
   item.getSubheader = function (testExist, ifDefined) {
     return ctx.apiui5.getSubheader(item, testExist, ifDefined);
   };
-	
+
 	/**
    * Sets the Content Text.
    * @description
@@ -2919,7 +3116,7 @@ ctx.customTypes.SAPUI5.feedcontent = function(item) {
   item.setContentText = function (value, testExist, ifDefined) {
     return ctx.apiui5.setContentText(item, value, testExist, ifDefined);
   };
-	
+
 	/**
    * Gets the value of sub header.
    * @description
@@ -2935,7 +3132,7 @@ ctx.customTypes.SAPUI5.feedcontent = function(item) {
   item.getAltText = function (testExist, ifDefined) {
     return ctx.apiui5.getAltText(item, testExist, ifDefined);
   };
-	
+
 	/**
    * Sets the value of item.
    * @description
@@ -2951,7 +3148,7 @@ ctx.customTypes.SAPUI5.feedcontent = function(item) {
   item.press = function (testExist, ifDefined) {
     return ctx.apiui5.click(item);
   };
-}						
+}
 /**
  * @ignore
  * SAPUI5 segmentbutton
@@ -2966,9 +3163,10 @@ ctx.customTypes.SAPUI5.segmentbutton = function(item) {
    // *** Add custom methods to the parent page ***
    // *********************************************
   item.parent.customMethods.CtxFindUI5Control = ctx.customTypes.SAPUI5.findCodeToInject('CtxFindUI5Control');
-  item.parent.customMethods.SAPUI5CallFunction =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5CallFunction');   
+  item.parent.customMethods.SAPUI5CallFunction =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5CallFunction');
   item.parent.customMethods.SAPUI5Convert =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5Convert');
 	item.parent.customMethods.SAPUI5GetItems =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5GetItems');
+	ctx.apiui5.common.get(item);
   /**
    * Sets the value of item.
    * @description
@@ -3066,9 +3264,10 @@ ctx.customTypes.SAPUI5.navigationlist = function(item) {
    // *** Add custom methods to the parent page ***
    // *********************************************
   item.parent.customMethods.CtxFindUI5Control = ctx.customTypes.SAPUI5.findCodeToInject('CtxFindUI5Control');
-  item.parent.customMethods.SAPUI5CallFunction =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5CallFunction');   
+  item.parent.customMethods.SAPUI5CallFunction =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5CallFunction');
   item.parent.customMethods.SAPUI5Convert =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5Convert');
 	item.parent.customMethods.SAPUI5GetItems =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5GetItems');
+	ctx.apiui5.common.get(item);
   /**
    * Sets the value of item.
    * @description
@@ -3122,63 +3321,6 @@ ctx.customTypes.SAPUI5.navigationlist = function(item) {
 }
 /**
  * @ignore
- * SAPUI5 uploadcollection
- * @class       ctx.customTypes.SAPUI5.uploadcollection
- * @constructor
- * @path        ctx.customTypes.SAPUI5.uploadcollection
- * @see https://sapui5.hana.ondemand.com/#/api/sap.m.UploadCollection
- */
-//ctx.customTypes.SAPUI5.uploadcollection = function(item) {
-
-//   // *********************************************
-//   // *** Add custom methods to the parent page ***
-//   // *********************************************
-//  item.parent.customMethods.CtxFindUI5Control = ctx.customTypes.SAPUI5.findCodeToInject('CtxFindUI5Control');
-//  item.parent.customMethods.SAPUI5CallFunction =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5CallFunction');   
-//  item.parent.customMethods.SAPUI5Convert =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5Convert');
-	
-//  /**
-//   * Sets the value of item.
-//   * @description
-//   *  <wrap help> //Example://</wrap>
-//   *  <code javascript> SAPUI5.pUI5.oItem.set({
-//	 *				url: '',
-//	 *				filename: "toto.txt"
-//	 *});</code>
-//   * @method set
-//   * @path   ctx.customTypes.SAPUI5.uploadcollection.set
-//	 * @see https://sapui5.hana.ondemand.com/#/api/sap.m.UploadCollection/methods/addItem
-//	 * @param {string} value value to be set
-//   * @param {boolean} [testExist] if true, test existence before setting value
-//   * @param {boolean} [ifDefined] if true, set value only if defined
-//	 * @return {string} result value
-//   */
-//  item.set = function (value, testExist, ifDefined) {
-//		return ctx.apiui5.addUploadCollectionItem(item, value, testExist, ifDefined);
-//  };
-//	/**
-//   * Add a Item of item.
-//   * @description
-//   *  <wrap help> //Example://</wrap>
-//   *  <code javascript> SAPUI5.pUI5.oItem.addItem({
-//	 *				url: '',
-//	 *				filename: "toto.txt"
-//	 *});</code>
-//   * @method set
-//   * @path   ctx.customTypes.SAPUI5.uploadcollection.addItem
-//	 * @see https://sapui5.hana.ondemand.com/#/api/sap.m.UploadCollection/methods/addItem
-//	 * @param {string} value value to be set
-//   * @param {boolean} [testExist] if true, test existence before setting value
-//   * @param {boolean} [ifDefined] if true, set value only if defined
-//	 * @return {string} result value
-//   */
-//  item.addItem = function (value, testExist, ifDefined) {
-//    return ctx.apiui5.addUploadCollectionItem(item, value, testExist, ifDefined);
-//  };
-	
-//}
-/**
- * @ignore
  * SAPUI5 taccount
  * @class       ctx.customTypes.SAPUI5.taccount
  * @constructor
@@ -3191,8 +3333,9 @@ ctx.customTypes.SAPUI5.taccount = function(item) {
    // *** Add custom methods to the parent page ***
    // *********************************************
   item.parent.customMethods.CtxFindUI5Control = ctx.customTypes.SAPUI5.findCodeToInject('CtxFindUI5Control');
-  item.parent.customMethods.SAPUI5CallFunction =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5CallFunction');   
+  item.parent.customMethods.SAPUI5CallFunction =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5CallFunction');
   item.parent.customMethods.SAPUI5Convert =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5Convert');
+	ctx.apiui5.common.get(item);
   /**
    * Sets the value of item.
    * @description
@@ -3276,9 +3419,9 @@ ctx.customTypes.SAPUI5.treegrid = function(item) {
    // *** Add custom methods to the parent page ***
    // *********************************************
   item.parent.customMethods.CtxFindUI5Control = ctx.customTypes.SAPUI5.findCodeToInject('CtxFindUI5Control');
-  item.parent.customMethods.SAPUI5CallFunction =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5CallFunction');   
+  item.parent.customMethods.SAPUI5CallFunction =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5CallFunction');
   item.parent.customMethods.SAPUI5Convert =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5Convert');
-	
+	ctx.apiui5.common.get(item);
 	/**
    * Sets the value of item.
    * @description
@@ -3310,9 +3453,10 @@ ctx.customTypes.SAPUI5.table = function(item) {
    // *** Add custom methods to the parent page ***
    // *********************************************
   item.parent.customMethods.CtxFindUI5Control = ctx.customTypes.SAPUI5.findCodeToInject('CtxFindUI5Control');
-  item.parent.customMethods.SAPUI5CallFunction =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5CallFunction');   
+  item.parent.customMethods.SAPUI5CallFunction =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5CallFunction');
   item.parent.customMethods.SAPUI5Convert =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5Convert');
 	item.parent.customMethods.SAPUI5GetTableData =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5GetTableData');
+	ctx.apiui5.common.get(item);
   /**
    * Sets the value of item.
    * @description
@@ -3401,7 +3545,7 @@ ctx.customTypes.SAPUI5.table = function(item) {
   item.setSelectedIndex = function (value, testExist, ifDefined) {
 		return ctx.apiui5.setSelectedIndex(item, value, testExist, ifDefined);
   };
-	
+
 	/**
    * Sets the value of item.
    * @description
@@ -3419,57 +3563,6 @@ ctx.customTypes.SAPUI5.table = function(item) {
 }
 /**
  * @ignore
- * SAPUI5 map
- * @class       ctx.customTypes.SAPUI5.map
- * @constructor
- * @path        ctx.customTypes.SAPUI5.map
- * @see https://sapui5.hana.ondemand.com/#/api/sap.ui.vbm.AnalyticMap
- */
-//ctx.customTypes.SAPUI5.map = function(item) {
-
-//   // *********************************************
-//   // *** Add custom methods to the parent page ***
-//   // *********************************************
-//  item.parent.customMethods.CtxFindUI5Control = ctx.customTypes.SAPUI5.findCodeToInject('CtxFindUI5Control');
-//  item.parent.customMethods.SAPUI5CallFunction =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5CallFunction');   
-//  item.parent.customMethods.SAPUI5Convert =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5Convert');
-//	item.parent.customMethods.SAPUI5GetItems =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5GetItems');
-//	item.parent.customMethods.SAPUi5RecordReplayStatus =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUi5RecordReplayStatus');
-  
-//	/**
-//   * Get regions.
-//   * @description
-//   *  <wrap help> //Example://</wrap>
-//   *  <code javascript>  SAPUI5.pUI5.oItem.getRegions();</code>
-//   * @method getRegions
-//   * @path   ctx.customTypes.SAPUI5.map.getRegions
-//	 * @see https://sapui5.hana.ondemand.com/#/api/sap.ui.vbm.AnalyticMap/methods/getRegions
-//	 * @param {boolean} [testExist] if true, test existence before setting value
-//   * @param {boolean} [ifDefined] if true, set value only if defined
-//	 * @return {string} result value
-//   */
-//  item.getRegions = function (testExist, ifDefined) {
-//    return ctx.apiui5.getRegions(item, testExist, ifDefined);
-//  };
-	
-//	/**
-//   * Sets the value of item.
-//   * @description
-//   *  <wrap help> </wrap>
-//   *  <code javascript> SAPUI5.pUI5.oItem.click('AU');</code>
-//   * @method set
-//   * @path   ctx.customTypes.SAPUI5.map.click
-//	 * @see https://sapui5.hana.ondemand.com/#/api/sap.ui.vbm.AnalyticMap/methods/fireRegionClick
-//	 * @param {boolean} [testExist] if true, test existence before setting value
-//   * @param {boolean} [ifDefined] if true, set value only if defined
-//	 * @return {string} result value
-//   */
-//  item.click = function (value, testExist, ifDefined) {
-//    return ctx.apiui5.fireRegionClick(item, value, testExist, ifDefined);
-//  };
-//}
-/**
- * @ignore
  * SAPUI5 carousel
  * @class       ctx.customTypes.SAPUI5.carousel
  * @constructor
@@ -3483,7 +3576,7 @@ ctx.customTypes.SAPUI5.carousel = function(item) {
    // *********************************************
   item.parent.customMethods.CtxFindUI5Control = ctx.customTypes.SAPUI5.findCodeToInject('CtxFindUI5Control');
   item.parent.customMethods.SAPUI5CallFunction =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5CallFunction');
-	
+	ctx.apiui5.common.get(item);
 	/**
    * next.
    * @description
@@ -3527,7 +3620,7 @@ ctx.customTypes.SAPUI5.toggleButton = function(item) {
   // *********************************************
   // *** Add custom methods to the parent page ***
   // *********************************************
-  
+
   item.parent.customMethods.CtxFindUI5Control = ctx.customTypes.SAPUI5.findCodeToInject('CtxFindUI5Control');
   item.parent.customMethods.SAPUI5ButtonClickDEFAULT = ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5ButtonClickDEFAULT');
   item.parent.customMethods.SAPUI5ButtonClickRRAPI = ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5ButtonClickRRAPI');
@@ -3535,7 +3628,7 @@ ctx.customTypes.SAPUI5.toggleButton = function(item) {
   item.parent.customMethods.SAPUI5CallFunction =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5CallFunction');
   item.parent.customMethods.SAPUI5SetPressed =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5SetPressed');
 	item.parent.customMethods.SAPUi5RecordReplayStatus =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUi5RecordReplayStatus');
-
+	ctx.apiui5.common.get(item);
  /**
   * Click on a Toggle Button.
   * @description
@@ -3609,13 +3702,14 @@ ctx.customTypes.SAPUI5.tablerow = function(item) {
   // *********************************************
   // *** Add custom methods to the parent page ***
   // *********************************************
-  
+
   item.parent.customMethods.CtxFindUI5Control = ctx.customTypes.SAPUI5.findCodeToInject('CtxFindUI5Control');
+	item.parent.customMethods.SAPUI5CallFunction =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5CallFunction');
   item.parent.customMethods.SAPUI5ButtonClickDEFAULT = ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5ButtonClickDEFAULT');
   item.parent.customMethods.SAPUI5ButtonClickRRAPI = ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5ButtonClickRRAPI');
   item.parent.customMethods.SAPUI5ButtonClick = ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5ButtonClick');
 	item.parent.customMethods.SAPUi5RecordReplayStatus =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUi5RecordReplayStatus');
-
+	ctx.apiui5.common.get(item);
  /**
   * Click on a Table Row.
   * @description
@@ -3643,14 +3737,14 @@ ctx.customTypes.SAPUI5.SF.suggestionSearchField = function(item) {
   // *** Add custom methods to the parent page ***
   // *********************************************
 
- 	item.parent.customMethods.CtxFindUI5Control = ctx.customTypes.SAPUI5.findCodeToInject('CtxFindUI5Control');    
- 	item.parent.customMethods.SAPUI5InputSearchDEFAULT = ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5InputSearchDEFAULT');  
+ 	item.parent.customMethods.CtxFindUI5Control = ctx.customTypes.SAPUI5.findCodeToInject('CtxFindUI5Control');
+ 	item.parent.customMethods.SAPUI5InputSearchDEFAULT = ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5InputSearchDEFAULT');
  	item.parent.customMethods.SAPUI5InputSearchRRAPI = ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5InputSearchRRAPI');
  	item.parent.customMethods.SAPUI5InputSearch =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5InputSearch');
  	item.parent.customMethods.SAPUI5SuggestionSearch =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5SuggestionSearch');
 	item.parent.customMethods.SAPUi5RecordReplayStatus =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUi5RecordReplayStatus');
-	 	item.parent.customMethods.SAPUI5CallFunction =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5CallFunction');
-	
+	item.parent.customMethods.SAPUI5CallFunction =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5CallFunction');
+	ctx.apiui5.common.get(item);
  /**
   * Sets the value to be search.
   * @description
@@ -3695,7 +3789,6 @@ ctx.customTypes.SAPUI5.multiCombobox = function(item){
   item.parent.customMethods.SAPUI5CallFunction =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5CallFunction');
   item.parent.customMethods.MultiComboboxGetSelectedItems = ctx.customTypes.SAPUI5.findCodeToInject('MultiComboboxGetSelectedItems');
 	item.parent.customMethods.MultiComboboxClearSelectItems = ctx.customTypes.SAPUI5.findCodeToInject('MultiComboboxClearSelectItems');
-	
    /**
   * select items for multiCombobox.
   * @description
@@ -3718,7 +3811,7 @@ ctx.customTypes.SAPUI5.multiCombobox = function(item){
   item.clear = function(values){
     return ctx.apiui5.clearSelectedItems(item, values);
   }
-  
+
   /**
   * get all selected items text from multiCombobox.
   * @description
@@ -3745,13 +3838,13 @@ ctx.customTypes.SAPUI5.feedinput = function(item) {
    // *** Add custom methods to the parent page ***
    // *********************************************
 
-  item.parent.customMethods.CtxFindUI5Control = ctx.customTypes.SAPUI5.findCodeToInject('CtxFindUI5Control');    
-  item.parent.customMethods.SAPUI5InputSetDEFAULT = ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5InputSetDEFAULT');  
-  item.parent.customMethods.SAPUI5InputSetRRAPI = ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5InputSetRRAPI');    
-  item.parent.customMethods.SAPUI5InputSet =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5InputSet');     
-  item.parent.customMethods.SAPUI5CallFunction =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5CallFunction');   
+  item.parent.customMethods.CtxFindUI5Control = ctx.customTypes.SAPUI5.findCodeToInject('CtxFindUI5Control');
+  item.parent.customMethods.SAPUI5InputSetDEFAULT = ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5InputSetDEFAULT');
+  item.parent.customMethods.SAPUI5InputSetRRAPI = ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5InputSetRRAPI');
+  item.parent.customMethods.SAPUI5InputSet =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5InputSet');
+  item.parent.customMethods.SAPUI5CallFunction =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5CallFunction');
   item.parent.customMethods.SAPUi5RecordReplayStatus =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUi5RecordReplayStatus');
- 
+ 	ctx.apiui5.common.get(item);
   /**
    * Sets the value of item.
    * @description
@@ -3780,13 +3873,13 @@ ctx.customTypes.SAPUI5.icon = function(item) {
   // *********************************************
   // *** Add custom methods to the parent page ***
   // *********************************************
-  
+
   item.parent.customMethods.CtxFindUI5Control = ctx.customTypes.SAPUI5.findCodeToInject('CtxFindUI5Control');
   item.parent.customMethods.SAPUI5ButtonClickDEFAULT = ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5ButtonClickDEFAULT');
   item.parent.customMethods.SAPUI5ButtonClickRRAPI = ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5ButtonClickRRAPI');
 	item.parent.customMethods.SAPUi5RecordReplayStatus =  ctx.customTypes.SAPUI5.findCodeToInject('SAPUi5RecordReplayStatus');
   item.parent.customMethods.SAPUI5ButtonClick = ctx.customTypes.SAPUI5.findCodeToInject('SAPUI5ButtonClick');
-
+	ctx.apiui5.common.get(item);
  /**
   * Click on a item.
   * @description

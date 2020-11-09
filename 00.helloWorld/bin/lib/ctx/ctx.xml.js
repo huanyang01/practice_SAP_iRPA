@@ -971,7 +971,6 @@ ctx.json = (function () {
   * @param {Array<string>|function(string,*)|null} [replacer] transforms values and properties encountered while stringifying; if an array, specifies the set of properties included in objects in the final string
   * @param {function(string,*)} [cycleReplacer] function to be used as replacer for circular references.
   * @param {boolean} [isShort] if 'true', serialize using short description if objects owns a method 'ctxShort()' (default is true)
-  * @see https://github.com/isaacs/json-stringify-safe/blob/master/stringify.js
   * @private
   */
   function serializer(replacer, cycleReplacer, isShort) {
@@ -1142,7 +1141,6 @@ ctx.json = (function () {
 //   * Licensed under the MIT (MIT-LICENSE.txt) licence.
   /**
    * @ignore
-   * @see http://goessner.net/articles/JsonPath/
    * @param {Object} obj
    * @param {string} expr
    * @param {*} [arg]
@@ -1252,85 +1250,41 @@ var obj = ctx.json.CSV2Array( txt );
     * @param   {string} strData CSV file with headers
     * @param   {string} [strDelimiter] Splitter character (default is ',')
     * @param   {string} [newLine] New line character (default is '\n')
-    * @see     http://stackoverflow.com/a/1293163/2343
     * @return  {Object} Result object
     */
-    CSV2Array : function ( strData, strDelimiter, newLine ){
-      ctx.notifyAction('ctx.json.CSV2Array');
-      // Check to see if the delimiter is defined. If not,
-      // then default to comma.
-      strDelimiter = (strDelimiter || ",");
-      newLine = (newLine || "\n");
+	CSV2Array: function(sData, sDelimiter, newLine) {
+		ctx.notifyAction('ctx.json.CSV2Array');
+		newLine = (newLine || "\n");
+		sDelimiter = (sDelimiter || ",");
 
-      // Create a regular expression to parse the CSV values.
-      var objPattern = new RegExp(
-          (
-              // Delimiters.
-              "(\\" + strDelimiter + "|\\r?\\n|\\r|^)" +
+		var objPtrn = new RegExp(
+			(
+				"(\\" + sDelimiter + "|\\r?\\n|\\r|^)" +
+				"(?:\"([^\"]*(?:\"\"[^\"]*)*)\"|" +
+				"([^\"\\" + sDelimiter + "\\r\\n]*))"
+			),
+			"gi"
+		);
 
-              // Quoted fields.
-              "(?:\"([^\"]*(?:\"\"[^\"]*)*)\"|" +
+		var tMatches = null;
+		var tData = [[]];
 
-              // Standard fields.
-              "([^\"\\" + strDelimiter + "\\r\\n]*))"
-          ),
-          "gi"
-          );
+		while (tMatches = objPtrn.exec(sData)) {
 
-      // Create an array to hold our data. Give the array
-      // a default empty first row.
-      var arrData = [[]];
+			var strMatchedDelimiter = tMatches[1];
+			var strMatchedValue;
 
-      // Create an array to hold our individual pattern
-      // matching groups.
-      var arrMatches = null;
+			if (strMatchedDelimiter.length && strMatchedDelimiter !== sDelimiter) tData.push([]);
 
-      // Keep looping over the regular expression matches
-      // until we can no longer find a match.
-      while (arrMatches = objPattern.exec( strData )){
+			if (!tMatches[2])
+				strMatchedValue = tMatches[3];
+			else
+				strMatchedValue = tMatches[2].replace(new RegExp("\"\"", "g"), "\"");
 
-        // Get the delimiter that was found.
-        var strMatchedDelimiter = arrMatches[ 1 ];
-
-        // Check to see if the given delimiter has a length
-        // (is not the start of string) and if it matches
-        // field delimiter. If id does not, then we know
-        // that this delimiter is a row delimiter.
-        if (
-          strMatchedDelimiter.length &&
-          strMatchedDelimiter !== strDelimiter
-          ){
-
-          // Since we have reached a new row of data,
-          // add an empty row to our data array.
-          arrData.push( [] );
-
-        }
-
-        var strMatchedValue;
-
-        // Now that we have our delimiter out of the way,
-        // let's check to see which kind of value we
-        // captured (quoted or unquoted).
-        if (arrMatches[ 2 ]){
-
-          // We found a quoted value. When we capture
-          // this value, unescape any double quotes.
-          strMatchedValue = arrMatches[ 2 ].replace(
-            new RegExp( "\"\"", "g" ),
-            "\""
-            );
-        } else {
-          // We found a non-quoted value.
-          strMatchedValue = arrMatches[ 3 ];
-        }
-        // Now that we have our value string, let's add
-        // it to the data array.
-        arrData[ arrData.length - 1 ].push( strMatchedValue );
-      }
-      // Return the parsed data.
-      return( arrData );
-    },
+			tData[tData.length - 1].push(strMatchedValue);
+		}
+		return (tData);
+	},
 
    /**
     * Gets a text in CSV format and returns an object.
@@ -1447,7 +1401,6 @@ var txt = ctx.json.object2CSV( obj, ',', '\n' );
     * @path    ctx.json.parse
     * @param   {string} text The string to parse
     * @param   {function(string,*)} [reviver] If a function, prescribes how the value originally produced by parsing is transformed, before being returned
-    * @see     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse
     * @return  {*} The parsed object
     */
     parse : function (text, reviver) {
@@ -1530,7 +1483,6 @@ var txt = ctx.json.stringify( data, escape );
     * @param   {number|string} [space] Causes the resulting string to be pretty-printed
     * @param   {function(string,*)} [cycleReplacer] Function to be used as replacer for circular references
     * @param   {boolean} [isShort] if ''true'', serialize using short description
-    * @see     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
     * @return  {string} JSON string which represents input object
     */
     stringify : function (value, replacer, space, cycleReplacer, isShort) {
